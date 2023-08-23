@@ -1,8 +1,8 @@
 import React from 'react'
-import Banner from '../home/Banner'
-import Links from '../home/Links'
-import Products from '../home/Products'
-import Testimonial from '../home/Testimonial'
+import Banner from './Banner'
+import Links from './Links'
+import Products from './Products'
+import Testimonial from './Testimonial'
 
 const Home = () => {
   return (

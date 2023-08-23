@@ -1,6 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from './components/pages/Home'
+
+// Layout imports
 import Layout from './components/layout/Layout'
+import Home from './components/pages/home/Home'
+import Headphones from './components/pages/headphones/Headphones'
 
 function App() {
   return (
@@ -8,6 +11,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/headphones' element={<Headphones />} />
         </Routes>
       </Layout>
     </>
