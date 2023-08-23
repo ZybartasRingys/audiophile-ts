@@ -15,7 +15,7 @@ const MobileNav = () => {
           audiophile
         </Text>
 
-        {/* <Image src='/shared/desktop/icon-cart.svg' cursor='pointer' /> */}
+        <Image src='/shared/desktop/icon-cart.svg' cursor='pointer' />
       </Flex>
     </Box>
   )
