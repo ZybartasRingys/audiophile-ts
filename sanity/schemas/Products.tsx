@@ -10,22 +10,22 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-    defineField({
-      name: 'slug',
-      type: 'slug',
-      options: {source: 'title'},
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
+     defineField({
       name: 'desc',
       title: 'Description',
       type: 'string',
     }),
-    defineField({
+       defineField({
+      name: 'slug',
+      title: 'slug',
+      type: 'string',
+    }),
+      defineField({
       name: 'productImage',
       title: 'ProductImage',
       type: 'image',
-      options: {hotspot: true},
+      options: {hotspot: true}
     }),
-  ],
+   ]
+
 })
