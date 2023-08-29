@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Header from './Header'
 import { getProducts } from '../../../../sanity/sanity'
-const Headphones = async () => {
-  const data = await getProducts()
+const Headphones = () => {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    const getData = async () => {
+      const products = await getProducts()
+      setProducts(products)
+    }
+    getData()
+  }, [])
 
   return (
     <>
-      {data?.map((product) => (
-        <div>{product?.title}</div>
-      ))}
+      <div>{products.map((product) => product.title)}</div>
       <Header />
     </>
   )

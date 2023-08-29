@@ -10,6 +10,7 @@ export const client = createClient({
 
 // uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getProducts() {
-  const products = await client.fetch('*[_type == "Products"]')
+  const products = await client.fetch('*[_type == "products"]')
+  console.log(products)
   return products
 }
