@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from 'react'
-
-import Header from './Header'
-import { getProducts } from '../../../../sanity/sanity'
+import Header from "./Header";
+import Products from "./Products";
 const Headphones = () => {
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    const getData = async () => {
-      const products = await getProducts()
-      setProducts(products)
-    }
-    getData()
-  }, [])
-
   return (
     <>
-      <div>{products.map((product) => product.title)}</div>
       <Header />
+      <Products desc={"string"} title={"string"} />
     </>
-  )
-}
+  );
+};
 
-export default Headphones
+export default Headphones;
