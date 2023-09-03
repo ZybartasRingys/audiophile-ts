@@ -15,8 +15,8 @@ const HeadphonesProducts = (props: Product) => {
 
   useEffect(() => {
     const getData = async () => {
-      const products = await getProducts();
-      setProducts(products);
+      const headphones = await getProducts();
+      setProducts(headphones);
     };
     getData();
   }, []);

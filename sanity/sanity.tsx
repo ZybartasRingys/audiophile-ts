@@ -21,7 +21,7 @@ export const urlFor = (source: SanityImageSource) => {
 
 // uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getProducts() {
-  const products = await client.fetch('*[_type == "products"]')
-  console.log(products)
-  return products
+  const headphones = await client.fetch('*[_type == "headphones"]')
+  console.log(headphones)
+  return headphones
 }

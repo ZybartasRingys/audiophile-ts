@@ -1,4 +1,4 @@
 import blockContent from './blockContent'
-import Products from './Products'
+import Headphones from "./Headphones"
 
-export const schemaTypes = [blockContent, Products]
+export const schemaTypes = [blockContent, Headphones]
