@@ -9,7 +9,7 @@ interface Product {
   title: "string";
 }
 
-const Products = (props: Product) => {
+const HeadphonesProducts = (props: Product) => {
   const [products, setProducts] = useState([] as any[]);
   console.log(products);
 
@@ -24,10 +24,11 @@ const Products = (props: Product) => {
     <Flex flexDir={{ base: "column" }} alignItems="center" mt="62px">
       {products.map((product) => (
         <Flex
+          key={product.title}
           flexDir={{ base: "column" }}
           width="89%"
           alignItems="center"
-          mt="120px"
+          mb="120px"
         >
           <Box height={{ base: "352px" }} width="100%" borderRadius="10px">
             {product.image && (
@@ -75,4 +76,4 @@ const Products = (props: Product) => {
   );
 };
 
-export default Products;
+export default HeadphonesProducts;

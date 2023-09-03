@@ -1,10 +1,15 @@
 import Header from "./Header";
-import Products from "./Products";
+import Links from "../home/Links";
+import HeadphonesProducts from "./HeadphonesProducts";
+import Testimonial from "../home/Testimonial";
+
 const Headphones = () => {
   return (
     <>
       <Header />
-      <Products desc={"string"} title={"string"} />
+      <HeadphonesProducts desc={"string"} title={"string"} />
+      <Links />
+      <Testimonial />
     </>
   );
 };
