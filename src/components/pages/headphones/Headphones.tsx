@@ -1,17 +1,17 @@
-import Header from "./Header";
-import Links from "../home/Links";
-import HeadphonesProducts from "./HeadphonesProducts";
-import Testimonial from "../home/Testimonial";
+import Header from './Header'
+import Links from '../home/Links'
+import HeadphonesProducts from './HeadphonesProducts'
+import Testimonial from '../home/Testimonial'
 
 const Headphones = () => {
   return (
     <>
       <Header />
-      <HeadphonesProducts desc={"string"} title={"string"} />
+      <HeadphonesProducts desc={'string'} title={'string'} image={'string'} />
       <Links />
       <Testimonial />
     </>
-  );
-};
+  )
+}
 
-export default Headphones;
+export default Headphones
