@@ -1,14 +1,4 @@
-import React from "react";
-
-import {
-  Card,
-  CardBody,
-  Heading,
-  Box,
-  Image,
-  Link,
-  Text,
-} from "@chakra-ui/react";
+import { Card, CardBody, Heading, Image, Link, Text } from "@chakra-ui/react";
 
 type Props = {};
 
@@ -126,7 +116,7 @@ const LinksCard = (props: Props) => {
           <Link
             display="flex"
             alignItems="center"
-            href="/headphones"
+            href="/earphones"
             textTransform="uppercase"
           >
             <Text
