@@ -6,7 +6,7 @@ import Home from "./components/pages/home/Home";
 import HeadphonesHome from "./components/pages/headphones/HeadphonesHome";
 import SpeakersHome from "./components/pages/speakers/SpeakersHome";
 import EarphonesHome from "./components/pages/earphones/EarphonesHome";
-import ProductsDetail from "./components/ProductsDetail";
+import ProductsDetail from "./components/products/productsDetail/ProductsDetail";
 
 function App() {
   return (

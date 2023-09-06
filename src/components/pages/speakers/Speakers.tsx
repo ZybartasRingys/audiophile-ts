@@ -2,7 +2,7 @@
 /* eslint-disable no-empty-pattern */
 import { useState, useEffect } from "react";
 import { getSpeakers } from "../../../../sanity/sanity";
-import ProductsComponent from "../../ProductsComponent";
+import ProductsComponent from "../../products/ProductsComponent";
 import { Flex } from "@chakra-ui/react";
 interface Ispeakers {
   title: "string";

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import { getEarphones } from "../../../../sanity/sanity";
-import ProductsComponent from "../../ProductsComponent";
+import ProductsComponent from "../../products/ProductsComponent";
 import { Flex } from "@chakra-ui/react";
 
 interface IEarphones {

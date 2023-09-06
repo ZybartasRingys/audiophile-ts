@@ -1,4 +1,4 @@
-import { urlFor } from "../../sanity/sanity";
+import { urlFor } from "../../../sanity/sanity";
 import { Box, Text, Heading, Flex, Link, Image } from "@chakra-ui/react";
 
 interface Ispeakers {

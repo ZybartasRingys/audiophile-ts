@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
-import { getProducts } from "../../../../sanity/sanity";
-import ProductsComponent from "../../products/ProductsComponent";
+import { Box, Text, Heading, Flex, Button } from "@chakra-ui/react";
+import { getAllProducts } from "../../../../sanity/sanity";
+import Product from "./Product";
+
 interface IProduct {
   desc: "string";
   title: "string";
@@ -10,20 +11,22 @@ interface IProduct {
   slug: "string";
 }
 
-const Headphones: React.FC<IProduct> = () => {
+const ProductsDetail: React.FC<IProduct> = () => {
   const [products, setProducts] = useState([] as any[]);
-
+  console.log(products);
   useEffect(() => {
     const getData = async () => {
-      const headphones = await getProducts();
-      setProducts(headphones);
+      const allProducts = await getAllProducts();
+      setProducts(allProducts);
     };
     getData();
   }, []);
   return (
-    <div>
+    <Flex flexDir={{ base: "column" }}>
+      <Box>Go back</Box>
+
       {products.map(({ title, desc, image, slug }) => (
-        <ProductsComponent
+        <Product
           title={title}
           desc={desc}
           image={image}
@@ -31,8 +34,8 @@ const Headphones: React.FC<IProduct> = () => {
           slug={slug}
         />
       ))}
-    </div>
+    </Flex>
   );
 };
 
-export default Headphones;
+export default ProductsDetail;
