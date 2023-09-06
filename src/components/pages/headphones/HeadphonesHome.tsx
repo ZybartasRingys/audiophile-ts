@@ -6,8 +6,13 @@ import Testimonial from "../home/Testimonial";
 const HeadphonesHome = () => {
   return (
     <>
-      <Header />
-      <Headphones desc={"string"} title={"string"} image={"string"} />
+      <Header title={"string"} />
+      <Headphones
+        desc={"string"}
+        title={"string"}
+        image={"string"}
+        slug={"string"}
+      />
       <Links />
       <Testimonial />
     </>

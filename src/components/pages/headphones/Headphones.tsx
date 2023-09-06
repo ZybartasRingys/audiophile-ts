@@ -7,6 +7,7 @@ interface IProduct {
   desc: "string";
   title: "string";
   image: "string";
+  slug: "string";
 }
 
 const Headphones: React.FC<IProduct> = () => {
@@ -22,12 +23,13 @@ const Headphones: React.FC<IProduct> = () => {
   }, []);
   return (
     <div>
-      {products.map(({ title, desc, image }) => (
+      {products.map(({ title, desc, image, slug }) => (
         <ProductsComponent
           title={title}
           desc={desc}
           image={image}
           key={title}
+          slug={slug}
         />
       ))}
     </div>

@@ -6,7 +6,12 @@ const EarphonesHome = () => {
   return (
     <div>
       <Header title={headerTitle} />
-      <Earphones title={"string"} desc={"string"} image={"string"} />
+      <Earphones
+        title={"string"}
+        desc={"string"}
+        image={"string"}
+        slug={"string"}
+      />
     </div>
   );
 };

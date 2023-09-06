@@ -9,7 +9,12 @@ const SpeakersHome = () => {
   return (
     <Flex flexDir={{ base: "column" }}>
       <Header title={headerTitle} />
-      <Speakers title={"string"} desc={"string"} image={"string"} />
+      <Speakers
+        title={"string"}
+        desc={"string"}
+        image={"string"}
+        slug={"string"}
+      />
       <Links />
       <Testimonial />
     </Flex>

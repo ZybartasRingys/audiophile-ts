@@ -8,6 +8,7 @@ interface IEarphones {
   title: "string";
   desc: "string";
   image: "string";
+  slug: "string";
 }
 
 const Earphones: React.FC<IEarphones> = () => {
@@ -23,12 +24,13 @@ const Earphones: React.FC<IEarphones> = () => {
 
   return (
     <Flex flexDir={{ base: "column" }}>
-      {earphones.map(({ title, desc, image }) => (
+      {earphones.map(({ title, desc, image, slug }) => (
         <ProductsComponent
           title={title}
           desc={desc}
           image={image}
           key={title}
+          slug={slug}
         />
       ))}
     </Flex>

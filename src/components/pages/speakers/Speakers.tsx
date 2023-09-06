@@ -8,6 +8,7 @@ interface Ispeakers {
   title: "string";
   desc: "string";
   image: "string";
+  slug: "string";
 }
 
 const Speakers: React.FC<Ispeakers> = () => {
@@ -22,12 +23,13 @@ const Speakers: React.FC<Ispeakers> = () => {
   }, []);
   return (
     <Flex flexDir={{ base: "column" }}>
-      {products.map(({ title, desc, image }) => (
+      {products.map(({ title, desc, image, slug }) => (
         <ProductsComponent
           title={title}
           desc={desc}
           image={image}
           key={title}
+          slug={slug}
         />
       ))}
     </Flex>
