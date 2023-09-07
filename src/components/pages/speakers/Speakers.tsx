@@ -1,28 +1,28 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty-pattern */
-import { useState, useEffect } from "react";
-import { getSpeakers } from "../../../../sanity/sanity";
-import ProductsComponent from "../../products/ProductsComponent";
-import { Flex } from "@chakra-ui/react";
+import { useState, useEffect } from 'react'
+import { getSpeakers } from '../../../../sanity/sanity'
+import ProductsComponent from '../products/ProductsComponent'
+import { Flex } from '@chakra-ui/react'
 interface Ispeakers {
-  title: "string";
-  desc: "string";
-  image: "string";
-  slug: "string";
+  title: 'string'
+  desc: 'string'
+  image: 'string'
+  slug: 'string'
 }
 
 const Speakers: React.FC<Ispeakers> = () => {
-  const [products, setProducts] = useState([] as any[]);
+  const [products, setProducts] = useState([] as any[])
 
   useEffect(() => {
     const getData = async () => {
-      const speakers = await getSpeakers();
-      setProducts(speakers);
-    };
-    getData();
-  }, []);
+      const speakers = await getSpeakers()
+      setProducts(speakers)
+    }
+    getData()
+  }, [])
   return (
-    <Flex flexDir={{ base: "column" }}>
+    <Flex flexDir={{ base: 'column' }}>
       {products.map(({ title, desc, image, slug }) => (
         <ProductsComponent
           title={title}
@@ -33,7 +33,7 @@ const Speakers: React.FC<Ispeakers> = () => {
         />
       ))}
     </Flex>
-  );
-};
+  )
+}
 
-export default Speakers;
+export default Speakers

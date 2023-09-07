@@ -1,29 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useEffect } from "react";
-import { getEarphones } from "../../../../sanity/sanity";
-import ProductsComponent from "../../products/ProductsComponent";
-import { Flex } from "@chakra-ui/react";
+import { useState, useEffect } from 'react'
+import { getEarphones } from '../../../../sanity/sanity'
+import ProductsComponent from '../products/ProductsComponent'
+import { Flex } from '@chakra-ui/react'
 
 interface IEarphones {
-  title: "string";
-  desc: "string";
-  image: "string";
-  slug: "string";
+  title: 'string'
+  desc: 'string'
+  image: 'string'
+  slug: 'string'
 }
 
 const Earphones: React.FC<IEarphones> = () => {
-  const [earphones, setEarphones] = useState([] as any[]);
+  const [earphones, setEarphones] = useState([] as any[])
 
   useEffect(() => {
     const getData = async () => {
-      const earphones = await getEarphones();
-      setEarphones(earphones);
-    };
-    getData();
-  }, []);
+      const earphones = await getEarphones()
+      setEarphones(earphones)
+    }
+    getData()
+  }, [])
 
   return (
-    <Flex flexDir={{ base: "column" }}>
+    <Flex flexDir={{ base: 'column' }}>
       {earphones.map(({ title, desc, image, slug }) => (
         <ProductsComponent
           title={title}
@@ -34,7 +34,7 @@ const Earphones: React.FC<IEarphones> = () => {
         />
       ))}
     </Flex>
-  );
-};
+  )
+}
 
-export default Earphones;
+export default Earphones
