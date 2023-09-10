@@ -31,18 +31,31 @@ const ProductsDetail: React.FC<IProduct> = () => {
       >
         {products
           .filter((product) => product.slug.current == slug)
-          .map(({ title, desc, image, slug, price, features, box }) => (
-            <Product
-              key={title}
-              title={title}
-              desc={desc}
-              image={image}
-              slug={slug}
-              price={price}
-              features={features}
-              box={box}
-            />
-          ))}
+          .map(
+            ({
+              title,
+              desc,
+              image,
+              slug,
+              price,
+              features,
+              box,
+              productImages,
+            }) => (
+              <Product
+                key={title}
+                title={title}
+                desc={desc}
+                image={image}
+                slug={slug}
+                price={price}
+                features={features}
+                box={box}
+                productImages={productImages}
+                products={products}
+              />
+            )
+          )}
       </Flex>
     </>
   );

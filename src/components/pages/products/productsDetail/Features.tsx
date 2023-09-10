@@ -1,11 +1,10 @@
-import { Flex, Box, Text, Heading } from "@chakra-ui/react";
+import { Flex, Box, Text, Heading, Image } from "@chakra-ui/react";
 import { IProduct } from "../../../../types";
-
-const Features: React.FC<IProduct> = ({ features, box }) => {
-  console.log(box);
+import { urlFor } from "../../../../../sanity/sanity";
+const Features: React.FC<IProduct> = ({ features, box, productImages }) => {
   return (
     <>
-      <Flex flexDir={{ base: "column" }} mt="88px" width="89%">
+      <Flex flexDir={{ base: "column" }} mt="88px" width="100%">
         <Heading>FEATURES</Heading>
         <Text mt="32px">{features}</Text>
 
@@ -23,9 +22,28 @@ const Features: React.FC<IProduct> = ({ features, box }) => {
                 1x
               </Text>
 
-              <Flex border="1px solid red" flexDir={{ base: "column" }}>
+              {/* In The Box Section */}
+
+              <Flex
+                border="1px solid red"
+                flexDir={{ base: "column" }}
+                mb="90px"
+              >
                 {box.map((item) => (
                   <Flex key={item}>{item}</Flex>
+                ))}
+              </Flex>
+
+              {/* Product Images Section */}
+              <Flex flexDir={{ base: "column" }}>
+                {productImages.map((image) => (
+                  <Flex width="100%" borderRadius="5px">
+                    <Image
+                      mb="15px"
+                      borderRadius="5px"
+                      src={urlFor(image).url()}
+                    />
+                  </Flex>
                 ))}
               </Flex>
             </Flex>

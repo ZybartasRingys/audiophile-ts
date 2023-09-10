@@ -53,5 +53,15 @@ export default defineType({
       layout: 'tags'
                 }
     }),
+
+    defineField({
+      title: 'productImages',
+      name: 'productImages',
+      type: 'array',
+      of: [{type: 'image'}],
+      options: {
+      layout: 'tags'
+                }
+    }),
   ],
 })

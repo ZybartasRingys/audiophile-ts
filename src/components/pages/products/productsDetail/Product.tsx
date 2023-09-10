@@ -2,6 +2,9 @@ import { Flex, Box, Text, Heading, Image, Button } from "@chakra-ui/react";
 import { urlFor } from "../../../../../sanity/sanity";
 import { IProduct } from "../../../../types";
 import Features from "./Features";
+import YouMayAlsoLike from "./YouMayAlsoLike";
+import Links from "../../home/Links";
+import Testimonial from "../../home/Testimonial";
 const Product: React.FC<IProduct> = ({
   title,
   desc,
@@ -9,10 +12,12 @@ const Product: React.FC<IProduct> = ({
   price,
   features,
   box,
+  productImages,
+  products,
 }) => {
   return (
     <>
-      <Flex flexDir={{ base: "column" }} width="89%" alignContent="center">
+      <Flex flexDir={{ base: "column" }} width="88%" height="100%">
         <Box height={{ base: "352px" }} width="100%" borderRadius="10px">
           {image && (
             <Image
@@ -51,6 +56,8 @@ const Product: React.FC<IProduct> = ({
           </Text>
         </Flex>
 
+        {/* Add to cart */}
+
         <Flex mt="32px">
           <Box width={{ base: "120px" }} height="48px" bgColor="grey.100"></Box>
           <Box>
@@ -68,8 +75,26 @@ const Product: React.FC<IProduct> = ({
           </Box>
         </Flex>
 
-        {/* Features component */}
-        <Features features={features} box={box} />
+        {/* Features Component */}
+        <Features
+          features={features}
+          box={box}
+          productImages={productImages}
+          desc={"string"}
+          title={"string"}
+          image={"string"}
+          slug={"string"}
+          price={0}
+        />
+
+        {/* You May Also Like Section */}
+
+        <YouMayAlsoLike products={products} />
+
+        {/* Links Section */}
+        <Links />
+        {/* Testimonial Section */}
+        <Testimonial />
       </Flex>
     </>
   );

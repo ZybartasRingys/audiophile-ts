@@ -6,4 +6,5 @@ export interface IProduct {
   price: number;
   features?: "string";
   box: Array<string>;
+  productImages: Array<string>;
 }
