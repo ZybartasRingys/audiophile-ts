@@ -1,19 +1,78 @@
-import { Flex, Box } from '@chakra-ui/react'
-
-interface IProduct {
-  desc: 'string'
-  title: 'string'
-  image: 'string'
-  slug: 'string'
-}
-
-const Product: React.FC<IProduct> = ({ title }) => {
+import { Flex, Box, Text, Heading, Image, Button } from "@chakra-ui/react";
+import { urlFor } from "../../../../../sanity/sanity";
+import { IProduct } from "../../../../types";
+import Features from "./Features";
+const Product: React.FC<IProduct> = ({
+  title,
+  desc,
+  image,
+  price,
+  features,
+  box,
+}) => {
   return (
-    <Flex>
-      <Box>Image</Box>
-      <Flex>{title}</Flex>
-    </Flex>
-  )
-}
+    <>
+      <Flex flexDir={{ base: "column" }} width="89%" alignContent="center">
+        <Box height={{ base: "352px" }} width="100%" borderRadius="10px">
+          {image && (
+            <Image
+              width="100%"
+              height="100%"
+              borderRadius="10px"
+              src={urlFor(image).url()}
+              alt={title}
+            ></Image>
+          )}
+        </Box>
+        <Flex flexDir={{ base: "column" }} textAlign="start">
+          <Text mt="32px" color="orange.100" height="14px" letterSpacing="10px">
+            NEW PRODUCT
+          </Text>
 
-export default Product
+          <Heading mt="32px" size="xl">
+            {title}
+          </Heading>
+          <Text
+            mt="32px"
+            fontSize="14px"
+            lineHeight="25px"
+            fontWeight="medium"
+            opacity="0.6"
+          >
+            {desc}
+          </Text>
+          <Text
+            fontSize={{ base: "18px" }}
+            fontWeight="bold"
+            letterSpacing="1.3px"
+            mt="32px"
+          >
+            ${price}
+          </Text>
+        </Flex>
+
+        <Flex mt="32px">
+          <Box width={{ base: "120px" }} height="48px" bgColor="grey.100"></Box>
+          <Box>
+            <Button
+              width="160px"
+              height="48px"
+              bgColor="orange.100"
+              color="white"
+              borderRadius="0px"
+              fontSize={{ base: "13px" }}
+              letterSpacing="1px"
+            >
+              ADD TO CART
+            </Button>
+          </Box>
+        </Flex>
+
+        {/* Features component */}
+        <Features features={features} box={box} />
+      </Flex>
+    </>
+  );
+};
+
+export default Product;

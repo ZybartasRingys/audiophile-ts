@@ -1,0 +1,9 @@
+export interface IProduct {
+  desc: "string";
+  title: "string";
+  image: "string";
+  slug: "string";
+  price: number;
+  features?: "string";
+  box: Array<string>;
+}

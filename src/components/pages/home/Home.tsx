@@ -1,8 +1,7 @@
-import React from 'react'
-import Banner from './Banner'
-import Links from './Links'
-import Products from './Products'
-import Testimonial from './Testimonial'
+import Banner from "./Banner";
+import Links from "./Links";
+import Products from "./Products";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
   return (
@@ -12,7 +11,7 @@ const Home = () => {
       <Products />
       <Testimonial />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

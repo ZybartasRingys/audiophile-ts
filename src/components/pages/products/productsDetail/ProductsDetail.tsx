@@ -1,45 +1,51 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from 'react'
-import { Box, Flex } from '@chakra-ui/react'
-import { getAllProducts } from '../../../../../sanity/sanity'
-import Product from './Product'
-import { useParams } from 'react-router-dom'
-
-interface IProduct {
-  desc: 'string'
-  title: 'string'
-  image: 'string'
-  slug: 'string'
-  route: 'string'
-}
+import { useEffect, useState } from "react";
+import { Box, Flex, Link } from "@chakra-ui/react";
+import { getProductsBySlug } from "../../../../../sanity/sanity";
+import Product from "./Product";
+import { IProduct } from "../../../../types";
+import { useParams } from "react-router-dom";
 
 const ProductsDetail: React.FC<IProduct> = () => {
-  const [products, setProducts] = useState<Array<IProduct>>([])
-  const location = useParams()
-  console.log(location.slug)
+  const [products, setProducts] = useState<Array<IProduct>>([]);
+  const { slug } = useParams();
 
   useEffect(() => {
     const getData = async () => {
-      const allProducts = await getAllProducts({ slug })
-      setProducts(allProducts)
-    }
-    getData()
-  }, [])
+      const allProducts = await getProductsBySlug();
+      setProducts(allProducts);
+    };
+    getData();
+  }, []);
   return (
-    <Flex flexDir={{ base: 'column' }}>
-      <Box>Go back</Box>
+    <>
+      <Box>
+        <Link href="/">Go back</Link>
+      </Box>
 
-      {products.map(({ title, desc, image, slug }) => (
-        <Product
-          title={title}
-          desc={desc}
-          image={image}
-          key={title}
-          slug={slug}
-        />
-      ))}
-    </Flex>
-  )
-}
+      <Flex
+        flexDir={{ base: "column" }}
+        width="100%"
+        height="100%"
+        alignItems="center"
+      >
+        {products
+          .filter((product) => product.slug.current == slug)
+          .map(({ title, desc, image, slug, price, features, box }) => (
+            <Product
+              key={title}
+              title={title}
+              desc={desc}
+              image={image}
+              slug={slug}
+              price={price}
+              features={features}
+              box={box}
+            />
+          ))}
+      </Flex>
+    </>
+  );
+};
 
-export default ProductsDetail
+export default ProductsDetail;

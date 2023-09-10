@@ -21,7 +21,10 @@ export default defineType({
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
+        maxLength: 96, 
+        slugify: input => input
+                         .toLowerCase()
+      
       }
     }),
       defineField({
@@ -29,6 +32,27 @@ export default defineType({
       title: 'image',
       type: 'image',
       options: {hotspot: true}
+    }),
+
+    defineField({
+      name: 'price',
+      title: 'Price',
+      type: 'number',
+    }),
+
+    defineField({
+      name: 'features',
+      title: 'Features',
+      type: 'string',
+    }),
+    defineField({
+      title: 'Box',
+      name: 'box',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+      layout: 'tags'
+                }
     }),
    ]
 

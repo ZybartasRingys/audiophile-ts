@@ -34,14 +34,17 @@ export async function getSpeakers() {
 
 export async function getEarphones() {
   const earphones = await client.fetch('*[_type == "earphones"]')
+ 
   return earphones
 }
 
 // Fetch all products
 
-export async function getAllProducts({params: slug}) {
+export async function getProductsBySlug() {
+  
   const products = await client.fetch(
-    '*[_type in ["headphones", "speakers", "earphones"] && slug.current == ${slug}][0]'
+    '*[_type in ["headphones", "speakers", "earphones" && slug.current == slug]]'
   )
+  console.log(products)
   return products
 }
