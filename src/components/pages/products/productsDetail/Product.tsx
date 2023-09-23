@@ -14,6 +14,8 @@ const Product: React.FC<IProduct> = ({
   box,
   productImages,
   products,
+  slug,
+  unit,
 }) => {
   return (
     <>
@@ -85,11 +87,12 @@ const Product: React.FC<IProduct> = ({
           image={"string"}
           slug={"string"}
           price={0}
+          unit={unit}
         />
 
         {/* You May Also Like Section */}
 
-        <YouMayAlsoLike products={products} />
+        <YouMayAlsoLike products={products} slug={slug} />
 
         {/* Links Section */}
         <Links />

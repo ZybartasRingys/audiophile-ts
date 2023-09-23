@@ -34,7 +34,6 @@ export async function getSpeakers() {
 
 export async function getEarphones() {
   const earphones = await client.fetch('*[_type == "earphones"]')
- 
   return earphones
 }
 
@@ -48,3 +47,6 @@ export async function getProductsBySlug() {
   console.log(products)
   return products
 }
+
+
+

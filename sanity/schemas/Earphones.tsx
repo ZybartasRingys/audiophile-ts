@@ -64,6 +64,15 @@ export default defineType({
       layout: 'tags'
                 }
     }),
+    defineField({
+      title: 'unit',
+      name: 'unit',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+      layout: 'tags'
+                }
+    }),
    ]
 
 })
