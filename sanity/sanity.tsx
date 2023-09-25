@@ -44,7 +44,7 @@ export async function getProductsBySlug() {
   const products = await client.fetch(
     '*[_type in ["headphones", "speakers", "earphones" && slug.current == slug]]'
   )
-  console.log(products)
+  
   return products
 }
 

@@ -2,7 +2,6 @@ import { Flex, Heading, Box, Button, Image } from "@chakra-ui/react";
 import { urlFor } from "../../../../../sanity/sanity";
 import { IProduct } from "../../../../types";
 const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
-  console.log(slug.current);
   return (
     <Flex
       flexDir={{ base: "column" }}
@@ -13,9 +12,9 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
       <Heading mb="50px">YOU MAY ALSO LIKE</Heading>
       {products
         .filter((product) => product.slug.current !== slug.current)
-        .map(({ title, image }) => {
+        .map((item: { title: string; image: string }) => (
           <Flex
-            key={title}
+            key={item.title}
             flexDir={{ base: "column" }}
             alignItems="center"
             height={{ base: "265px" }}
@@ -26,11 +25,11 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
                 width="100%"
                 height={{ base: "120px" }}
                 borderRadius="10px"
-                src={urlFor(image).url()}
-                alt={title}
+                src={urlFor(item.image).url()}
+                alt={item.title}
               ></Image>
             </Box>
-            <Heading size="sm">{title}</Heading>
+            <Heading size="sm">{item.title}</Heading>
             <Box>
               <Button
                 width="160px"
@@ -44,8 +43,8 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
                 SEE PRODUCT
               </Button>
             </Box>
-          </Flex>;
-        })}
+          </Flex>
+        ))}
     </Flex>
   );
 };
