@@ -11,5 +11,8 @@ export interface IProduct {
 }
 
 export interface ICartProps {
+  totalPrice: number
+  totalCartItems: number
   addToCart: () => void
+  removeAllCartItems: () => void
 }

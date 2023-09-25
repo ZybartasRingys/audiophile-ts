@@ -5,6 +5,8 @@ import Features from './Features'
 import YouMayAlsoLike from './YouMayAlsoLike'
 import Links from '../../home/Links'
 import Testimonial from '../../home/Testimonial'
+
+//Context
 import { useContext } from 'react'
 import { CartContext } from '../../../../context/CartContext'
 const Product: React.FC<IProduct> = ({
