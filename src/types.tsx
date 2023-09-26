@@ -5,6 +5,7 @@ export interface IProduct {
   title: "string";
   image: "string";
   slug: "string";
+  _id: "string";
   price: number;
   features?: "string";
   box: Array<string>;
@@ -15,21 +16,20 @@ export interface IProduct {
 // Cart types
 
 export interface ICartContext {
-  totalPrice: number;
   totalCartQuantity: number;
-  cartItems: CartItem[];
-  getItemsQuantity: (id: number) => number;
-  increaseCartQuantity: (id: number) => void;
-  decreaseCartQuantity: (id: number) => void;
-  removeFromCart: (id: number) => void;
-  removeAllCartItems: (id: number) => void;
+  cartItems: CartItemProps[];
+  getItemsQuantity: (_id: "string") => number;
+  increaseCartQuantity: (_id: "string") => void;
+  decreaseCartQuantity: (_id: "string") => void;
+  removeFromCart: (_id: "string") => void;
+  removeAllCartItems: (_id: "string") => void;
 }
 
 export type ShoppingCartProvider = {
   children: ReactNode;
 };
 
-export type CartItem = {
-  id: number;
+export type CartItemProps = {
+  _id: "string";
   quantity: number;
 };

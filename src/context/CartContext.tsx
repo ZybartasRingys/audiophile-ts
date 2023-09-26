@@ -1,28 +1,48 @@
-import { createContext, useState } from "react";
-import { ICartContext, ShoppingCartProvider, CartItem } from "../types";
+import { createContext, useState, useEffect } from "react";
+
+// Types
+import {
+  ICartContext,
+  ShoppingCartProvider,
+  CartItemProps,
+  IProduct,
+} from "../types";
+
+import { getProductsBySlug } from "../../sanity/sanity";
 
 export const CartContext = createContext({} as ICartContext);
 
 export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItemProps[]>([]);
+  const [products, setProducts] = useState<IProduct[]>([]);
+  console.log(products);
+
+  //get all products
+
+  useEffect(() => {
+    const getData = async () => {
+      const allProducts = await getProductsBySlug();
+      setProducts(allProducts);
+    };
+    getData();
+  }, []);
 
   const totalCartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
   );
 
-  const getItemsQuantity = (id: number) => {
-    return cartItems.find((item) => item.id === id)?.quantity || 0;
+  const getItemsQuantity = (_id: "string") => {
+    return cartItems.find((item) => item._id === _id)?.quantity || 0;
   };
 
-  const increaseCartQuantity = (id: number) => {
+  const increaseCartQuantity = (_id: "string") => {
     setCartItems((currItems) => {
-      if (currItems.find((item) => item.id === id) == null) {
-        return [...currItems, { id, quantity: 1 }];
+      if (currItems.find((item) => item._id === _id) == null) {
+        return [...currItems, { _id, quantity: 1 }];
       } else {
         return currItems.map((item) => {
-          if (item.id === id) {
+          if (item._id === _id) {
             return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
@@ -32,13 +52,13 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
     });
   };
 
-  const decreaseCartQuantity = (id: number) => {
+  const decreaseCartQuantity = (_id: "string") => {
     setCartItems((currItems) => {
-      if (currItems.find((item) => item.id === id)?.quantity === 1) {
-        return [...currItems.filter((item) => item.id !== id)];
+      if (currItems.find((item) => item._id === _id)?.quantity === 1) {
+        return [...currItems.filter((item) => item._id !== _id)];
       } else {
         return currItems.map((item) => {
-          if (item.id === id) {
+          if (item._id === _id) {
             return { ...item, quantity: item.quantity - 1 };
           } else {
             return item;
@@ -48,14 +68,10 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
     });
   };
 
-  const removeFromCart = (id: number) => {
+  const removeFromCart = (_id: "string") => {
     setCartItems((currItems) => {
-      return currItems.filter((item) => item.id !== id);
+      return currItems.filter((item) => item._id !== _id);
     });
-  };
-
-  const removeAllCartItems = (id: number) => {
-    console.log("removed");
   };
 
   return (
@@ -65,9 +81,9 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
         increaseCartQuantity,
         decreaseCartQuantity,
         removeFromCart,
-        removeAllCartItems,
         cartItems,
         totalCartQuantity,
+        products,
       }}
     >
       {children}

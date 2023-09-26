@@ -1,22 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from "react";
 import { Box, Flex, Link } from "@chakra-ui/react";
-import { getProductsBySlug } from "../../../../../sanity/sanity";
 import Product from "./Product";
 import { IProduct } from "../../../../types";
 import { useParams } from "react-router-dom";
 
+//Context
+import { useContext } from "react";
+import { CartContext } from "../../../../context/CartContext";
+
 const ProductsDetail: React.FC<IProduct> = () => {
-  const [products, setProducts] = useState<Array<IProduct>>([]);
+  const { products } = useContext(CartContext);
   const { slug } = useParams();
 
-  useEffect(() => {
-    const getData = async () => {
-      const allProducts = await getProductsBySlug();
-      setProducts(allProducts);
-    };
-    getData();
-  }, []);
   return (
     <>
       <Flex flexDir={{ base: "column" }} alignItems="center">
@@ -36,7 +31,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
           alignItems="center"
         >
           {products
-            .filter((product) => product.slug.current == slug)
+            .filter((product: IProduct) => product.slug.current == slug)
             .map(
               ({
                 title,
@@ -48,6 +43,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
                 box,
                 productImages,
                 unit,
+                _id,
               }) => (
                 <Product
                   key={title}
@@ -61,6 +57,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
                   productImages={productImages}
                   products={products}
                   unit={unit}
+                  _id={_id}
                 />
               )
             )}

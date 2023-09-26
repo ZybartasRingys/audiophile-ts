@@ -20,8 +20,8 @@ import CartItem from "./CartItem";
 
 const Cart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const { totalCartQuantity, cartItems } = useContext(CartContext);
+
   return (
     <>
       <Image
@@ -46,7 +46,7 @@ const Cart = () => {
           </ModalHeader>
           <ModalBody>
             {cartItems.map((item) => (
-              <CartItem key={item.id} {...item} />
+              <CartItem key={item._id} {...item} />
             ))}
           </ModalBody>
           <ModalFooter>
