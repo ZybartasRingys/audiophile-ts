@@ -15,7 +15,6 @@ export const CartContext = createContext({} as ICartContext);
 export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
   const [cartItems, setCartItems] = useState<CartItemProps[]>([]);
   const [products, setProducts] = useState<IProduct[]>([]);
-  console.log(products);
 
   //get all products
 
@@ -33,7 +32,7 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
   );
 
   const getItemsQuantity = (_id: "string") => {
-    return cartItems.find((item) => item._id === _id)?.quantity || 0;
+    return cartItems.find((item) => item._id === _id)?.quantity || 1;
   };
 
   const increaseCartQuantity = (_id: "string") => {

@@ -9,6 +9,9 @@ import Testimonial from "../../home/Testimonial";
 //Context
 import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContext";
+//Icons
+import { HiMiniPlusSmall, HiMiniMinusSmall } from "react-icons/hi2";
+
 const Product: React.FC<IProduct> = ({
   title,
   desc,
@@ -22,7 +25,9 @@ const Product: React.FC<IProduct> = ({
   unit,
   _id,
 }) => {
-  const { increaseCartQuantity } = useContext(CartContext);
+  const { increaseCartQuantity, decreaseCartQuantity, getItemsQuantity } =
+    useContext(CartContext);
+  const quantity = getItemsQuantity(_id);
 
   return (
     <>
@@ -68,8 +73,27 @@ const Product: React.FC<IProduct> = ({
         {/* Add to cart */}
 
         <Flex mt="32px">
-          <Box width={{ base: "120px" }} height="48px" bgColor="grey.100"></Box>
-          <Box>
+          <Flex width={{ base: "120px" }} height="48px" bgColor="grey.100">
+            <Flex
+              width={{ base: "100%" }}
+              alignItems="center"
+              justifyContent="space-around"
+            >
+              <Box onClick={() => decreaseCartQuantity(_id)}>
+                <HiMiniMinusSmall />
+              </Box>
+
+              {quantity}
+              <Box
+                onClick={() => {
+                  increaseCartQuantity(_id);
+                }}
+              >
+                <HiMiniPlusSmall />
+              </Box>
+            </Flex>
+          </Flex>
+          <Flex>
             <Button
               width="160px"
               height="48px"
@@ -82,7 +106,7 @@ const Product: React.FC<IProduct> = ({
             >
               ADD TO CART
             </Button>
-          </Box>
+          </Flex>
         </Flex>
 
         {/* Features Component */}

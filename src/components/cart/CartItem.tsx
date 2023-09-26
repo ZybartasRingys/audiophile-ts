@@ -11,19 +11,22 @@ import { CartContext } from "../../context/CartContext";
 
 //icons
 
-import { HiMiniPlusSmall } from "react-icons/hi2";
+import { HiMiniPlusSmall, HiMiniMinusSmall } from "react-icons/hi2";
 
 const CartItem = ({ _id, quantity }: CartItemProps) => {
-  const { removeFromCart, products } = useContext(CartContext);
-  console.log(products);
-  console.log(_id);
+  const {
+    products,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    getItemsQuantity,
+  } = useContext(CartContext);
 
   const item = products.find((i: IProduct) => i._id === _id);
-
+  const cartQuantity = getItemsQuantity(_id);
   if (item === null) return null;
   return (
-    <Flex>
-      <Box>
+    <Flex justifyContent="space-between" alignItems="center">
+      <Box width={{ base: "64px" }} height={{ base: "64px" }}>
         {item.image && (
           <Image
             width="100%"
@@ -34,20 +37,38 @@ const CartItem = ({ _id, quantity }: CartItemProps) => {
           ></Image>
         )}
       </Box>
-      <Flex>
-        <Text>{item.title}</Text>
-        <Text>{item.price}</Text>
+      <Flex
+        flexDir={{ base: "column" }}
+        width={{ base: "76px" }}
+        height={{ base: "50px" }}
+      >
+        <Text fontSize="11px">{item.title}</Text>
+        <Text fontSize="15px">{item.price}</Text>
       </Flex>
       <Flex
         width={{ base: "96px" }}
         height={{ base: "32px" }}
         bgColor="grey.100"
       >
-        <Box>
-          <HiMiniPlusSmall />
-        </Box>
-        <Button></Button>
-        <Box></Box>
+        <Flex
+          width={{ base: "100%" }}
+          alignItems="center"
+          justifyContent="space-around"
+          bgColor="white.300"
+        >
+          <Box onClick={() => decreaseCartQuantity(_id)}>
+            <HiMiniMinusSmall />
+          </Box>
+
+          {cartQuantity}
+          <Box
+            onClick={() => {
+              increaseCartQuantity(_id);
+            }}
+          >
+            <HiMiniPlusSmall />
+          </Box>
+        </Flex>
       </Flex>
     </Flex>
   );
