@@ -1,35 +1,33 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Box, Flex, Link } from "@chakra-ui/react";
-import Product from "./Product";
-import { IProduct } from "../../../../types";
-import { useParams } from "react-router-dom";
+import { Box, Flex, Link } from '@chakra-ui/react'
+import Product from './Product'
+import { IProduct } from '../../../../types'
+import { useParams } from 'react-router-dom'
 
 //Context
-import { useContext } from "react";
-import { CartContext } from "../../../../context/CartContext";
+import { useContext } from 'react'
+import { CartContext } from '../../../../context/CartContext'
 
 const ProductsDetail: React.FC<IProduct> = () => {
-  const { products } = useContext(CartContext);
-  const { slug } = useParams();
+  const { products } = useContext(CartContext)
+  const { slug } = useParams()
 
   return (
     <>
-      <Flex flexDir={{ base: "column" }} alignItems="center">
+      <Flex flexDir={{ base: 'column' }} alignItems='center'>
         <Box
-          width="88%"
-          textAlign="start"
-          mt={{ base: "20px" }}
-          mb={{ base: "30px" }}
-        >
-          <Link href="/">Go back</Link>
+          width='88%'
+          textAlign='start'
+          mt={{ base: '20px' }}
+          mb={{ base: '30px' }}>
+          <Link href='/'>Go back</Link>
         </Box>
 
         <Flex
-          flexDir={{ base: "column" }}
-          width="100%"
-          height="100%"
-          alignItems="center"
-        >
+          flexDir={{ base: 'column' }}
+          width='100%'
+          height='100%'
+          alignItems='center'>
           {products
             .filter((product: IProduct) => product.slug.current == slug)
             .map(
@@ -64,7 +62,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
         </Flex>
       </Flex>
     </>
-  );
-};
+  )
+}
 
-export default ProductsDetail;
+export default ProductsDetail
