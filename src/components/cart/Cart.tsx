@@ -10,37 +10,38 @@ import {
   Image,
   Text,
   Flex,
-} from '@chakra-ui/react'
+  Link,
+} from "@chakra-ui/react";
 
 // Context
-import { useContext } from 'react'
-import { CartContext } from '../../context/CartContext'
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
-import CartItem from './CartItem'
-import Products from '../pages/home/Products'
+import CartItem from "./CartItem";
 
 const Cart = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { totalCartQuantity, cartItems, removeAllCartItems, products } =
-    useContext(CartContext)
+    useContext(CartContext);
 
   return (
     <>
       <Image
-        src='/shared/desktop/icon-cart.svg'
-        cursor='pointer'
+        src="/shared/desktop/icon-cart.svg"
+        cursor="pointer"
         onClick={onOpen}
       />
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent
-          width={{ base: '89%' }}
-          height={{ base: '488px' }}
-          bgColor='white'
-          mt={{ base: '85px' }}>
+          width={{ base: "89%" }}
+          height={{ base: "488px" }}
+          bgColor="white"
+          mt={{ base: "85px" }}
+        >
           <ModalHeader>
-            <Flex justifyContent={{ base: 'space-between' }}>
+            <Flex justifyContent={{ base: "space-between" }}>
               <Text>CART {`(${totalCartQuantity})`}</Text>
               <Button onClick={() => removeAllCartItems()}>Remove All</Button>
             </Flex>
@@ -51,32 +52,34 @@ const Cart = () => {
             ))}
           </ModalBody>
           <ModalFooter>
-            <Flex flexDir={{ base: 'column' }}>
-              <Flex justifyContent='space-between'>
+            <Flex flexDir={{ base: "column" }}>
+              <Flex justifyContent="space-between">
                 <Text>TOTAL</Text>
-                <Text fontWeight='bold'>
+                <Text fontWeight="bold">
                   $
                   {cartItems.reduce((total, cartItem) => {
-                    const item = products.find((i) => i._id === cartItem._id)
-                    return total + (item?.price || 0) * cartItem.quantity
+                    const item = products.find((i) => i._id === cartItem._id);
+                    return total + (item?.price || 0) * cartItem.quantity;
                   }, 0)}
                 </Text>
               </Flex>
 
-              <Button
-                height={{ base: '48px' }}
-                width={{ base: '271px' }}
-                borderRadius='none'
-                bgColor='orange.100'
-                color='white'>
+              <Link
+                href="/checkout"
+                height={{ base: "48px" }}
+                width={{ base: "271px" }}
+                borderRadius="none"
+                bgColor="orange.100"
+                color="white"
+              >
                 Checkout
-              </Button>
+              </Link>
             </Flex>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
