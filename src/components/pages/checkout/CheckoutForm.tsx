@@ -1,31 +1,47 @@
 import { useForm } from "react-hook-form";
+
+//Chakra UI
 import {
-  FormErrorMessage,
   FormLabel,
   FormControl,
   Input,
-  Button,
   Flex,
-  Text,
   Checkbox,
-  CheckboxGroup,
+  Text,
 } from "@chakra-ui/react";
 
+//Chakra Styles Import
 import { formLabelStyle } from "./checkoutStyle";
 
+//Context
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartContext";
+
+//Components
+import CartItem from "../../cart/CartItem";
+
 const CheckoutForm = () => {
+  const { cartItems, products } = useContext(CartContext);
+
+  console.log(cartItems);
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = () => {
+    console.log("submited");
   };
+
   return (
-    <Flex width={{ base: "100%" }} height={{ base: "100%" }}>
-      <Flex width="100%" justifyContent="center">
+    <Flex
+      width={{ base: "100%" }}
+      height={{ base: "100%" }}
+      flexDir={{ base: "column" }}
+      alignItems="center"
+    >
+      <Flex width="89%" justifyContent="center">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/*Billing Address section */}
           <FormLabel
@@ -98,16 +114,18 @@ const CheckoutForm = () => {
             <FormLabel {...formLabelStyle}>e-Money PIN</FormLabel>
             <Input />
           </FormControl>
-
-          <Button
-            mt={4}
-            colorScheme="teal"
-            isLoading={isSubmitting}
-            type="submit"
-          >
-            Submit
-          </Button>
         </form>
+      </Flex>
+
+      {/*Summary section */}
+      <Flex border="1px solid red" width="89%" justifyContent="center">
+        <Text>Summmary</Text>
+
+        <Flex>
+          {/* {cartItems.map((item) => (
+            <CartItem key={item._id} {...item} />
+          ))} */}
+        </Flex>
       </Flex>
     </Flex>
   );

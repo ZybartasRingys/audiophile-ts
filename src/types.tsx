@@ -1,36 +1,38 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react";
 
 export interface IProduct {
-  desc: 'string'
-  title: 'string'
-  image: 'string'
-  slug: 'string'
-  _id: 'string'
-  price: number
-  features?: 'string'
-  box: Array<string>
-  productImages: Array<string>
-  unit: Array<string>
+  desc: "string";
+  title: "string";
+  image: "string";
+  slug: "string";
+  _id: "string";
+  price: number;
+  features?: "string";
+  box: Array<string>;
+  productImages: Array<string>;
+  unit: Array<string>;
 }
 
 // Cart types
 
 export interface ICartContext {
-  totalCartQuantity: number
-  cartItems: CartItemProps[]
-  getItemsQuantity: (_id: 'string') => number
-  increaseCartQuantity: (_id: 'string') => void
-  decreaseCartQuantity: (_id: 'string') => void
-  removeFromCart: (_id: 'string') => void
-  removeAllCartItems: () => void
+  totalCartQuantity: number;
+  cartItems: CartItemProps[];
+  getItemsQuantity: (_id: "string") => number;
+  increaseCartQuantity: (_id: "string") => void;
+  decreaseCartQuantity: (_id: "string") => void;
+  removeFromCart: (_id: "string") => void;
+  removeAllCartItems: () => void;
 }
 
 export type ShoppingCartProvider = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export type CartItemProps = {
-  _id: 'string'
-  quantity: number
-  price: number
-}
+  _id: "string";
+  quantity: number;
+  price: number;
+};
+
+// Form types
