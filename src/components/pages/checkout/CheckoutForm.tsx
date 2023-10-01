@@ -7,7 +7,11 @@ import {
   Button,
   Flex,
   Text,
+  Checkbox,
+  CheckboxGroup,
 } from "@chakra-ui/react";
+
+import { formLabelStyle } from "./checkoutStyle";
 
 const CheckoutForm = () => {
   const {
@@ -37,32 +41,64 @@ const CheckoutForm = () => {
             <FormLabel color="black.100" fontWeight="bold" fontSize="12px">
               Name
             </FormLabel>
-            <Input
-              width={{ base: "280px" }}
-              height={{ base: "56px" }}
-              defaultValue="Alexei Ward"
-              color="grey.100"
-            />
-            <FormLabel>Email Address</FormLabel>
             <Input />
-            <FormLabel>Phone Number</FormLabel>
+            <FormLabel {...formLabelStyle}>Email Address</FormLabel>
+            <Input />
+            <FormLabel {...formLabelStyle}>Phone Number</FormLabel>
             <Input />
           </FormControl>
           {/*Billing Address section end */}
 
           {/*Shipping info  section */}
-          <FormLabel>Shipping info</FormLabel>
+          <FormLabel
+            color="orange.100"
+            fontSize="13px"
+            lineHeight="25px"
+            letterSpacing="1px"
+            fontWeight="bold"
+            textTransform="uppercase"
+            mt="30px"
+          >
+            Shipping info
+          </FormLabel>
           <FormControl>
-            <FormLabel>Your Address</FormLabel>
+            <FormLabel {...formLabelStyle}>Your Address</FormLabel>
             <Input />
-            <FormLabel>ZIP Code</FormLabel>
+            <FormLabel {...formLabelStyle}>ZIP Code</FormLabel>
             <Input />
-            <FormLabel>City</FormLabel>
+            <FormLabel {...formLabelStyle}>City</FormLabel>
             <Input />
-            <FormLabel>Country</FormLabel>
+            <FormLabel {...formLabelStyle}>Country</FormLabel>
             <Input />
           </FormControl>
+
           {/*Shipping info  section end */}
+
+          {/*Payment method  section */}
+          <FormLabel
+            color="orange.100"
+            fontSize="13px"
+            lineHeight="25px"
+            letterSpacing="1px"
+            fontWeight="bold"
+            textTransform="uppercase"
+            mt="30px"
+          >
+            Payment details
+          </FormLabel>
+          <FormControl>
+            <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
+            <Flex flexDir={{ base: "column" }}>
+              <Checkbox>e-Money</Checkbox>
+              <Checkbox>Cash On Delivery</Checkbox>
+            </Flex>
+
+            <FormLabel {...formLabelStyle}>e-Money Number</FormLabel>
+            <Input />
+            <FormLabel {...formLabelStyle}>e-Money PIN</FormLabel>
+            <Input />
+          </FormControl>
+
           <Button
             mt={4}
             colorScheme="teal"
