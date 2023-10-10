@@ -1,6 +1,3 @@
-//Components
-import CheckoutForm from './CheckoutForm'
-
 import { useForm } from 'react-hook-form'
 
 //Chakra UI
@@ -11,6 +8,7 @@ import {
   Flex,
   Checkbox,
   Text,
+  Button,
 } from '@chakra-ui/react'
 
 //Chakra Styles Import
@@ -25,6 +23,7 @@ import CheckoutItem from './CheckoutItem'
 
 const Checkout = () => {
   const { cartItems } = useContext(CartContext)
+  console.log(cartItems)
 
   const {
     handleSubmit,
@@ -115,19 +114,32 @@ const Checkout = () => {
             </FormControl>
           </form>
         </Flex>
-
         {/*Summary section */}
-        <Flex
-          border='1px solid red'
-          width='89%'
-          justifyContent='center'
-          flexDir={{ base: 'column' }}>
+        <Flex width='89%' justifyContent='center' flexDir={{ base: 'column' }}>
           <Text>Summmary</Text>
 
-          <Flex flexDir={{ base: 'column' }}>
+          <Flex flexDir={{ base: 'column' }} padding='24px'>
             {cartItems.map((item) => (
               <CheckoutItem key={item._id} {...item} />
             ))}
+
+            {cartItems.length ? (
+              <Button
+                mt='30px'
+                width='279px'
+                height='48px'
+                color='white'
+                bgColor='orange.100'
+                fontSize='13px'
+                letterSpacing='1px'
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
+                fontWeight='bold'
+                textTransform='uppercase'>
+                Continue & pay
+              </Button>
+            ) : null}
           </Flex>
         </Flex>
       </Flex>
