@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form'
 
 //Chakra UI
 import {
@@ -8,53 +8,50 @@ import {
   Flex,
   Checkbox,
   Text,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 //Chakra Styles Import
-import { formLabelStyle } from "./checkoutStyle";
+import { formLabelStyle } from './checkoutStyle'
 
 //Context
-import { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
+import { useContext } from 'react'
+import { CartContext } from '../../../context/CartContext'
 
 //Components
-import CartItem from "../../cart/CartItem";
+import CheckoutItem from './CheckoutItem'
 
 const CheckoutForm = () => {
-  const { cartItems, products } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext)
 
-  console.log(cartItems);
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = () => {
-    console.log("submited");
-  };
+    console.log('submited')
+  }
 
   return (
     <Flex
-      width={{ base: "100%" }}
-      height={{ base: "100%" }}
-      flexDir={{ base: "column" }}
-      alignItems="center"
-    >
-      <Flex width="89%" justifyContent="center">
+      width={{ base: '100%' }}
+      height={{ base: '100%' }}
+      flexDir={{ base: 'column' }}
+      alignItems='center'>
+      <Flex width='89%' justifyContent='center'>
         <form onSubmit={handleSubmit(onSubmit)}>
           {/*Billing Address section */}
           <FormLabel
-            color="orange.100"
-            fontSize="13px"
-            lineHeight="25px"
-            letterSpacing="1px"
-            fontWeight="bold"
-          >
+            color='orange.100'
+            fontSize='13px'
+            lineHeight='25px'
+            letterSpacing='1px'
+            fontWeight='bold'>
             BILLING DETAILS
           </FormLabel>
           <FormControl>
-            <FormLabel color="black.100" fontWeight="bold" fontSize="12px">
+            <FormLabel color='black.100' fontWeight='bold' fontSize='12px'>
               Name
             </FormLabel>
             <Input />
@@ -67,14 +64,13 @@ const CheckoutForm = () => {
 
           {/*Shipping info  section */}
           <FormLabel
-            color="orange.100"
-            fontSize="13px"
-            lineHeight="25px"
-            letterSpacing="1px"
-            fontWeight="bold"
-            textTransform="uppercase"
-            mt="30px"
-          >
+            color='orange.100'
+            fontSize='13px'
+            lineHeight='25px'
+            letterSpacing='1px'
+            fontWeight='bold'
+            textTransform='uppercase'
+            mt='30px'>
             Shipping info
           </FormLabel>
           <FormControl>
@@ -92,19 +88,18 @@ const CheckoutForm = () => {
 
           {/*Payment method  section */}
           <FormLabel
-            color="orange.100"
-            fontSize="13px"
-            lineHeight="25px"
-            letterSpacing="1px"
-            fontWeight="bold"
-            textTransform="uppercase"
-            mt="30px"
-          >
+            color='orange.100'
+            fontSize='13px'
+            lineHeight='25px'
+            letterSpacing='1px'
+            fontWeight='bold'
+            textTransform='uppercase'
+            mt='30px'>
             Payment details
           </FormLabel>
           <FormControl>
             <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
-            <Flex flexDir={{ base: "column" }}>
+            <Flex flexDir={{ base: 'column' }}>
               <Checkbox>e-Money</Checkbox>
               <Checkbox>Cash On Delivery</Checkbox>
             </Flex>
@@ -118,17 +113,21 @@ const CheckoutForm = () => {
       </Flex>
 
       {/*Summary section */}
-      <Flex border="1px solid red" width="89%" justifyContent="center">
+      <Flex
+        border='1px solid red'
+        width='89%'
+        justifyContent='center'
+        flexDir={{ base: 'column' }}>
         <Text>Summmary</Text>
 
-        <Flex>
-          {/* {cartItems.map((item) => (
-            <CartItem key={item._id} {...item} />
-          ))} */}
+        <Flex flexDir={{ base: 'column' }}>
+          {cartItems.map((item) => (
+            <CheckoutItem key={item._id} {...item} />
+          ))}
         </Flex>
       </Flex>
     </Flex>
-  );
-};
+  )
+}
 
-export default CheckoutForm;
+export default CheckoutForm
