@@ -12,6 +12,7 @@ import {
   Button,
   useDisclosure,
   Heading,
+  Image,
 } from '@chakra-ui/react'
 
 //Context
@@ -21,6 +22,7 @@ import { CartContext } from '../../../context/CartContext'
 //Components
 
 import CheckoutItem from './CheckoutItem'
+import SummaryItem from './SummaryItem'
 
 const Summary = () => {
   const { cartItems, products } = useContext(CartContext)
@@ -89,34 +91,60 @@ const Summary = () => {
             </Flex>
           </Flex>
 
+          {/*Modal */}
+
           <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent
-              border='1px solid red'
               bgColor='white.100'
               width={{ base: '87%' }}
               height={{ base: '600px' }}
               display='flex'
               alignItems='center'>
-              <ModalHeader width={{ base: '86%' }} border='1px solid red'>
-                <Heading>THANK YOU FOR YOUR ORDER</Heading>
-                <Text>You will receive an email confirmation shortly.</Text>
+              <ModalHeader width={{ base: '86%' }} pl='0'>
+                <Image src='/public/checkout/icon-order-confirmation.svg' />
               </ModalHeader>
 
               <ModalBody>
+                <Flex flexDir={{ base: 'column' }} width={{ base: '263px' }}>
+                  <Text fontSize='24px' fontWeight='bold' letterSpacing='0.9px'>
+                    THANK YOU FOR YOUR ORDER
+                  </Text>
+                  <Text fontSize='15px' lineHeight='25px' color='grey.100'>
+                    You will receive an email confirmation shortly.
+                  </Text>
+                </Flex>
                 <Flex
-                  border='1px solid red'
-                  width={{ base: '86%' }}
-                  height={{ base: '232px' }}>
-                  Image
+                  width={{ base: '100%' }}
+                  height={{ base: '232px' }}
+                  borderRadius='8px'>
+                  {cartItems.map((item) => (
+                    <SummaryItem key={item._id} {...item} />
+                  ))}
                 </Flex>
               </ModalBody>
 
               <ModalFooter>
-                <Button variant='ghost'>Secondary Action</Button>
+                <Button
+                  mt='30px'
+                  width='279px'
+                  height='48px'
+                  color='white'
+                  bgColor='orange.100'
+                  fontSize='13px'
+                  letterSpacing='1px'
+                  display='flex'
+                  justifyContent='center'
+                  alignItems='center'
+                  fontWeight='bold'
+                  textTransform='uppercase'
+                  borderRadius='none'>
+                  Back to home
+                </Button>
               </ModalFooter>
             </ModalContent>
           </Modal>
+          {/*Modal end */}
 
           {cartItems.length ? (
             <Button
