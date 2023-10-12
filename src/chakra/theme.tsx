@@ -35,4 +35,14 @@ const fonts = {
   },
 };
 
-export const theme = extendTheme({ colors, fonts });
+const global = {
+  styles: {
+    global: {
+      "html, body": {
+        fontFamily: "Manrope Variable, sans-serif",
+      },
+    },
+  },
+};
+
+export const theme = extendTheme({ colors, fonts, global });
