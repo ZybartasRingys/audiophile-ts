@@ -22,12 +22,7 @@ const SummaryItem = ({ _id }: CheckoutItemProps) => {
       marginBottom='24px'
       width='100%'>
       {/* Item */}
-      <Flex
-        width='100%'
-        height={{ base: '140px' }}
-        justifyContent='space-evenly'
-        padding='20px'
-        bgColor='white.300'>
+      <Flex width='100%' borderBottom='1px solid #979797' pb='15px'>
         <Flex width={{ base: '100%' }}>
           <Box
             width={{ base: '28px' }}
@@ -45,7 +40,7 @@ const SummaryItem = ({ _id }: CheckoutItemProps) => {
 
           <Flex flexDir={{ base: 'column' }}>
             <Text fontSize='12px' fontWeight='bold'>
-              {item.title}
+              {item.title.replace('Headphones', '')}
             </Text>
             <Text fontSize='12px'> $ {item.price}</Text>
           </Flex>
@@ -62,13 +57,6 @@ const SummaryItem = ({ _id }: CheckoutItemProps) => {
       </Flex>
 
       {/* Item */}
-      <Flex
-        color='white'
-        height={{ base: '92px' }}
-        bgColor='black.100'
-        borderBottomRadius='8px'>
-        Grand total
-      </Flex>
     </Flex>
   )
 }
