@@ -1,29 +1,44 @@
-import { Card, CardBody, Heading, Image, Link, Text } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  Heading,
+  Image,
+  Link,
+  Text,
+  Box,
+} from "@chakra-ui/react";
 
-type Props = {};
-
-const LinksCard = (props: Props) => {
+const LinksCard = () => {
   return (
     <>
       {/* Headphones Card */}
-      <Card height={{ base: "165px" }} bgColor="white.300" mt="60px">
+      <Card
+        width={{ base: "95%" }}
+        height={{ base: "165px" }}
+        bgColor="white.300"
+        mt="60px"
+      >
         <CardBody display="flex" alignItems="center" flexDir="column">
-          <Image
-            src="/shared/desktop/image-category-thumbnail-headphones.png"
-            alt="earphones"
-            width="50%"
-            height="150px"
-          />
+          <Box
+            width="103px"
+            height="120px"
+            mt="-60px"
+            bgImage="url('/shared/desktop/image-category-thumbnail-headphones.png')"
+            bgPosition="center"
+            bgRepeat="no-repeat"
+            bgSize="cover"
+          ></Box>
 
-          <Heading
+          <Text
             fontSize="15px"
             fontFamily="main.100"
+            fontWeight="bold"
             textTransform="uppercase"
             letterSpacing="1px"
-            mb="15px"
+            mb="17px"
           >
             Headphones{" "}
-          </Heading>
+          </Text>
           <Link
             display="flex"
             alignItems="center"
@@ -50,22 +65,28 @@ const LinksCard = (props: Props) => {
       {/* Headphones Card */}
 
       {/* Speaker Card */}
-      <Card height={{ base: "165px" }} bgColor="white.300" mt="80px">
+      <Card
+        width={{ base: "95%" }}
+        height={{ base: "165px" }}
+        bgColor="white.300"
+        mt="80px"
+      >
         <CardBody display="flex" alignItems="center" flexDir="column">
-          {/* <Image
-            mt='-10px'
-            src='/shared/desktop/image-zx9-speaker.jpg'
-            alt='earphones'
-            width='50%'
-            border='1px solid red'
-          /> */}
+          <Box
+            width="103px"
+            height="120px"
+            mt="-60px"
+            bgImage="url('/shared/desktop/image-category-thumbnail-headphones.png')"
+            bgPosition="center"
+            bgRepeat="no-repeat"
+            bgSize="cover"
+          ></Box>
           <Heading
             fontSize="15px"
             fontFamily="main.100"
             textTransform="uppercase"
             letterSpacing="1px"
-            mt="32px"
-            mb="15px"
+            mb="17px"
           >
             Speakers
           </Heading>
@@ -95,21 +116,28 @@ const LinksCard = (props: Props) => {
       {/* Speaker  Card */}
 
       {/* Earphones Card */}
-      <Card height={{ base: "165px" }} bgColor="white.300" mt="50px">
+      <Card
+        width={{ base: "95%" }}
+        height={{ base: "165px" }}
+        bgColor="white.300"
+        mt="50px"
+      >
         <CardBody display="flex" alignItems="center" flexDir="column">
-          <Image
-            src="/shared/desktop/image-category-thumbnail-earphones.png"
-            alt="earphones"
-            width="50%"
-            height="150px"
-            mt="-70px"
-          />
+          <Box
+            width="103px"
+            height="120px"
+            mt="-60px"
+            bgImage="url('/shared/desktop/image-category-thumbnail-headphones.png')"
+            bgPosition="center"
+            bgRepeat="no-repeat"
+            bgSize="cover"
+          ></Box>
           <Heading
             fontSize="15px"
             fontFamily="main.100"
             textTransform="uppercase"
             letterSpacing="1px"
-            mb="15px"
+            mb="17px"
           >
             Earphones
           </Heading>
