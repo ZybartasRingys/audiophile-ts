@@ -1,53 +1,79 @@
+import { Box, Heading, Text, Flex, Image, Link } from "@chakra-ui/react";
+
+// Styles imports
+
 import {
-  Box,
-  Heading,
-  Text,
-  Button,
-  Flex,
-  Image,
-  Link,
-} from "@chakra-ui/react";
+  homeProductsHeadingStyle,
+  seeProductButton,
+  homeProductsHeadingStyle2,
+} from "./HomeStyles";
 
 const Products = () => {
   return (
-    <Box mt="120px" width="89%">
+    <Flex flexDir={{ base: "column" }} mt="120px" width="89%">
       <Flex
         flexDir="column"
         justifyContent="center"
         alignItems="center"
         bgColor="#D87D4A"
         borderRadius="10px"
-        bgImg="/home/desktop/pattern-circles.svg"
-        bgPos="top"
-        bgSize="cover"
-        bgRepeat="no-repeat"
       >
         <Flex
           flexDir={{ base: "column" }}
           alignItems="center"
           justifyContent="center"
+          width={{ base: "100%" }}
           height="600px"
+          bgImg="/home/desktop/pattern-circles.svg"
+          bgRepeat="no-repeat"
+          bgSize="cover"
+          bgPosition="center -126px"
         >
           <Image
-            width="170px"
-            height="200px"
+            width="173px"
+            height="207px"
             src="/home/mobile/image-speaker-zx9.png"
             alt="ZX9"
+            mb="39px"
           ></Image>
-          <Flex flexDir={{ base: "column" }} alignContent="center">
-            <Heading size="lg" color="white.100" textTransform="uppercase">
-              ZX9
-            </Heading>
-            <Heading size="lg" color="white.100" textTransform="uppercase">
-              speaker
-            </Heading>
+          <Flex
+            width={{ base: "86%" }}
+            flexDir={{ base: "column" }}
+            textAlign="center"
+            mb="30px"
+          >
+            <Text {...homeProductsHeadingStyle}>ZX9</Text>
+            <Text {...homeProductsHeadingStyle}>speaker</Text>
+            <Text
+              textAlign="center"
+              fontSize="15px"
+              lineHeight="25px"
+              opacity="0.8"
+              color="white.100"
+              mt="30px"
+            >
+              Upgrade to premium speakers that are phenomenally built to deliver
+              truly remarkable sound.
+            </Text>
           </Flex>
 
-          <Text textAlign="center">
-            Upgrade to premium speakers that are phenomenally built to deliver
-            truly remarkable sound.
-          </Text>
-          <Button>See product</Button>
+          <Link
+            width="160px"
+            height="48px"
+            borderRadius="none"
+            color="white.100"
+            bgColor="black.100"
+            textTransform="uppercase"
+            fontSize="13px"
+            letterSpacing="1px"
+            fontWeight="bold"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            href="/speakers"
+          >
+            See product
+          </Link>
         </Flex>
       </Flex>
       <Flex
@@ -65,20 +91,11 @@ const Products = () => {
         textTransform="uppercase"
         borderRadius="10px"
       >
-        <Heading color="black.100" mb="32px">
+        <Heading {...homeProductsHeadingStyle2} mb="32px">
           ZX7 speaker
         </Heading>
-        <Link
-          width="204px"
-          height="48px"
-          border="1px solid black"
-          href="/headphones"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          cursor="pointer"
-        >
-          See product YX1
+        <Link href="/speakers" {...seeProductButton}>
+          See product
         </Link>
       </Flex>
 
@@ -102,24 +119,13 @@ const Products = () => {
           pl="25px"
           borderRadius="10px"
         >
-          <Heading textTransform="uppercase" letterSpacing="2px" mb="34px">
+          <Heading {...homeProductsHeadingStyle2} mb="34px">
             yx1 earphones{" "}
           </Heading>
-          <Link
-            width="204px"
-            height="48px"
-            border="1px solid black"
-            href="/headphones"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            cursor="pointer"
-          >
-            See product
-          </Link>
+          <Link {...seeProductButton}>See product</Link>
         </Flex>
       </Flex>
-    </Box>
+    </Flex>
   );
 };
 
