@@ -46,7 +46,7 @@ const Banner = () => {
           fontSize="15px"
           mb="28px"
           fontWeight="medium"
-          opacity="0.7"
+          opacity="0.5"
           lineHeight="25px"
         >
           Experience natural, lifelike audio and exceptional build quality made

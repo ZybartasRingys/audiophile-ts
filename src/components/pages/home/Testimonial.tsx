@@ -1,36 +1,49 @@
-import React from 'react'
-import { Flex, Box, Heading, Text } from '@chakra-ui/react'
-type Props = {}
+import { Flex, Box, Heading, Text } from "@chakra-ui/react";
 
-const Testimonial = (props: Props) => {
+const Testimonial = () => {
   return (
     <Flex
-      flexDir={{ base: 'column' }}
-      width='89%'
-      height='689px'
-      mt='120px'
-      mb='120px'
-      alignContent='center'
-      justifyContent='center'
-      textAlign='center'
-      fontFamily='main.100'>
+      flexDir={{ base: "column" }}
+      width="87%"
+      height="689px"
+      mt="120px"
+      mb="120px"
+      alignContent="center"
+      justifyContent="center"
+      textAlign="center"
+      fontFamily="main.100"
+    >
       <Box
-        width='100%'
-        height={{ base: '300px' }}
-        bgImg='/shared/mobile/image-best-gear.jpg'
-        bgPos='center'
-        bgSize='cover'
-        bgRepeat='no-repeat'
-        borderRadius='10px'
-        mb='43px'></Box>
-      <Heading textTransform='uppercase' mb='40px'>
-        Bringing you the{' '}
-        <Text as='span' color='orange.100'>
+        width="100%"
+        height={{ base: "300px" }}
+        bgImg="/shared/mobile/image-best-gear.jpg"
+        bgPos="center"
+        bgSize="cover"
+        bgRepeat="no-repeat"
+        borderRadius="10px"
+        mb="43px"
+      ></Box>
+      <Text
+        fontSize={{ base: "27px" }}
+        letterSpacing="1px"
+        textTransform="uppercase"
+        fontWeight="bold"
+        fontFamily="main.100"
+        mb="40px"
+      >
+        Bringing you the
+        <Text as="span" color="orange.100">
           best
-        </Text>{' '}
+        </Text>{" "}
         audio gear
-      </Heading>
-      <Text opacity='0.9'>
+      </Text>
+      <Text
+        fontSize={{ base: "15px" }}
+        lineHeight="25px"
+        fontFamily="main.100"
+        fontWeight="medium"
+        opacity="0.5"
+      >
         Located at the heart of New York City, Audiophile is the premier store
         for high end headphones, earphones, speakers, and audio accessories. We
         have a large showroom and luxury demonstration rooms available for you
@@ -39,7 +52,7 @@ const Testimonial = (props: Props) => {
         to buy your portable audio equipment.
       </Text>
     </Flex>
-  )
-}
+  );
+};
 
-export default Testimonial
+export default Testimonial;
