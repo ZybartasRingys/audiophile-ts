@@ -1,8 +1,8 @@
 import Header from "../headphones/Header";
 import Earphones from "./Earphones";
-const headerTitle = "earphones";
 
 const EarphonesHome = () => {
+  const headerTitle = "earphones";
   return (
     <div>
       <Header title={headerTitle} />

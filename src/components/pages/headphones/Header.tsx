@@ -1,9 +1,9 @@
 import { Flex, Heading } from "@chakra-ui/react";
-type Props = {
-  title: "string";
-};
 
-const Header = ({ title }: Props) => {
+//Types
+import { HeaderProps } from "../../../types";
+
+const Header = ({ title }: HeaderProps) => {
   return (
     <Flex
       width="100%"
@@ -17,6 +17,7 @@ const Header = ({ title }: Props) => {
         color="white"
         textTransform="uppercase"
         letterSpacing="2px"
+        fontFamily="main.100"
       >
         {title}
       </Heading>

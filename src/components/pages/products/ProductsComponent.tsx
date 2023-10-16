@@ -1,26 +1,26 @@
 import { urlFor } from "../../../../sanity/sanity";
 import { Box, Text, Heading, Flex, Link, Image } from "@chakra-ui/react";
 
-interface Ispeakers {
-  title: "string";
-  desc: "string";
-  image: "string";
-  slug: {
-    current: "string";
-  };
-}
+// Types
 
-const ProductsComponent = ({ title, desc, image, slug }: Ispeakers) => {
+import { IProduct } from "../../../types";
+
+const ProductsComponent = ({ title, desc, image, slug }: IProduct) => {
   return (
     <Flex flexDir={{ base: "column" }} alignItems="center" mt="62px">
       <Flex
         key={title}
         flexDir={{ base: "column" }}
-        width="89%"
+        width="88%"
         alignItems="center"
         mb="120px"
       >
-        <Box height={{ base: "352px" }} width="100%" borderRadius="10px">
+        <Box
+          boxShadow="md"
+          height={{ base: "352px" }}
+          width="100%"
+          borderRadius="10px"
+        >
           {image && (
             <Image
               width="100%"
@@ -32,7 +32,13 @@ const ProductsComponent = ({ title, desc, image, slug }: Ispeakers) => {
           )}
         </Box>
 
-        <Text mt="25px" color="orange.100" height="14px" letterSpacing="10px">
+        <Text
+          mt="30px"
+          color="orange.100"
+          height="14px"
+          letterSpacing="10px"
+          fontFamily="main.100"
+        >
           NEW PRODUCT
         </Text>
         <Flex
@@ -41,10 +47,25 @@ const ProductsComponent = ({ title, desc, image, slug }: Ispeakers) => {
           width="100%"
           textAlign="center"
         >
-          <Heading size="xl" letterSpacing="1px" textTransform="uppercase">
+          <Heading
+            size="xl"
+            letterSpacing="1px"
+            textTransform="uppercase"
+            fontFamily="main.100"
+            color="black.200"
+          >
             {title}
           </Heading>
-          <Text mt="37px">{desc}</Text>
+          <Text
+            mt="37px"
+            fontFamily="main.100"
+            fontSize={{ base: "15px" }}
+            lineHeight="25px"
+            fontWeight="medium"
+            opacity="0.5"
+          >
+            {desc}
+          </Text>
         </Flex>
         <Link
           href={`/products/${slug.current}`}
@@ -55,6 +76,7 @@ const ProductsComponent = ({ title, desc, image, slug }: Ispeakers) => {
           bgColor="orange.100"
           fontSize="13px"
           letterSpacing="1px"
+          fontFamily="main.100"
           display="flex"
           justifyContent="center"
           alignItems="center"

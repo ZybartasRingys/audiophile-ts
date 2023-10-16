@@ -18,7 +18,7 @@ export const urlFor = (source: SanityImageSource) => {
 
 // headphones Query
 
-export async function getProducts() {
+export async function getHeadphones() {
   const headphones = await client.fetch('*[_type == "headphones"]')
   return headphones
 }
@@ -40,13 +40,9 @@ export async function getEarphones() {
 // Fetch all products
 
 export async function getProductsBySlug() {
-  
   const products = await client.fetch(
     '*[_type in ["headphones", "speakers", "earphones" && slug.current == slug]]'
   )
-  
+
   return products
 }
-
-
-
