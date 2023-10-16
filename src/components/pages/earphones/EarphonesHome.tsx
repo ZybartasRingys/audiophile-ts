@@ -17,6 +17,12 @@ const EarphonesHome = () => {
         desc={'string'}
         image={'string'}
         slug={'string'}
+        _id={'string'}
+        price={0}
+        box={[]}
+        productImages={[]}
+        unit={[]}
+        products={[]}
       />
 
       <Links />

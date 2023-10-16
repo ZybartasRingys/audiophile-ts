@@ -34,8 +34,9 @@ const ProductsComponent = ({ title, desc, image, slug }: IProduct) => {
           color='orange.100'
           height='14px'
           letterSpacing='10px'
-          fontFamily='main.100'>
-          NEW PRODUCT
+          fontFamily='main.100'
+          textTransform='uppercase'>
+          New product
         </Text>
         <Flex
           mt='32px'
@@ -43,10 +44,11 @@ const ProductsComponent = ({ title, desc, image, slug }: IProduct) => {
           width='100%'
           textAlign='center'>
           <Heading
-            size='xl'
+            fontSize={{ base: '28px' }}
             letterSpacing='1px'
             textTransform='uppercase'
             fontFamily='main.100'
+            fontWeight='bold'
             color='black.200'>
             {title}
           </Heading>
