@@ -1,19 +1,28 @@
-import Header from "../headphones/Header";
-import Earphones from "./Earphones";
+// Chakra UI
+import { Flex } from '@chakra-ui/react'
+
+//Components
+import Header from '../headphones/Header'
+import Earphones from './Earphones'
+import Links from '../home/Links'
+import Testimonial from '../home/Testimonial'
 
 const EarphonesHome = () => {
-  const headerTitle = "earphones";
+  const headerTitle = 'earphones'
   return (
-    <div>
+    <Flex flexDir={{ base: 'column' }} alignItems='center'>
       <Header title={headerTitle} />
       <Earphones
-        title={"string"}
-        desc={"string"}
-        image={"string"}
-        slug={"string"}
+        title={'string'}
+        desc={'string'}
+        image={'string'}
+        slug={'string'}
       />
-    </div>
-  );
-};
 
-export default EarphonesHome;
+      <Links />
+      <Testimonial />
+    </Flex>
+  )
+}
+
+export default EarphonesHome

@@ -1,26 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useEffect } from 'react'
+import { useContext } from 'react'
 import { getEarphones } from '../../../../sanity/sanity'
 import ProductsComponent from '../products/ProductsComponent'
 import { Flex } from '@chakra-ui/react'
 
-interface IEarphones {
-  title: 'string'
-  desc: 'string'
-  image: 'string'
-  slug: 'string'
-}
+//Types
+import { IProduct } from '../../../types'
 
-const Earphones: React.FC<IEarphones> = () => {
-  const [earphones, setEarphones] = useState([] as any[])
+//Context
+import { AppContext } from '../../../context/AppContext'
 
-  useEffect(() => {
-    const getData = async () => {
-      const earphones = await getEarphones()
-      setEarphones(earphones)
-    }
-    getData()
-  }, [])
+const Earphones: React.FC<IProduct> = () => {
+  const { earphones } = useContext(AppContext)
 
   return (
     <Flex flexDir={{ base: 'column' }}>
@@ -31,6 +22,12 @@ const Earphones: React.FC<IEarphones> = () => {
           image={image}
           key={title}
           slug={slug}
+          _id={'string'}
+          price={0}
+          box={[]}
+          productImages={[]}
+          unit={[]}
+          products={[]}
         />
       ))}
     </Flex>

@@ -1,35 +1,34 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty-pattern */
-import { useState, useEffect } from 'react'
-import { getSpeakers } from '../../../../sanity/sanity'
+import { useContext } from 'react'
+
 import ProductsComponent from '../products/ProductsComponent'
 import { Flex } from '@chakra-ui/react'
-interface Ispeakers {
-  title: 'string'
-  desc: 'string'
-  image: 'string'
-  slug: 'string'
-}
 
-const Speakers: React.FC<Ispeakers> = () => {
-  const [products, setProducts] = useState([] as any[])
+//Types
+import { IProduct } from '../../../types'
 
-  useEffect(() => {
-    const getData = async () => {
-      const speakers = await getSpeakers()
-      setProducts(speakers)
-    }
-    getData()
-  }, [])
+//Context
+import { AppContext } from '../../../context/AppContext'
+
+const Speakers: React.FC<IProduct> = () => {
+  const { speakers } = useContext(AppContext)
+
   return (
     <Flex flexDir={{ base: 'column' }}>
-      {products.map(({ title, desc, image, slug }) => (
+      {speakers.reverse().map(({ title, desc, image, slug }) => (
         <ProductsComponent
           title={title}
           desc={desc}
           image={image}
           key={title}
           slug={slug}
+          _id={'string'}
+          price={0}
+          box={[]}
+          productImages={[]}
+          unit={[]}
+          products={[]}
         />
       ))}
     </Flex>
