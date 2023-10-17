@@ -32,8 +32,8 @@ const Product: React.FC<IProduct> = ({
 
   return (
     <>
-      <Flex flexDir={{ base: 'column' }} width='88%' height='100%'>
-        <Box height={{ base: '352px' }} width='100%' borderRadius='10px'>
+      <Flex flexDir={{ base: 'column' }} width='87%' height='100%'>
+        <Box height={{ base: '327px' }} width='100%' borderRadius='10px'>
           {image && (
             <Image
               width='100%'
@@ -47,6 +47,7 @@ const Product: React.FC<IProduct> = ({
           {isNewProduct === true ? (
             <Text
               mt='32px'
+              mb={{ base: '30px' }}
               color='orange.100'
               fontSize='14px'
               letterSpacing='10px'
@@ -55,44 +56,60 @@ const Product: React.FC<IProduct> = ({
             </Text>
           ) : null}
 
-          <Heading mt='32px' size='xl'>
+          <Heading
+            fontSize={{ base: '28px' }}
+            letterSpacing='1px'
+            textTransform='uppercase'
+            fontFamily='main.100'
+            fontWeight='bold'
+            color='black.200'>
             {title}
           </Heading>
           <Text
-            mt='32px'
-            fontSize='14px'
+            mt={{ base: '32px' }}
+            fontFamily='main.100'
+            fontSize={{ base: '15px' }}
             lineHeight='25px'
             fontWeight='medium'
-            opacity='0.6'>
+            opacity='0.5'>
             {desc}
           </Text>
           <Text
             fontSize={{ base: '18px' }}
             fontWeight='bold'
+            fontFamily='main.100'
             letterSpacing='1.3px'
             mt='32px'>
-            ${price}
+            $ {price}
           </Text>
         </Flex>
 
         {/* Add to cart */}
 
-        <Flex mt='32px'>
-          <Flex width={{ base: '120px' }} height='48px' bgColor='grey.100'>
+        <Flex
+          mt='32px'
+          width={{ base: '91%' }}
+          height={{ base: '48px' }}
+          justifyContent='space-between'>
+          <Flex width={{ base: '120px' }} height='48px' bgColor='white.300'>
             <Flex
               width={{ base: '100%' }}
               alignItems='center'
               justifyContent='space-around'>
-              <Box onClick={() => decreaseCartQuantity(_id)}>
-                <HiMiniMinusSmall />
+              <Box opacity='0.5'>
+                <HiMiniMinusSmall onClick={() => decreaseCartQuantity(_id)} />
               </Box>
 
-              {quantity}
-              <Box
-                onClick={() => {
-                  increaseCartQuantity(_id)
-                }}>
-                <HiMiniPlusSmall />
+              <Text fontSize='13px' fontWeight='bold' fontFamily='main.100'>
+                {quantity}
+              </Text>
+
+              <Box opacity='0.5'>
+                <HiMiniPlusSmall
+                  onClick={() => {
+                    increaseCartQuantity(_id)
+                  }}
+                />
               </Box>
             </Flex>
           </Flex>

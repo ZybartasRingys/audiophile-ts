@@ -42,6 +42,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
                 productImages,
                 unit,
                 _id,
+                isNewProduct,
               }) => (
                 <Product
                   key={title}
@@ -56,6 +57,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
                   products={products}
                   unit={unit}
                   _id={_id}
+                  isNewProduct={isNewProduct}
                 />
               )
             )}
