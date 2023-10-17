@@ -15,7 +15,7 @@ const Earphones: React.FC<IProduct> = () => {
 
   return (
     <Flex flexDir={{ base: 'column' }}>
-      {earphones.map(({ title, desc, image, slug }) => (
+      {earphones.map(({ title, desc, image, slug, isNewProduct }) => (
         <ProductsComponent
           title={title}
           desc={desc}
@@ -28,6 +28,7 @@ const Earphones: React.FC<IProduct> = () => {
           productImages={[]}
           unit={[]}
           products={[]}
+          isNewProduct={isNewProduct}
         />
       ))}
     </Flex>

@@ -14,6 +14,7 @@ export interface IProduct {
   productImages: Array<string>
   unit: Array<string>
   products: IProduct[]
+  isNewProduct: boolean
 }
 
 export type ProductsProps = {

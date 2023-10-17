@@ -16,21 +16,25 @@ const Speakers: React.FC<IProduct> = () => {
 
   return (
     <Flex flexDir={{ base: 'column' }}>
-      {speakers.reverse().map(({ title, desc, image, slug }) => (
-        <ProductsComponent
-          title={title}
-          desc={desc}
-          image={image}
-          key={title}
-          slug={slug}
-          _id={'string'}
-          price={0}
-          box={[]}
-          productImages={[]}
-          unit={[]}
-          products={[]}
-        />
-      ))}
+      {speakers
+        .slice(0)
+        .reverse()
+        .map(({ title, desc, image, slug, isNewProduct }) => (
+          <ProductsComponent
+            title={title}
+            desc={desc}
+            image={image}
+            key={title}
+            slug={slug}
+            _id={'string'}
+            price={0}
+            box={[]}
+            productImages={[]}
+            unit={[]}
+            products={[]}
+            isNewProduct={isNewProduct}
+          />
+        ))}
     </Flex>
   )
 }

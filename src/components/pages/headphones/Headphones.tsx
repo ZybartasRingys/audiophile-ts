@@ -15,23 +15,28 @@ import ProductsComponent from '../products/ProductsComponent'
 
 const Headphones: React.FC<IProduct> = () => {
   const { headphones } = useContext(AppContext)
+
   return (
     <Flex flexDir={{ base: 'column' }}>
-      {headphones.map(({ title, desc, image, slug }) => (
-        <ProductsComponent
-          title={title}
-          desc={desc}
-          image={image}
-          key={title}
-          slug={slug}
-          _id={'string'}
-          price={0}
-          box={[]}
-          productImages={[]}
-          unit={[]}
-          products={[]}
-        />
-      ))}
+      {headphones
+        .slice(0)
+        .reverse()
+        .map(({ title, desc, image, slug, isNewProduct }) => (
+          <ProductsComponent
+            title={title}
+            desc={desc}
+            image={image}
+            key={title}
+            slug={slug}
+            _id={'string'}
+            price={0}
+            box={[]}
+            productImages={[]}
+            unit={[]}
+            products={[]}
+            isNewProduct={isNewProduct}
+          />
+        ))}
     </Flex>
   )
 }

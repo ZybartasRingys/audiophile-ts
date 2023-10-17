@@ -22,9 +22,7 @@ export default defineType({
       options: {
         source: 'title',
         maxLength: 96,
-        slugify: input => input
-        .toLowerCase()
-      
+        slugify: (input) => input.toLowerCase(),
       },
     }),
     defineField({
@@ -50,8 +48,8 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}],
       options: {
-      layout: 'tags'
-                }
+        layout: 'tags',
+      },
     }),
 
     defineField({
@@ -60,8 +58,8 @@ export default defineType({
       type: 'array',
       of: [{type: 'image'}],
       options: {
-      layout: 'tags'
-                }
+        layout: 'tags',
+      },
     }),
     defineField({
       title: 'unit',
@@ -69,8 +67,13 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}],
       options: {
-      layout: 'tags'
-                }
+        layout: 'tags',
+      },
+    }),
+    defineField({
+      name: 'isNewProduct',
+      title: 'isNewProduct',
+      type: 'boolean',
     }),
   ],
 })

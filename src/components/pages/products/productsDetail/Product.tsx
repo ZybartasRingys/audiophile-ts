@@ -24,6 +24,7 @@ const Product: React.FC<IProduct> = ({
   slug,
   unit,
   _id,
+  isNewProduct,
 }) => {
   const { increaseCartQuantity, decreaseCartQuantity, getItemsQuantity } =
     useContext(CartContext)
@@ -43,13 +44,16 @@ const Product: React.FC<IProduct> = ({
           )}
         </Box>
         <Flex flexDir={{ base: 'column' }} textAlign='start'>
-          <Heading
-            mt='32px'
-            color='orange.100'
-            height='14px'
-            letterSpacing='10px'>
-            New product
-          </Heading>
+          {isNewProduct === true ? (
+            <Text
+              mt='32px'
+              color='orange.100'
+              fontSize='14px'
+              letterSpacing='10px'
+              textTransform='uppercase'>
+              New product
+            </Text>
+          ) : null}
 
           <Heading mt='32px' size='xl'>
             {title}
@@ -118,11 +122,26 @@ const Product: React.FC<IProduct> = ({
           slug={'string'}
           price={0}
           unit={unit}
+          _id={'string'}
+          products={[]}
+          isNewProduct={false}
         />
 
         {/* You May Also Like Section */}
 
-        <YouMayAlsoLike products={products} slug={slug} />
+        <YouMayAlsoLike
+          products={products}
+          slug={slug}
+          desc={'string'}
+          title={'string'}
+          image={'string'}
+          _id={'string'}
+          price={0}
+          box={[]}
+          productImages={[]}
+          unit={[]}
+          isNewProduct={false}
+        />
 
         {/* Links Section */}
         <Links />

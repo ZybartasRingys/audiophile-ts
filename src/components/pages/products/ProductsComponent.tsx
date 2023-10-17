@@ -5,15 +5,21 @@ import { Box, Text, Heading, Flex, Link, Image } from '@chakra-ui/react'
 
 import { IProduct } from '../../../types'
 
-const ProductsComponent = ({ title, desc, image, slug }: IProduct) => {
+const ProductsComponent = ({
+  title,
+  desc,
+  image,
+  slug,
+  isNewProduct,
+}: IProduct) => {
   return (
-    <Flex flexDir={{ base: 'column' }} alignItems='center' mt='62px'>
+    <Flex flexDir={{ base: 'column' }} alignItems='center' mb='120px'>
       <Flex
         key={title}
         flexDir={{ base: 'column' }}
         width='88%'
-        alignItems='center'
-        mb='120px'>
+        height={{ base: '100%' }}
+        alignItems='center'>
         <Box
           boxShadow='lg'
           height={{ base: '352px' }}
@@ -29,19 +35,21 @@ const ProductsComponent = ({ title, desc, image, slug }: IProduct) => {
           )}
         </Box>
 
-        <Text
-          mt='30px'
-          color='orange.100'
-          height='14px'
-          letterSpacing='10px'
-          fontFamily='main.100'
-          textTransform='uppercase'>
-          New product
-        </Text>
+        {isNewProduct === true ? (
+          <Text
+            mt='32px'
+            color='orange.100'
+            fontSize='14px'
+            letterSpacing='10px'
+            fontFamily='main.100'
+            textTransform='uppercase'>
+            New product
+          </Text>
+        ) : null}
         <Flex
           mt='32px'
           flexDir={{ base: 'column' }}
-          width='100%'
+          width='99%'
           textAlign='center'>
           <Heading
             fontSize={{ base: '28px' }}

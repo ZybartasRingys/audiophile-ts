@@ -10,28 +10,26 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-     defineField({
+    defineField({
       name: 'desc',
       title: 'Description',
       type: 'string',
     }),
-       defineField({
+    defineField({
       name: 'slug',
       title: 'slug',
       type: 'slug',
       options: {
         source: 'title',
         maxLength: 96,
-        slugify: input => input
-                         .toLowerCase(),
-                        
-      }
+        slugify: (input) => input.toLowerCase(),
+      },
     }),
-      defineField({
+    defineField({
       name: 'image',
       title: 'image',
       type: 'image',
-      options: {hotspot: true}
+      options: {hotspot: true},
     }),
     defineField({
       name: 'price',
@@ -50,8 +48,8 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}],
       options: {
-      layout: 'tags'
-                }
+        layout: 'tags',
+      },
     }),
     defineField({
       title: 'productImages',
@@ -59,8 +57,8 @@ export default defineType({
       type: 'array',
       of: [{type: 'image'}],
       options: {
-      layout: 'tags'
-                }
+        layout: 'tags',
+      },
     }),
     defineField({
       title: 'unit',
@@ -68,9 +66,13 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}],
       options: {
-      layout: 'tags'
-                }
+        layout: 'tags',
+      },
     }),
-   ]
-
+    defineField({
+      name: 'isNewProduct',
+      title: 'isNewProduct',
+      type: 'boolean',
+    }),
+  ],
 })
