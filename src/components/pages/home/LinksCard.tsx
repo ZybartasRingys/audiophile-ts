@@ -13,10 +13,11 @@ const LinksCard = () => {
     <>
       {/* Headphones Card */}
       <Card
-        width={{ base: '95%' }}
+        width={{ base: '100%' }}
         height={{ base: '165px' }}
         bgColor='white.300'
-        mt={{ base: '14px' }}>
+        mt={{ base: '14px' }}
+        border='1px solid red'>
         <CardBody display='flex' alignItems='center' flexDir='column'>
           <Box
             width='140px'
@@ -107,7 +108,7 @@ const LinksCard = () => {
 
       {/* Earphones Card */}
       <Card
-        width={{ base: '95%' }}
+        width={{ base: '100%' }}
         height={{ base: '165px' }}
         bgColor='white.300'
         mt='50px'>
