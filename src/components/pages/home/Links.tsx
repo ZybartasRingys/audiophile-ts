@@ -1,21 +1,19 @@
-import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import LinksCard from "./LinksCard";
-type Props = {};
 
-const Links = (props: Props) => {
+const Links = () => {
   return (
     <>
-      <Box
+      <Flex
         width="100%"
-        px="15px"
-        display={{ base: "flex" }}
+        height="100%"
         flexDir="column"
         alignItems="center"
+        justifyContent="space-between"
         pt="25px"
       >
         <LinksCard />
-      </Box>
+      </Flex>
     </>
   );
 };
