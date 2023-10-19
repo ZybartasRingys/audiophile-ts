@@ -90,7 +90,7 @@ const Product: React.FC<IProduct> = ({
             letterSpacing="1.3px"
             mt="32px"
           >
-            $ {price}
+            $ {price.toLocaleString("en-US")}
           </Text>
         </Flex>
 

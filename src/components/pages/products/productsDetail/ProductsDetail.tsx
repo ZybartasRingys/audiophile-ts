@@ -29,7 +29,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
             opacity="0.5"
             href="/"
           >
-            Go back
+            Go Back
           </Link>
         </Box>
 
