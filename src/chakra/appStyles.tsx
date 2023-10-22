@@ -63,3 +63,10 @@ export const SmallTextOpacity: BoxProps = {
   fontFamily: "main.100",
   opacity: "0.5",
 };
+
+export const ItemHeading: BoxProps = {
+  fontSize: { base: "14px" },
+  fontFamily: "main.100",
+  fontWeight: "bold",
+  lineHeight: "25px",
+};

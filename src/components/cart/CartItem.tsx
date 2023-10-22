@@ -1,18 +1,15 @@
 // Chakra
 import { urlFor } from "../../../sanity/sanity";
 import { Image, Text, Flex, Box } from "@chakra-ui/react";
-
 // Types
 import { CartItemProps, IProduct } from "../../types";
-
 //Context
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-
 //icons
-
 import { HiMiniPlusSmall, HiMiniMinusSmall } from "react-icons/hi2";
-
+//Styles props imports
+import { ItemHeading } from "../../chakra/appStyles";
 const CartItem = ({ _id }: CartItemProps) => {
   const {
     products,
@@ -43,18 +40,10 @@ const CartItem = ({ _id }: CartItemProps) => {
         width={{ base: "76px" }}
         height={{ base: "50px" }}
       >
-        <Text fontSize="12px" fontWeight="bold">
+        <Text {...ItemHeading}>
           {item.title.replace("Headphones", "").replace("speaker", "")}
         </Text>
-        <Text
-          fontSize={{ base: "14px" }}
-          fontFamily="main.100"
-          fontWeight="bold"
-          lineHeight="25px"
-          opacity="0.5"
-        >
-          $ {item.price.toLocaleString("en-US")}
-        </Text>
+        <Text>$ {item.price.toLocaleString("en-US")}</Text>
       </Flex>
       <Flex
         width={{ base: "96px" }}
