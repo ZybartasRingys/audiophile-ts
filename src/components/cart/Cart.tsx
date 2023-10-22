@@ -2,9 +2,6 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
   Button,
   useDisclosure,
   Image,
@@ -14,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 //Styles
-import { SmallTextOpacity } from "../../chakra/appStyles";
+import { SmallTextOpacity, BodyText } from "../../chakra/appStyles";
 
 // Context
 import { useContext } from "react";
@@ -39,59 +36,83 @@ const Cart = () => {
         <ModalOverlay />
         <ModalContent
           width={{ base: "89%" }}
-          height={{ base: "450px" }}
+          height={{ base: "488px" }}
           bgColor="white"
           mt={{ base: "85px" }}
-          border="2px solid green"
         >
-          <ModalHeader>
-            <Flex justifyContent={{ base: "space-between" }}>
-              <Text>CART {`(${totalCartQuantity})`}</Text>
-              <Button
-                bgColor="transparent"
-                textDecor="underline"
-                {...SmallTextOpacity}
-                onClick={() => removeAllCartItems()}
-              >
-                Remove All
-              </Button>
-            </Flex>
-          </ModalHeader>
-          <ModalBody
+          <Flex
+            width={{ base: "100%" }}
+            height={{ base: "80px" }}
+            justifyContent={{ base: "space-between" }}
+            alignItems="center"
+            paddingX={{ base: "28px" }}
+          >
+            <Text {...BodyText} fontWeight="bold">
+              CART {`(${totalCartQuantity})`}
+            </Text>
+            <Text
+              bgColor="transparent"
+              outline="none"
+              textDecor="underline"
+              {...SmallTextOpacity}
+              onClick={() => removeAllCartItems()}
+            >
+              Remove all
+            </Text>
+          </Flex>
+
+          <Flex
+            width={{ base: "100%" }}
             height={{ base: "276px" }}
             display="flex"
             flexDir={{ base: "column" }}
             justifyContent="space-between"
+            paddingY={{ base: "15px" }}
+            paddingX={{ base: "28px" }}
           >
             {cartItems.map((item) => (
               <CartItem key={item._id} {...item} />
             ))}
-          </ModalBody>
-          <ModalFooter>
-            <Flex flexDir={{ base: "column" }}>
-              <Flex justifyContent="space-between">
-                <Text>TOTAL</Text>
-                <Text fontWeight="bold">
-                  $
-                  {cartItems.reduce((total, cartItem) => {
+          </Flex>
+          <Flex
+            width={{ base: "100%" }}
+            height={{ base: "140px" }}
+            flexDir={{ base: "column" }}
+            alignItems="center"
+            justifyContent="space-around"
+          >
+            <Flex
+              width={{ base: "100%" }}
+              justifyContent="space-between"
+              paddingX={{ base: "28px" }}
+            >
+              <Text {...SmallTextOpacity}>TOTAL</Text>
+              <Text fontWeight="bold">
+                $
+                {cartItems
+                  .reduce((total, cartItem) => {
                     const item = products.find((i) => i._id === cartItem._id);
                     return total + (item?.price || 0) * cartItem.quantity;
-                  }, 0)}
-                </Text>
-              </Flex>
-
-              <Link
-                href="/checkout"
-                height={{ base: "48px" }}
-                width={{ base: "271px" }}
-                borderRadius="none"
-                bgColor="orange.100"
-                color="white"
-              >
-                Checkout
-              </Link>
+                  }, 0)
+                  .toLocaleString("en-US")}
+              </Text>
             </Flex>
-          </ModalFooter>
+
+            <Link
+              href="/checkout"
+              height={{ base: "48px" }}
+              width={{ base: "271px" }}
+              borderRadius="none"
+              bgColor="orange.100"
+              color="white"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              textTransform="uppercase"
+            >
+              Checkout
+            </Link>
+          </Flex>
         </ModalContent>
       </Modal>
     </>

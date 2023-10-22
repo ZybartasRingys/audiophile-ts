@@ -43,8 +43,18 @@ const CartItem = ({ _id }: CartItemProps) => {
         width={{ base: "76px" }}
         height={{ base: "50px" }}
       >
-        <Text fontSize="11px">{item.title}</Text>
-        <Text fontSize="15px">$ {item.price}</Text>
+        <Text fontSize="12px" fontWeight="bold">
+          {item.title.replace("Headphones", "").replace("speaker", "")}
+        </Text>
+        <Text
+          fontSize={{ base: "14px" }}
+          fontFamily="main.100"
+          fontWeight="bold"
+          lineHeight="25px"
+          opacity="0.5"
+        >
+          $ {item.price.toLocaleString("en-US")}
+        </Text>
       </Flex>
       <Flex
         width={{ base: "96px" }}
@@ -57,12 +67,13 @@ const CartItem = ({ _id }: CartItemProps) => {
           justifyContent="space-around"
           bgColor="white.300"
         >
-          <Box onClick={() => decreaseCartQuantity(_id)}>
+          <Box opacity="0.5" onClick={() => decreaseCartQuantity(_id)}>
             <HiMiniMinusSmall />
           </Box>
 
           {cartQuantity}
           <Box
+            opacity="0.5"
             onClick={() => {
               increaseCartQuantity(_id);
             }}
