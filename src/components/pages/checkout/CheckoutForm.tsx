@@ -1,5 +1,5 @@
 // React hook form
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form'
 
 //Chakra UI
 import {
@@ -10,76 +10,76 @@ import {
   Checkbox,
   Heading,
   Text,
-} from "@chakra-ui/react";
+  Radio,
+  RadioGroup,
+} from '@chakra-ui/react'
 
 //Chakra Styles Import
 import {
   formLabelStyle,
   formInputStyle,
   FormLabelHeading,
-} from "./checkoutStyle";
-import { Heading4 } from "../../../chakra/appStyles";
+} from './checkoutStyle'
+import { Heading4 } from '../../../chakra/appStyles'
 
 //components
 
-import Summary from "./Summary";
+import Summary from './Summary'
 
 const CheckoutForm = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = () => {
-    console.log("submited");
-  };
+    console.log('submited')
+  }
   return (
     <Flex
-      width="89%"
-      flexDir={{ base: "column" }}
-      justifyContent="center"
-      borderRadius="8px"
-    >
+      width='89%'
+      flexDir={{ base: 'column' }}
+      justifyContent='center'
+      borderRadius='8px'>
       <Flex
-        width={{ base: "100%" }}
-        height={{ base: "94px" }}
-        alignItems="center"
-        px={{ base: "23px" }}
-      >
-        <Heading {...Heading4} letterSpacing="1px">
+        width={{ base: '100%' }}
+        height={{ base: '94px' }}
+        alignItems='center'
+        px={{ base: '23px' }}>
+        <Heading {...Heading4} letterSpacing='1px'>
           CHECKOUT
         </Heading>
       </Flex>
 
-      <Flex width={{ base: "100%" }} justifyContent="center">
+      <Flex width={{ base: '100%' }} justifyContent='center'>
         <form onSubmit={handleSubmit(onSubmit)}>
           {/*Billing Address section */}
           <FormLabel {...FormLabelHeading}>BILLING DETAILS</FormLabel>
           <FormControl>
-            <Flex justifyContent="space-between" width="100%">
-              <FormLabel color="black.100" fontWeight="bold" fontSize="12px">
+            <Flex justifyContent='space-between' width='100%'>
+              <FormLabel color='black.100' fontWeight='bold' fontSize='12px'>
                 Name
               </FormLabel>
               <Text
-                fontFamily="main.100"
-                fontSize={{ base: "12px" }}
-                fontWeight="medium"
-                letterSpacing="-0.2"
-                color="#CD2C2C"
-              >
+                fontFamily='main.100'
+                fontSize={{ base: '12px' }}
+                fontWeight='medium'
+                letterSpacing='-0.2'
+                color='#CD2C2C'>
                 {errors.name?.message}
               </Text>
             </Flex>
 
             <Input
-              autoComplete="offer"
-              _focusVisible={{ borderColor: "orange.100" }}
-              {...register("name", {
-                required: "Required",
+              autoComplete='offer'
+              _focusVisible={{ borderColor: 'orange.100' }}
+              {...register('name', {
+                required: "Can't be empty",
+                minLength: 4,
               })}
               {...formInputStyle}
-              placeholder="Alexei Ward"
+              placeholder='Alexei Ward'
             />
             <FormLabel {...formLabelStyle}>Email Address</FormLabel>
             <Input {...formInputStyle} />
@@ -107,9 +107,35 @@ const CheckoutForm = () => {
           <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
           <FormControl>
             <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
-            <Flex flexDir={{ base: "column" }}>
-              <Checkbox variant="circular">e-Money</Checkbox>
-              <Checkbox>Cash On Delivery</Checkbox>
+            <Flex flexDir={{ base: 'column' }}>
+              <RadioGroup
+                width={{ base: '280px' }}
+                height={{ base: '58px' }}
+                display='flex'
+                alignItems='center'
+                mb={{ base: '15px' }}
+                border='1px solid red'
+                borderRadius='8px'
+                borderColor='#CFCFCF'
+                bgColor='white.100'
+                variant='circular'
+                colorScheme='orange'
+                paddingLeft={{ base: '15px' }}>
+                <Radio />
+                e-Money
+              </RadioGroup>
+              <Checkbox
+                width={{ base: '280px' }}
+                height={{ base: '58px' }}
+                border='1px solid red'
+                borderRadius='8px'
+                borderColor='#CFCFCF'
+                bgColor='white.100'
+                variant='circular'
+                colorScheme='orange'
+                paddingLeft={{ base: '15px' }}>
+                Cash On Delivery
+              </Checkbox>
             </Flex>
 
             <FormLabel {...formLabelStyle}>e-Money Number</FormLabel>
@@ -122,7 +148,7 @@ const CheckoutForm = () => {
 
       <Summary handleSubmit={handleSubmit(onSubmit)} />
     </Flex>
-  );
-};
+  )
+}
 
-export default CheckoutForm;
+export default CheckoutForm
