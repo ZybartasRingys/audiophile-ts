@@ -31,3 +31,33 @@ export const FormLabelHeading: BoxProps = {
   mb: { base: "20px" },
   textTransform: "uppercase",
 };
+
+export const SummaryItemHeading: BoxProps = {
+  fontSize: { base: "15px" },
+  fontFamily: "main.100",
+  fontWeight: "bold",
+  lineHeight: "25px",
+};
+
+export const SummaryItemPrice: BoxProps = {
+  fontSize: "14px",
+  lineHeight: "25px",
+  fontWeight: "bold",
+  fontFamily: "main.100",
+  opacity: "0.5",
+};
+
+export const SummaryPricesText: BoxProps = {
+  fontSize: "15px",
+  lineHeight: "25px",
+  fontWeight: "medium",
+  fontFamily: "main.100",
+  opacity: "0.5",
+};
+
+export const SummaryTotalPrices: BoxProps = {
+  fontSize: { base: "18px" },
+  fontFamily: "main.100",
+  fontWeight: "bold",
+  lineHeight: "auto",
+};

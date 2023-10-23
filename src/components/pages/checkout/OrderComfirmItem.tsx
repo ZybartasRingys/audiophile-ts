@@ -5,12 +5,11 @@ import { Image, Text, Flex, Box } from "@chakra-ui/react";
 //Context
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
+
 // Types
 import { CheckoutItemProps, IProduct } from "../../../types";
-//Styles props imports
-import { SummaryItemPrice, SummaryItemHeading } from "./checkoutStyle";
 
-const CheckoutItem = ({ _id }: CheckoutItemProps) => {
+const OrderComfirmItem = ({ _id }: CheckoutItemProps) => {
   const { products, getItemsQuantity } = useContext(CartContext);
   const item = products.find((i: IProduct) => i._id === _id);
   if (item === undefined) return null;
@@ -19,14 +18,16 @@ const CheckoutItem = ({ _id }: CheckoutItemProps) => {
   return (
     <Flex
       justifyContent="space-between"
-      alignItems="center"
+      flexDir={{ base: "column" }}
       marginBottom="24px"
+      width="100%"
     >
-      <Flex>
-        <Flex>
+      {/* Item */}
+      <Flex width="100%" borderBottom="1px solid #979797" pb="15px">
+        <Flex width={{ base: "100%" }}>
           <Box
-            width={{ base: "64px" }}
-            height={{ base: "64px" }}
+            width={{ base: "28px" }}
+            height={{ base: "32px" }}
             mr={{ base: "18px" }}
           >
             {item.image && (
@@ -40,25 +41,28 @@ const CheckoutItem = ({ _id }: CheckoutItemProps) => {
             )}
           </Box>
 
-          <Flex
-            flexDir={{ base: "column" }}
-            justifyContent="center"
-            width={{ base: "90px" }}
-            height={{ base: "64px" }}
-          >
-            <Text {...SummaryItemHeading}>
+          <Flex flexDir={{ base: "column" }} border="1px solid red">
+            <Text fontSize="15px" fontWeight="bold">
               {item.title.replace("Headphones", "").replace("speaker", "")}
             </Text>
-            <Text {...SummaryItemPrice}>
-              $ {item.price.toLocaleString("en-US")}
-            </Text>
+            <Text fontSize="12px"> $ {item.price.toLocaleString("en-US")}</Text>
           </Flex>
         </Flex>
+
+        <Text
+          fontSize="15px"
+          lineHeight="25px"
+          fontWeight="bold"
+          opacity="0.6"
+          fontFamily="manrope"
+        >
+          x{itemsQuantity}
+        </Text>
       </Flex>
 
-      <Text {...SummaryItemPrice}>x{itemsQuantity}</Text>
+      {/* Item */}
     </Flex>
   );
 };
 
-export default CheckoutItem;
+export default OrderComfirmItem;

@@ -18,9 +18,10 @@ import {
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 
-//Components
+//Styles props imports
+import { SummaryTotalPrices, SummaryPricesText } from "./checkoutStyle";
 
-import CheckoutItem from "./CheckoutItem";
+//Components
 import SummaryItem from "./SummaryItem";
 
 const Summary = ({ handleSubmit }) => {
@@ -54,44 +55,52 @@ const Summary = ({ handleSubmit }) => {
 
         <Flex flexDir={{ base: "column" }} padding="24px">
           {cartItems.map((item) => (
-            <CheckoutItem key={item._id} {...item} />
+            <SummaryItem key={item._id} {...item} />
           ))}
 
           <Flex flexDir={{ base: "column" }}>
             <Flex justifyContent="space-between">
-              <Text> TOTAL</Text>
-              <Text>
+              <Text {...SummaryPricesText}> TOTAL</Text>
+              <Text {...SummaryTotalPrices}>
                 $
-                {cartItems.reduce((total, cartItem) => {
-                  const item = products.find((i) => i._id === cartItem._id);
-                  return total + (item?.price || 0) * cartItem.quantity;
-                }, 0)}
+                {cartItems
+                  .reduce((total, cartItem) => {
+                    const item = products.find((i) => i._id === cartItem._id);
+                    return total + (item?.price || 0) * cartItem.quantity;
+                  }, 0)
+                  .toLocaleString("en-US")}
               </Text>
             </Flex>
             <Flex justifyContent="space-between">
-              <Text>SHIPPING</Text>
-              <Text>{cartItems.length ? "$ 50" : null}</Text>
-            </Flex>
-            <Flex justifyContent="space-between">
-              <Text>{`VAT (INCLUDED)`}</Text>
-              <Text>
-                $
-                {cartItems.reduce((total, cartItem) => {
-                  const item = products.find((i) => i._id === cartItem._id);
-                  return total + (item?.price || 0) * cartItem.quantity * 0.2;
-                }, 0)}
+              <Text {...SummaryPricesText}>SHIPPING</Text>
+              <Text {...SummaryTotalPrices}>
+                {cartItems.length ? "$ 50" : null}
               </Text>
             </Flex>
             <Flex justifyContent="space-between">
-              <Text>GRAND TOTAL</Text>
-              <Text>
+              <Text {...SummaryPricesText}>{`VAT (INCLUDED)`}</Text>
+              <Text {...SummaryTotalPrices}>
                 $
-                {cartItems.reduce((total, cartItem) => {
-                  const item = products.find((i) => i._id === cartItem._id);
-                  return (
-                    total + (item?.price || 0) * cartItem.quantity * 1.2 + 50
-                  );
-                }, 0)}
+                {cartItems
+                  .reduce((total, cartItem) => {
+                    const item = products.find((i) => i._id === cartItem._id);
+                    return total + (item?.price || 0) * cartItem.quantity * 0.2;
+                  }, 0)
+                  .toLocaleString("en-US")}
+              </Text>
+            </Flex>
+            <Flex justifyContent="space-between">
+              <Text {...SummaryPricesText}>GRAND TOTAL</Text>
+              <Text {...SummaryTotalPrices} color="orange.100">
+                $
+                {cartItems
+                  .reduce((total, cartItem) => {
+                    const item = products.find((i) => i._id === cartItem._id);
+                    return (
+                      total + (item?.price || 0) * cartItem.quantity * 1.2 + 50
+                    );
+                  }, 0)
+                  .toLocaleString("en-US")}
               </Text>
             </Flex>
           </Flex>
