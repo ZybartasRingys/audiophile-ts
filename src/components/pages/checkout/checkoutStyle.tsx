@@ -2,7 +2,7 @@ import { BoxProps } from '@chakra-ui/react'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const formLabelStyle: BoxProps = {
-  color: 'black.100',
+  color: 'black.200',
   fontWeight: 'bold',
   fontSize: '12px',
 }
@@ -12,13 +12,12 @@ export const formInputStyle: BoxProps = {
   width: { base: '280px' },
   height: { base: '56px' },
   bgColor: 'white.100',
-  color: 'grey.100',
+  color: 'black.200',
   mb: { base: '25px' },
   borderColor: 'grey.200',
   fontFamily: 'main.100',
   fontSize: { base: '14px' },
   letterSpacing: '-0.25',
-  opacity: '0.5',
   fontWeight: 'bold',
 }
 

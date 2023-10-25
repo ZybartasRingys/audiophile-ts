@@ -30,6 +30,7 @@ const Summary = ({ handleSubmit, errors }) => {
 
   const handleClick = () => {
     handleSubmit()
+    onOpen()
   }
   return (
     <Flex width={{ base: '100%' }} alignItems='center' justifyContent='center'>
@@ -148,9 +149,11 @@ const Summary = ({ handleSubmit, errors }) => {
                     justifyContent='space-evenly'
                     padding='24px'
                     bgColor='white.300'>
-                    {cartItems.map((item) => (
-                      <SummaryItem key={item._id} {...item} />
-                    ))}
+                    {cartItems.map((item, index) => {
+                      if (index === 0) {
+                        return <SummaryItem key={item._id} {...item} />
+                      }
+                    })}
                   </Flex>
 
                   <Flex

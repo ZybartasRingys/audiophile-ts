@@ -26,7 +26,7 @@ import { Heading4 } from '../../../chakra/appStyles'
 import Summary from './Summary'
 
 const CheckoutForm = () => {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(true)
 
   console.log(checked)
   const {
@@ -65,9 +65,7 @@ const CheckoutForm = () => {
           <FormControl>
             {/*Name input */}
             <Flex justifyContent='space-between' width='100%'>
-              <FormLabel color='black.100' fontWeight='bold' fontSize='12px'>
-                Name
-              </FormLabel>
+              <FormLabel {...formLabelStyle}>Name</FormLabel>
               <Text
                 fontFamily='main.100'
                 fontSize={{ base: '12px' }}
@@ -154,7 +152,7 @@ const CheckoutForm = () => {
           <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
           <FormControl>
             <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
-            <Flex flexDir={{ base: 'column' }}>
+            <Flex flexDir={{ base: 'column' }} mb={{ base: '32px' }}>
               <Checkbox
                 width={{ base: '280px' }}
                 height={{ base: '58px' }}
@@ -181,13 +179,14 @@ const CheckoutForm = () => {
                 bgColor='white.100'
                 variant='circular'
                 colorScheme='orange'
-                paddingLeft={{ base: '15px' }}>
+                paddingLeft={{ base: '15px' }}
+                onChange={() => setChecked(false)}>
                 Cash On Delivery
               </Checkbox>
             </Flex>
 
             {checked === true ? (
-              <Flex>
+              <Flex flexDir={{ base: 'column' }}>
                 <FormLabel {...formLabelStyle}>e-Money Number</FormLabel>
                 <Input {...formInputStyle} />
                 <FormLabel {...formLabelStyle}>e-Money PIN</FormLabel>
