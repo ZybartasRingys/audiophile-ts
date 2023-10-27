@@ -26,7 +26,6 @@ export const homeProductsHeadingStyle2: BoxProps = {
 export const seeProductButton: BoxProps = {
   width: '160px',
   height: '48px',
-  border: '1px solid black',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

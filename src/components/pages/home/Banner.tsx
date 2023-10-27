@@ -4,17 +4,23 @@ const Banner = () => {
   return (
     <Flex
       width='100%'
-      height='500px'
-      bg='black.200'
-      pt='95px'
+      height='509px'
       justifyContent='center'
-      fontFamily='main.100'>
+      fontFamily='main.100'
+      bgImg='/home/mobile/image-header.jpg'
+      backgroundPosition='center'
+      bgSize='cover'
+      bgRepeat='no-repeat'
+      border='1px solid red'
+      bgPos='center top'>
       <Flex
         width='88%'
         flexDir={{ base: 'column' }}
         alignItems='center'
         px='15px'
-        textAlign='center'>
+        pt='95px'
+        textAlign='center'
+        border='1px solid red'>
         <Heading
           fontWeight='400'
           color='white'
