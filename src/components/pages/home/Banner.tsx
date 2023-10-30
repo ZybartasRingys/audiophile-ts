@@ -1,6 +1,5 @@
 import { Text, Heading, Link, Flex } from "@chakra-ui/react";
-import { seeProductButton } from "./HomeStyles";
-
+import { Default1btn } from "../../../chakra/appStyles";
 const Banner = () => {
   return (
     <Flex
@@ -12,7 +11,7 @@ const Banner = () => {
       backgroundPosition="center"
       bgSize="cover"
       bgRepeat="no-repeat"
-      bgPos="center top"
+      bgPos="center -90px"
     >
       <Flex
         width="88%"
@@ -57,7 +56,7 @@ const Banner = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </Text>
-        <Link {...seeProductButton}>See product</Link>
+        <Link {...Default1btn}>See product</Link>
       </Flex>
     </Flex>
   );

@@ -4,7 +4,7 @@ const Testimonial = () => {
   return (
     <Flex
       flexDir={{ base: "column" }}
-      width="100%"
+      width="87%"
       height="689px"
       mt="120px"
       mb="120px"
@@ -45,6 +45,7 @@ const Testimonial = () => {
           fontFamily="main.100"
           fontWeight="medium"
           opacity="0.5"
+          color="black.200"
         >
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.

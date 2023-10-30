@@ -70,3 +70,37 @@ export const ItemHeading: BoxProps = {
   fontWeight: "bold",
   lineHeight: "25px",
 };
+
+//buttons
+
+export const Default1btn: BoxProps = {
+  width: "160px",
+  height: "48px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  cursor: "pointer",
+  textTransform: "uppercase",
+  fontSize: "13px",
+  fontWeight: "bold",
+  fontFamily: "main.100",
+  letterSpacing: "1px",
+  color: "white",
+  bgColor: "orange.100",
+};
+
+export const Default2btn: BoxProps = {
+  width: "160px",
+  height: "48px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  cursor: "pointer",
+  textTransform: "uppercase",
+  fontSize: "13px",
+  fontWeight: "bold",
+  fontFamily: "main.100",
+  letterSpacing: "1px",
+  border: "1px solid black",
+  color: "black.200",
+};

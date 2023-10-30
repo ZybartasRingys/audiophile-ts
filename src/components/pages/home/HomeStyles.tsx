@@ -43,6 +43,6 @@ export const seeProductButton: BoxProps = {
   fontWeight: "bold",
   fontFamily: "main.100",
   letterSpacing: "1px",
-  bgColor: "orange.100",
-  color: "white",
+  border: "1px solid black",
+  color: "black.200",
 };
