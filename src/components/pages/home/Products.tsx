@@ -10,72 +10,72 @@ import {
 
 const Products = () => {
   return (
-    <Flex flexDir={{ base: "column" }} mt="120px" width="89%">
+    <Flex flexDir={{ base: "column" }} height="100%" mt="120px" width="87%">
       <Flex
-        flexDir="column"
-        justifyContent="center"
+        width={{ base: "100%" }}
+        height={{ base: "600px" }}
+        flexDir={{ base: "column" }}
         alignItems="center"
-        bgColor="#D87D4A"
-        borderRadius="10px"
+        justifyContent="center"
+        overflow="hidden"
+        borderRadius="8px"
+        bgColor="orange.100"
+        bgImg="/home/desktop/pattern-circles.svg"
+        bgSize="cover"
+        bgRepeat="no-repeat"
+        bgPos="center -128px"
       >
+        <Image
+          position="relative"
+          width="173px"
+          height="207px"
+          src="/home/mobile/image-speaker-zx9.png"
+          alt="ZX9"
+        ></Image>
         <Flex
+          width={{ base: "86%" }}
+          maxH={{ base: "250px" }}
           flexDir={{ base: "column" }}
-          alignItems="center"
-          justifyContent="center"
-          width={{ base: "100%" }}
-          height="600px"
-          bgImg="/home/desktop/pattern-circles.svg"
-          bgRepeat="no-repeat"
-          bgSize="cover"
-          bgPosition="center -126px"
+          textAlign="center"
+          border="1px solid red"
+          pt={{ base: "39px" }}
         >
-          <Image
-            width="173px"
-            height="207px"
-            src="/home/mobile/image-speaker-zx9.png"
-            alt="ZX9"
-            mb="39px"
-          ></Image>
-          <Flex
-            width={{ base: "86%" }}
-            flexDir={{ base: "column" }}
+          <Text {...homeProductsHeadingStyle}>ZX9</Text>
+          <Text {...homeProductsHeadingStyle}>speaker</Text>
+          <Text
             textAlign="center"
-            mb="30px"
-          >
-            <Text {...homeProductsHeadingStyle}>ZX9</Text>
-            <Text {...homeProductsHeadingStyle}>speaker</Text>
-            <Text
-              textAlign="center"
-              fontSize="15px"
-              lineHeight="25px"
-              opacity="0.8"
-              color="white.100"
-              mt="30px"
-            >
-              Upgrade to premium speakers that are phenomenally built to deliver
-              truly remarkable sound.
-            </Text>
-          </Flex>
-
-          <Link
-            width="160px"
-            height="48px"
-            borderRadius="none"
+            fontSize="15px"
+            lineHeight="25px"
+            opacity="0.8"
             color="white.100"
-            bgColor="black.100"
-            textTransform="uppercase"
-            fontSize="13px"
-            letterSpacing="1px"
-            fontWeight="bold"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            href="/speakers"
+            mt={{ base: "30px" }}
           >
-            See product
-          </Link>
+            Upgrade to premium speakers that are phenomenally built to deliver
+            truly remarkable sound.
+          </Text>
         </Flex>
+
+        <Link
+          mt={{ base: "30px" }}
+          width="160px"
+          height="48px"
+          borderRadius="none"
+          color="white.100"
+          bgColor="black.100"
+          textTransform="uppercase"
+          fontSize="13px"
+          letterSpacing="1px"
+          fontWeight="bold"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          href="/speakers"
+        >
+          See product
+        </Link>
       </Flex>
+
+      {/* ZX 7 SPEAKER */}
       <Flex
         width="100%"
         flexDir={{ base: "column" }}
@@ -98,6 +98,10 @@ const Products = () => {
           See product
         </Link>
       </Flex>
+
+      {/* ZX 7 SPEAKER END*/}
+
+      {/* YX1 EARPHONES */}
 
       <Flex flexDir={{ base: "column" }} mt="24px">
         <Box
@@ -125,6 +129,8 @@ const Products = () => {
           <Link {...seeProductButton}>See product</Link>
         </Flex>
       </Flex>
+
+      {/* YX1 EARPHONES END */}
     </Flex>
   );
 };
