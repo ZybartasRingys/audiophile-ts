@@ -4,7 +4,7 @@ import LinksCard from "./LinksCard";
 const Links = () => {
   return (
     <Flex
-      width="87%"
+      width="100%"
       height="100%"
       flexDir="column"
       alignItems="center"

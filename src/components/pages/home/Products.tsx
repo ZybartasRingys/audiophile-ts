@@ -10,7 +10,7 @@ import {
 
 const Products = () => {
   return (
-    <Flex flexDir={{ base: "column" }} height="100%" mt="120px" width="87%">
+    <Flex flexDir={{ base: "column" }} height="100%" mt="120px" width="100%">
       <Flex
         width={{ base: "100%" }}
         height={{ base: "100%" }}

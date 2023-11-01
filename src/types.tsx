@@ -1,68 +1,69 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react";
 
 // Product types
 
 export interface IProduct {
-  desc: 'string'
-  title: 'string'
-  image: 'string'
-  slug: 'string'
-  _id: 'string'
-  price: number
-  features?: 'string'
-  box: Array<string>
-  productImages: Array<string>
-  unit: Array<string>
-  products: IProduct[]
-  isNewProduct: boolean
+  desc: "string";
+  title: "string";
+  image: "string";
+  slug: "string";
+  _id: "string";
+  price: number;
+  features?: "string";
+  box: Array<string>;
+  productImages: Array<string>;
+  unit: Array<string>;
+  products: IProduct[];
+  isNewProduct: boolean;
+  current?: "string";
 }
 
 export type ProductsProps = {
-  products: IProduct[]
-}
+  products: IProduct[];
+};
 
 // App context types
 
 export type AppProvider = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export interface IAppContext extends IProduct {
-  headphones: IProduct[]
-  speakers: IProduct[]
-  earphones: IProduct[]
+  headphones: IProduct[];
+  speakers: IProduct[];
+  earphones: IProduct[];
 }
 
 // header tyoe
 
 export type HeaderProps = {
-  title: 'string'
-}
+  title: "string";
+};
 
 // Cart context types
 
 export interface ICartContext {
-  totalCartQuantity: number
-  cartItems: CartItemProps[]
-  getItemsQuantity: (_id: 'string') => number
-  increaseCartQuantity: (_id: 'string') => void
-  decreaseCartQuantity: (_id: 'string') => void
-  removeAllCartItems: () => void
-  products: IProduct[]
+  totalCartQuantity: number;
+  cartItems: CartItemProps[];
+  getItemsQuantity: (_id: "string") => number;
+  increaseCartQuantity: (_id: "string") => void;
+  decreaseCartQuantity: (_id: "string") => void;
+  removeAllCartItems: () => void;
+  products: IProduct[];
 }
 
 export type ShoppingCartProvider = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export type CartItemProps = {
-  _id: 'string'
-  quantity: number
-}
+  _id: "string";
+  quantity: number;
+};
 
 // Form types
 
 export type CheckoutItemProps = {
-  _id: 'string'
-  quantity: number
-}
+  _id: "string";
+  quantity: number;
+};

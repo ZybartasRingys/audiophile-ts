@@ -14,7 +14,13 @@ const ProductsDetail: React.FC<IProduct> = () => {
 
   return (
     <>
-      <Flex flexDir={{ base: "column" }} alignItems="center">
+      <Flex
+        flexDir={{ base: "column" }}
+        width={{ base: "100%" }}
+        height={{ base: "100%" }}
+        alignItems="center"
+        justifyContent="center"
+      >
         <Box
           width="87%"
           textAlign="start"
@@ -23,6 +29,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
         >
           <Link
             fontSize="15px"
+            color="black.200"
             fontFamily="main.100"
             fontWeight="medium"
             lineHeight="25px"

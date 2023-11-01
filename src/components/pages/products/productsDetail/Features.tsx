@@ -1,7 +1,7 @@
 import { Flex, Text, Heading, Image } from "@chakra-ui/react";
 import { IProduct } from "../../../../types";
 import { urlFor } from "../../../../../sanity/sanity";
-import { Heading4, BodyText } from "../../../../chakra/appStyles";
+import { Heading5, BodyText } from "../../../../chakra/appStyles";
 const Features: React.FC<IProduct> = ({
   features,
   box,
@@ -15,9 +15,11 @@ const Features: React.FC<IProduct> = ({
           <Heading
             mb={{ base: "32px" }}
             fontSize={{ base: "24px" }}
+            fontWeight="bold"
             lineHeight={{ base: "36px" }}
-            letterSpacing={{ base: "0.9px" }}
+            letterSpacing={{ base: "0.86px" }}
             fontFamily="main.100"
+            color="black.200"
           >
             FEATURES
           </Heading>
@@ -27,19 +29,20 @@ const Features: React.FC<IProduct> = ({
             lineHeight={{ base: "25px" }}
             fontWeight="medium"
             opacity="0.5"
+            color="black.200"
           >
             {features}
           </Text>
         </Flex>
 
         <Flex flexDir={{ base: "column" }}>
-          <Heading {...Heading4} letterSpacing="0.86" mb="24px">
+          <Heading {...Heading5} letterSpacing="0.86" mb="24px">
             IN THE BOX
           </Heading>
           <Flex>
             {/* In The Box Section */}
             <Flex flexDir={{ base: "column" }}>
-              <Flex height={{ base: "157px" }}>
+              <Flex height={{ base: "157px" }} mb={{ base: "90px" }}>
                 {/* Unit */}
                 <Flex
                   flexDir={{ base: "column" }}
@@ -52,6 +55,8 @@ const Features: React.FC<IProduct> = ({
                       color="orange.100"
                       fontSize="15px"
                       lineHeight="25px"
+                      fontFamily="main.100"
+                      fontWeight="bold"
                       key={i}
                     >
                       {number}
@@ -66,7 +71,12 @@ const Features: React.FC<IProduct> = ({
                   mb="90px"
                 >
                   {box.map((item) => (
-                    <Text {...BodyText} opacity="0.5" key={item}>
+                    <Text
+                      {...BodyText}
+                      fontSize="15px"
+                      opacity="0.5"
+                      key={item}
+                    >
                       {item}
                     </Text>
                   ))}

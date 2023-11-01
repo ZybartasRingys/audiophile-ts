@@ -4,7 +4,7 @@ const Testimonial = () => {
   return (
     <Flex
       flexDir={{ base: "column" }}
-      width="87%"
+      width="100%"
       height="689px"
       mt="120px"
       mb="120px"

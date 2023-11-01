@@ -37,6 +37,7 @@ const Product: React.FC<IProduct> = ({
         width="87%"
         height="100%"
         alignItems="center"
+        justifyContent="center"
       >
         <Box height={{ base: "327px" }} width="100%" borderRadius="10px">
           {image && (
@@ -55,27 +56,33 @@ const Product: React.FC<IProduct> = ({
               mt="32px"
               mb={{ base: "30px" }}
               color="orange.100"
-              fontSize="14px"
+              fontSize={{ base: "14px" }}
+              fontFamily="main.100"
               letterSpacing="10px"
               textTransform="uppercase"
             >
               New product
             </Text>
-          ) : null}
+          ) : (
+            <Flex width={{ base: "100%" }} height={{ base: "40px" }} />
+          )}
+          <Flex width={{ base: "59%" }}>
+            <Heading
+              fontSize={{ base: "28px" }}
+              letterSpacing="1px"
+              textTransform="uppercase"
+              fontFamily="main.100"
+              fontWeight="bold"
+              color="black.200"
+            >
+              {title}
+            </Heading>
+          </Flex>
 
-          <Heading
-            fontSize={{ base: "28px" }}
-            letterSpacing="1px"
-            textTransform="uppercase"
-            fontFamily="main.100"
-            fontWeight="bold"
-            color="black.200"
-          >
-            {title}
-          </Heading>
           <Text
             mt={{ base: "32px" }}
             fontFamily="main.100"
+            color="black.200"
             fontSize={{ base: "15px" }}
             lineHeight="25px"
             fontWeight="medium"
@@ -87,6 +94,7 @@ const Product: React.FC<IProduct> = ({
             fontSize={{ base: "18px" }}
             fontWeight="bold"
             fontFamily="main.100"
+            color="black.200"
             letterSpacing="1.3px"
             mt="32px"
           >
@@ -98,9 +106,10 @@ const Product: React.FC<IProduct> = ({
 
         <Flex
           mt="32px"
-          width={{ base: "91%" }}
+          width={{ base: "100%" }}
           height={{ base: "48px" }}
           justifyContent="space-between"
+          pr={{ base: "28px" }}
         >
           <Flex width={{ base: "120px" }} height="48px" bgColor="white.300">
             <Flex
@@ -112,7 +121,12 @@ const Product: React.FC<IProduct> = ({
                 <HiMiniMinusSmall onClick={() => decreaseCartQuantity(_id)} />
               </Box>
 
-              <Text fontSize="13px" fontWeight="bold" fontFamily="main.100">
+              <Text
+                fontSize="13px"
+                fontWeight="bold"
+                fontFamily="main.100"
+                color="black.200"
+              >
                 {quantity}
               </Text>
 

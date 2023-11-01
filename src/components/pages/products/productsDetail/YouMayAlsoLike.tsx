@@ -19,7 +19,7 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
       width={{ base: "100%" }}
       textAlign="center"
       alignContent="center"
-      mt={{ base: "120px" }}
+      mt={{ base: "100px" }}
     >
       <Heading {...Heading5} letterSpacing="0.86px" mb="50px">
         YOU MAY ALSO LIKE

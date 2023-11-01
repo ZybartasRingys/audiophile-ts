@@ -45,6 +45,7 @@ export const Heading5: BoxProps = {
   lineHeight: "auto",
   fontWeight: "bold",
   fontFamily: "main.100",
+  color: "black.200",
 };
 
 export const Heading6: BoxProps = {};
@@ -54,6 +55,7 @@ export const BodyText: BoxProps = {
   lineHeight: "25px",
   fontWeight: "medium",
   fontFamily: "main.100",
+  color: "black.200",
 };
 
 export const SmallTextOpacity: BoxProps = {

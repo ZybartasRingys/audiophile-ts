@@ -6,11 +6,23 @@ import Testimonial from "./Testimonial";
 
 const Home = () => {
   return (
-    <Flex flexDir={{ base: "column" }} alignItems="center">
+    <Flex
+      flexDir={{ base: "column" }}
+      alignItems="center"
+      width={{ base: "100%" }}
+      height={{ base: "100%" }}
+    >
       <Banner />
-      <Links />
-      <Products />
-      <Testimonial />
+      <Flex
+        width={{ base: "87%" }}
+        height={{ base: "100%" }}
+        flexDir={{ base: "column" }}
+        alignItems="center"
+      >
+        <Links />
+        <Products />
+        <Testimonial />
+      </Flex>
     </Flex>
   );
 };

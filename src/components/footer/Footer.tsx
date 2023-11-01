@@ -10,8 +10,13 @@ const Footer = () => {
       flexDir={{ base: "column" }}
       color="white"
       alignItems="center"
-      pt={{ base: "50px" }}
     >
+      <Flex
+        width={{ base: "104px" }}
+        height={{ base: "4px" }}
+        bgColor="orange.100"
+        mb={{ base: "48px" }}
+      ></Flex>
       <Image src="/public/shared/desktop/logo.svg" />
 
       <Flex
