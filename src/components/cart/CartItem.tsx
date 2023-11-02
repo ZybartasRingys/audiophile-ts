@@ -9,7 +9,7 @@ import { CartContext } from "../../context/CartContext";
 //icons
 import { HiMiniPlusSmall, HiMiniMinusSmall } from "react-icons/hi2";
 //Styles props imports
-import { ItemHeading } from "../../chakra/appStyles";
+import { ItemHeading, SmallTextOpacity } from "../../chakra/appStyles";
 const CartItem = ({ _id }: CartItemProps) => {
   const {
     products,
@@ -37,16 +37,22 @@ const CartItem = ({ _id }: CartItemProps) => {
       </Box>
       <Flex
         flexDir={{ base: "column" }}
-        width={{ base: "76px" }}
+        width={{ base: "90px" }}
         height={{ base: "50px" }}
       >
         <Text {...ItemHeading}>
           {item.title.replace("Headphones", "").replace("speaker", "")}
         </Text>
-        <Text>$ {item.price.toLocaleString("en-US")}</Text>
+        <Text
+          {...SmallTextOpacity}
+          fontWeight="bold"
+          fontSize={{ base: "14px" }}
+        >
+          $ {item.price.toLocaleString("en-US")}
+        </Text>
       </Flex>
       <Flex
-        width={{ base: "96px" }}
+        width={{ base: "95px" }}
         height={{ base: "32px" }}
         bgColor="grey.100"
       >
@@ -59,8 +65,16 @@ const CartItem = ({ _id }: CartItemProps) => {
           <Box opacity="0.5" onClick={() => decreaseCartQuantity(_id)}>
             <HiMiniMinusSmall />
           </Box>
+          <Text
+            fontFamily="main.100"
+            fontWeight="bold"
+            fontSize={{ base: "13px" }}
+            letterSpacing={{ base: "1px" }}
+            color="black.200"
+          >
+            {cartQuantity}
+          </Text>
 
-          {cartQuantity}
           <Box
             opacity="0.5"
             onClick={() => {

@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useContext } from 'react'
+import { useContext } from "react";
 
-import ProductsComponent from '../products/ProductsComponent'
-import { Flex } from '@chakra-ui/react'
+import ProductsComponent from "../products/ProductsComponent";
+import { Flex } from "@chakra-ui/react";
 
 //Types
-import { IProduct } from '../../../types'
+import { IProduct } from "../../../types";
 
 //Context
-import { AppContext } from '../../../context/AppContext'
+import { AppContext } from "../../../context/AppContext";
 
 const Earphones: React.FC<IProduct> = () => {
-  const { earphones } = useContext(AppContext)
+  const { earphones } = useContext(AppContext);
 
   return (
-    <Flex flexDir={{ base: 'column' }}>
+    <Flex flexDir={{ base: "column" }} width={{ base: "87%" }}>
       {earphones.map(({ title, desc, image, slug, isNewProduct }) => (
         <ProductsComponent
           title={title}
@@ -22,7 +22,7 @@ const Earphones: React.FC<IProduct> = () => {
           image={image}
           key={title}
           slug={slug}
-          _id={'string'}
+          _id={"string"}
           price={0}
           box={[]}
           productImages={[]}
@@ -32,7 +32,7 @@ const Earphones: React.FC<IProduct> = () => {
         />
       ))}
     </Flex>
-  )
-}
+  );
+};
 
-export default Earphones
+export default Earphones;

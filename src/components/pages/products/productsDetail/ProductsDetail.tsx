@@ -25,7 +25,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
           width="87%"
           textAlign="start"
           mt={{ base: "15px" }}
-          mb={{ base: "28px" }}
+          mb={{ base: "20px" }}
         >
           <Link
             fontSize="15px"

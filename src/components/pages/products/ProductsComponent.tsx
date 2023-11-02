@@ -17,7 +17,7 @@ const ProductsComponent = ({
       <Flex
         key={title}
         flexDir={{ base: "column" }}
-        width="88%"
+        width="100%"
         height={{ base: "100%" }}
         alignItems="center"
       >

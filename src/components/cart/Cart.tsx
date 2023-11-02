@@ -38,7 +38,7 @@ const Cart = () => {
           width={{ base: "89%" }}
           height={{ base: "488px" }}
           bgColor="white"
-          mt={{ base: "85px" }}
+          mt={{ base: "110px" }}
         >
           <Flex
             width={{ base: "100%" }}
@@ -47,7 +47,7 @@ const Cart = () => {
             alignItems="center"
             paddingX={{ base: "28px" }}
           >
-            <Text {...BodyText} fontWeight="bold">
+            <Text {...BodyText} fontWeight="bold" letterSpacing="1.29px">
               CART {`(${totalCartQuantity})`}
             </Text>
             <Text
@@ -79,15 +79,21 @@ const Cart = () => {
             height={{ base: "140px" }}
             flexDir={{ base: "column" }}
             alignItems="center"
-            justifyContent="space-around"
+            pt={{ base: "10px" }}
           >
             <Flex
               width={{ base: "100%" }}
               justifyContent="space-between"
               paddingX={{ base: "28px" }}
+              mb={{ base: "24px" }}
             >
               <Text {...SmallTextOpacity}>TOTAL</Text>
-              <Text fontWeight="bold">
+              <Text
+                fontWeight="bold"
+                fontSize={{ base: "18px" }}
+                fontFamily="main.100"
+                color="black.200"
+              >
                 $
                 {cartItems
                   .reduce((total, cartItem) => {
@@ -109,6 +115,9 @@ const Cart = () => {
               alignItems="center"
               justifyContent="center"
               textTransform="uppercase"
+              fontSize={{ base: "13px" }}
+              letterSpacing={{ base: "1px" }}
+              fontWeight="bold"
             >
               Checkout
             </Link>

@@ -23,8 +23,10 @@ const HeadphonesHome = () => {
         products={[]}
         isNewProduct={false}
       />
-      <Links />
-      <Testimonial />
+      <Flex width={{ base: "87%" }} flexDir={{ base: "column" }}>
+        <Links />
+        <Testimonial />
+      </Flex>
     </Flex>
   );
 };

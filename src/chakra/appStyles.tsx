@@ -63,14 +63,16 @@ export const SmallTextOpacity: BoxProps = {
   lineHeight: "25px",
   fontWeight: "medium",
   fontFamily: "main.100",
+  color: "black.200",
   opacity: "0.5",
 };
 
 export const ItemHeading: BoxProps = {
-  fontSize: { base: "14px" },
+  fontSize: { base: "15px" },
   fontFamily: "main.100",
   fontWeight: "bold",
   lineHeight: "25px",
+  color: "black.200",
 };
 
 //buttons
