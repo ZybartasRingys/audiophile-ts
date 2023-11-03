@@ -6,14 +6,15 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
- Image,
+  Image,
   Link,
 } from "@chakra-ui/react";
 
 //Context
 import { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
+import { CartContext } from "../../../../context/CartContext";
 
+//components
 import OrderComfirmItem from "./OrderComfirmItem";
 
 const OrderComfirmModal = (isOpen, onClose) => {

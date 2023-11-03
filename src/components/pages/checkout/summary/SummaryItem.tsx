@@ -1,14 +1,14 @@
 // Chakra
-import { urlFor } from "../../../../sanity/sanity";
+import { urlFor } from "../../../../../sanity/sanity";
 import { Image, Text, Flex, Box } from "@chakra-ui/react";
 
 //Context
 import { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
+import { CartContext } from "../../../../context/CartContext";
 // Types
-import { CheckoutItemProps, IProduct } from "../../../types";
+import { CheckoutItemProps, IProduct } from "../../../../types";
 //Styles props imports
-import { SummaryItemPrice, SummaryItemHeading } from "./checkoutStyle";
+import { SummaryItemPrice, SummaryItemHeading } from "../checkoutStyle";
 
 const CheckoutItem = ({ _id }: CheckoutItemProps) => {
   const { products, getItemsQuantity } = useContext(CartContext);

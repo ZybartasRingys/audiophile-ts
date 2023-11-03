@@ -45,6 +45,7 @@ const MobileNav = () => {
             bgColor="white"
             height={{ base: "750px" }}
             borderTopRadius="none"
+            mt={{ base: "98px" }}
           >
             <ModalBody>
               {/* Headphones Card */}

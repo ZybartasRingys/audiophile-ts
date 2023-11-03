@@ -36,6 +36,7 @@ export const Heading4: BoxProps = {
   lineHeight: "auto",
   fontWeight: "bold",
   fontFamily: "main.100",
+  color: "black.200",
 };
 
 export const Heading5: BoxProps = {

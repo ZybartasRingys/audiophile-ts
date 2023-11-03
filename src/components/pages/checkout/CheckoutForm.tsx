@@ -23,9 +23,13 @@ import { Heading4 } from "../../../chakra/appStyles";
 
 //components
 
-import Summary from "./Summary";
+import Summary from "./summary/Summary";
 
-const CheckoutForm = () => {
+interface IFormInputs {
+  name: "string";
+}
+
+const CheckoutForm: React.FC<IFormInputs> = () => {
   const [checked, setChecked] = useState(true);
 
   console.log(checked);
@@ -59,7 +63,9 @@ const CheckoutForm = () => {
       <Flex width={{ base: "100%" }} justifyContent="center">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/*Billing Address section */}
-          <FormLabel {...FormLabelHeading}>BILLING DETAILS</FormLabel>
+          <FormLabel htmlFor="name" {...FormLabelHeading}>
+            BILLING DETAILS
+          </FormLabel>
           <FormControl>
             {/*Name input */}
             <Flex justifyContent="space-between" width="100%">
@@ -79,15 +85,19 @@ const CheckoutForm = () => {
               autoComplete="off"
               _focusVisible={{ borderColor: "orange.100" }}
               {...register("name", {
-                required: "Can't be empty",
+                required: "Field can't be empty",
                 minLength: 4,
               })}
               {...formInputStyle}
+              aria-invalid={errors.name ? "true" : "false"}
+              aria-required={true}
               placeholder="Alexei Ward"
             />
             {/*Name input end */}
 
-            <Flex>
+            {/*Email input */}
+
+            <Flex justifyContent="space-between" width="100%">
               <FormLabel {...formLabelStyle}>Email Address</FormLabel>
               <Text
                 fontFamily="main.100"
@@ -103,7 +113,7 @@ const CheckoutForm = () => {
               autoComplete="off"
               _focusVisible={{ borderColor: "orange.100" }}
               {...register("email", {
-                required: "Can't be empty",
+                required: "Field can't be empty",
                 minLength: 4,
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -137,13 +147,49 @@ const CheckoutForm = () => {
           <FormLabel {...FormLabelHeading}>Shipping info</FormLabel>
           <FormControl>
             <FormLabel {...formLabelStyle}>Your Address</FormLabel>
-            <Input {...formInputStyle} placeholder="1137 Williams Avenue" />
+            <Input
+              {...formInputStyle}
+              autoComplete="off"
+              _focusVisible={{ borderColor: "orange.100" }}
+              {...register("address", {
+                required: "Can't be empty",
+                minLength: 4,
+              })}
+              placeholder="1137 Williams Avenue"
+            />
             <FormLabel {...formLabelStyle}>ZIP Code</FormLabel>
-            <Input {...formInputStyle} placeholder="10001" />
+            <Input
+              autoComplete="off"
+              _focusVisible={{ borderColor: "orange.100" }}
+              {...register("zipcode", {
+                required: "Can't be empty",
+                minLength: 4,
+              })}
+              {...formInputStyle}
+              placeholder="10001"
+            />
             <FormLabel {...formLabelStyle}>City</FormLabel>
-            <Input {...formInputStyle} placeholder="New York" />
+            <Input
+              autoComplete="off"
+              _focusVisible={{ borderColor: "orange.100" }}
+              {...register("city", {
+                required: "Can't be empty",
+                minLength: 4,
+              })}
+              {...formInputStyle}
+              placeholder="New York"
+            />
             <FormLabel {...formLabelStyle}>Country</FormLabel>
-            <Input {...formInputStyle} placeholder="United States" />
+            <Input
+              autoComplete="off"
+              _focusVisible={{ borderColor: "orange.100" }}
+              {...register("country", {
+                required: "Can't be empty",
+                minLength: 4,
+              })}
+              {...formInputStyle}
+              placeholder="United States"
+            />
           </FormControl>
 
           {/*Shipping info  section end */}
@@ -167,6 +213,7 @@ const CheckoutForm = () => {
                 colorScheme="orange"
                 paddingLeft={{ base: "15px" }}
                 onChange={() => setChecked(true)}
+                defaultChecked
               >
                 e-Money
               </Checkbox>
@@ -190,9 +237,9 @@ const CheckoutForm = () => {
             {checked === true ? (
               <Flex flexDir={{ base: "column" }}>
                 <FormLabel {...formLabelStyle}>e-Money Number</FormLabel>
-                <Input {...formInputStyle} />
+                <Input {...formInputStyle} placeholder="238521993" />
                 <FormLabel {...formLabelStyle}>e-Money PIN</FormLabel>
-                <Input {...formInputStyle} />
+                <Input {...formInputStyle} placeholder="6891" />
               </Flex>
             ) : null}
           </FormControl>
