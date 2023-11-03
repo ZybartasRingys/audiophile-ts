@@ -1,6 +1,6 @@
 // React hook form
-import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useForm } from 'react-hook-form'
+import { useState } from 'react'
 
 //Chakra UI
 import {
@@ -11,134 +11,130 @@ import {
   Checkbox,
   Heading,
   Text,
-} from "@chakra-ui/react";
+  FormErrorMessage,
+  FormLabelProps,
+} from '@chakra-ui/react'
 
 //Chakra Styles Import
 import {
   formLabelStyle,
   formInputStyle,
   FormLabelHeading,
-} from "./checkoutStyle";
-import { Heading4 } from "../../../chakra/appStyles";
+} from './checkoutStyle'
+import { Heading4 } from '../../../chakra/appStyles'
 
 //components
 
-import Summary from "./summary/Summary";
+import Summary from './summary/Summary'
 
 interface IFormInputs {
-  name: "string";
+  name: 'string'
 }
 
 const CheckoutForm: React.FC<IFormInputs> = () => {
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(true)
 
-  console.log(checked);
+  console.log(checked)
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = () => {
-    console.log("submited");
-  };
+    console.log('submited')
+  }
   return (
     <Flex
-      width="89%"
-      flexDir={{ base: "column" }}
-      justifyContent="center"
-      borderRadius="8px"
-    >
+      width='89%'
+      flexDir={{ base: 'column' }}
+      justifyContent='center'
+      borderRadius='8px'>
       <Flex
-        width={{ base: "100%" }}
-        height={{ base: "94px" }}
-        alignItems="center"
-        px={{ base: "23px" }}
-      >
-        <Heading {...Heading4} letterSpacing="1px">
+        width={{ base: '100%' }}
+        height={{ base: '94px' }}
+        alignItems='center'
+        px={{ base: '23px' }}>
+        <Heading {...Heading4} letterSpacing='1px'>
           CHECKOUT
         </Heading>
       </Flex>
 
-      <Flex width={{ base: "100%" }} justifyContent="center">
+      <Flex width={{ base: '100%' }} justifyContent='center'>
         <form onSubmit={handleSubmit(onSubmit)}>
           {/*Billing Address section */}
-          <FormLabel htmlFor="name" {...FormLabelHeading}>
+          <FormLabel htmlFor='name' {...FormLabelHeading}>
             BILLING DETAILS
           </FormLabel>
-          <FormControl>
+          <FormControl isInvalid={errors.name ? true : false}>
             {/*Name input */}
-            <Flex justifyContent="space-between" width="100%">
+            <Flex justifyContent='space-between' width='100%'>
               <FormLabel {...formLabelStyle}>Name</FormLabel>
               <Text
-                fontFamily="main.100"
-                fontSize={{ base: "12px" }}
-                fontWeight="medium"
-                letterSpacing="-0.2"
-                color="#CD2C2C"
-              >
+                fontFamily='main.100'
+                fontSize={{ base: '12px' }}
+                fontWeight='medium'
+                letterSpacing='-0.2'
+                color='#CD2C2C'>
                 {errors.name?.message}
               </Text>
             </Flex>
 
             <Input
-              autoComplete="off"
-              _focusVisible={{ borderColor: "orange.100" }}
-              {...register("name", {
+              autoComplete='off'
+              _focusVisible={{ borderColor: 'orange.100' }}
+              {...register('name', {
                 required: "Field can't be empty",
                 minLength: 4,
               })}
               {...formInputStyle}
-              aria-invalid={errors.name ? "true" : "false"}
-              aria-required={true}
-              placeholder="Alexei Ward"
+              placeholder='Alexei Ward'
             />
             {/*Name input end */}
 
             {/*Email input */}
 
-            <Flex justifyContent="space-between" width="100%">
+            <Flex justifyContent='space-between' width='100%'>
               <FormLabel {...formLabelStyle}>Email Address</FormLabel>
               <Text
-                fontFamily="main.100"
-                fontSize={{ base: "12px" }}
-                fontWeight="medium"
-                letterSpacing="-0.2"
-                color="#CD2C2C"
-              >
+                fontFamily='main.100'
+                fontSize={{ base: '12px' }}
+                fontWeight='medium'
+                letterSpacing='-0.2'
+                color='#CD2C2C'>
                 {errors.email?.message}
               </Text>
             </Flex>
             <Input
-              autoComplete="off"
-              _focusVisible={{ borderColor: "orange.100" }}
-              {...register("email", {
+              autoComplete='off'
+              _focusVisible={{ borderColor: 'orange.100' }}
+              {...register('email', {
                 required: "Field can't be empty",
                 minLength: 4,
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Wrong format",
+                  message: 'Wrong format',
                 },
               })}
               {...formInputStyle}
-              placeholder="alexei@mail.com"
+              placeholder='alexei@mail.com'
             />
 
             <FormLabel {...formLabelStyle}>Phone Number</FormLabel>
 
             <Input
-              autoComplete="off"
-              _focusVisible={{ borderColor: "orange.100" }}
-              {...register("number", {
+              autoComplete='off'
+              _focusVisible={{ borderColor: 'orange.100' }}
+              {...register('number', {
                 required: "Can't be empty",
                 pattern: {
                   value: /^[0-9]+$/,
-                  message: "Please enter a number",
+                  message: 'Please enter a number',
                 },
                 minLength: 4,
               })}
               {...formInputStyle}
-              placeholder="+1 202-555-0136"
+              placeholder='+1 202-555-0136'
             />
           </FormControl>
           {/*Billing Address section end */}
@@ -149,46 +145,46 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
             <FormLabel {...formLabelStyle}>Your Address</FormLabel>
             <Input
               {...formInputStyle}
-              autoComplete="off"
-              _focusVisible={{ borderColor: "orange.100" }}
-              {...register("address", {
+              autoComplete='off'
+              _focusVisible={{ borderColor: 'orange.100' }}
+              {...register('address', {
                 required: "Can't be empty",
                 minLength: 4,
               })}
-              placeholder="1137 Williams Avenue"
+              placeholder='1137 Williams Avenue'
             />
             <FormLabel {...formLabelStyle}>ZIP Code</FormLabel>
             <Input
-              autoComplete="off"
-              _focusVisible={{ borderColor: "orange.100" }}
-              {...register("zipcode", {
+              autoComplete='off'
+              _focusVisible={{ borderColor: 'orange.100' }}
+              {...register('zipcode', {
                 required: "Can't be empty",
                 minLength: 4,
               })}
               {...formInputStyle}
-              placeholder="10001"
+              placeholder='10001'
             />
             <FormLabel {...formLabelStyle}>City</FormLabel>
             <Input
-              autoComplete="off"
-              _focusVisible={{ borderColor: "orange.100" }}
-              {...register("city", {
+              autoComplete='off'
+              _focusVisible={{ borderColor: 'orange.100' }}
+              {...register('city', {
                 required: "Can't be empty",
                 minLength: 4,
               })}
               {...formInputStyle}
-              placeholder="New York"
+              placeholder='New York'
             />
             <FormLabel {...formLabelStyle}>Country</FormLabel>
             <Input
-              autoComplete="off"
-              _focusVisible={{ borderColor: "orange.100" }}
-              {...register("country", {
+              autoComplete='off'
+              _focusVisible={{ borderColor: 'orange.100' }}
+              {...register('country', {
                 required: "Can't be empty",
                 minLength: 4,
               })}
               {...formInputStyle}
-              placeholder="United States"
+              placeholder='United States'
             />
           </FormControl>
 
@@ -198,48 +194,46 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
           <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
           <FormControl>
             <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
-            <Flex flexDir={{ base: "column" }} mb={{ base: "32px" }}>
+            <Flex flexDir={{ base: 'column' }} mb={{ base: '32px' }}>
               <Checkbox
-                width={{ base: "280px" }}
-                height={{ base: "58px" }}
-                display="flex"
-                alignItems="center"
-                mb={{ base: "15px" }}
-                border="1px solid red"
-                borderRadius="8px"
-                borderColor="#CFCFCF"
-                bgColor="white.100"
-                variant="circular"
-                colorScheme="orange"
-                paddingLeft={{ base: "15px" }}
+                width={{ base: '280px' }}
+                height={{ base: '58px' }}
+                display='flex'
+                alignItems='center'
+                mb={{ base: '15px' }}
+                border='1px solid red'
+                borderRadius='8px'
+                borderColor='#CFCFCF'
+                bgColor='white.100'
+                variant='circular'
+                colorScheme='orange'
+                paddingLeft={{ base: '15px' }}
                 onChange={() => setChecked(true)}
-                defaultChecked
-              >
+                defaultChecked>
                 e-Money
               </Checkbox>
 
               <Checkbox
-                width={{ base: "280px" }}
-                height={{ base: "58px" }}
-                border="1px solid red"
-                borderRadius="8px"
-                borderColor="#CFCFCF"
-                bgColor="white.100"
-                variant="circular"
-                colorScheme="orange"
-                paddingLeft={{ base: "15px" }}
-                onChange={() => setChecked(false)}
-              >
+                width={{ base: '280px' }}
+                height={{ base: '58px' }}
+                border='1px solid red'
+                borderRadius='8px'
+                borderColor='#CFCFCF'
+                bgColor='white.100'
+                variant='circular'
+                colorScheme='orange'
+                paddingLeft={{ base: '15px' }}
+                onChange={() => setChecked(false)}>
                 Cash On Delivery
               </Checkbox>
             </Flex>
 
             {checked === true ? (
-              <Flex flexDir={{ base: "column" }}>
+              <Flex flexDir={{ base: 'column' }}>
                 <FormLabel {...formLabelStyle}>e-Money Number</FormLabel>
-                <Input {...formInputStyle} placeholder="238521993" />
+                <Input {...formInputStyle} placeholder='238521993' />
                 <FormLabel {...formLabelStyle}>e-Money PIN</FormLabel>
-                <Input {...formInputStyle} placeholder="6891" />
+                <Input {...formInputStyle} placeholder='6891' />
               </Flex>
             ) : null}
           </FormControl>
@@ -248,7 +242,7 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
 
       <Summary handleSubmit={handleSubmit(onSubmit)} errors={errors} />
     </Flex>
-  );
-};
+  )
+}
 
-export default CheckoutForm;
+export default CheckoutForm
