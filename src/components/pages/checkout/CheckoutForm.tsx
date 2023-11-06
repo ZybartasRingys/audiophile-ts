@@ -11,8 +11,6 @@ import {
   Checkbox,
   Heading,
   Text,
-  FormErrorMessage,
-  FormLabelProps,
 } from '@chakra-ui/react'
 
 //Chakra Styles Import
@@ -24,8 +22,20 @@ import {
 import { Heading4 } from '../../../chakra/appStyles'
 
 //components
-
+import InputField from './form/InputField'
 import Summary from './summary/Summary'
+
+type Inputs = {
+  name: string
+  email: string
+  phoneNumber: string
+  address: string
+  ZIPCode: string
+  city: string
+  country: string
+  eMoneyNumber: number
+  eMoneyPin: number
+}
 
 interface IFormInputs {
   name: 'string'
@@ -34,16 +44,18 @@ interface IFormInputs {
 const CheckoutForm: React.FC<IFormInputs> = () => {
   const [checked, setChecked] = useState(true)
 
-  console.log(checked)
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm()
+  } = useForm<Inputs>()
 
-  const onSubmit = () => {
-    console.log('submited')
+  const onSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault()
+    console.log('good')
   }
+
+  console.log(errors)
   return (
     <Flex
       width='89%'
@@ -62,52 +74,29 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
 
       <Flex width={{ base: '100%' }} justifyContent='center'>
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/*Billing Address section */}
-          <FormLabel htmlFor='name' {...FormLabelHeading}>
-            BILLING DETAILS
-          </FormLabel>
-          <FormControl isInvalid={errors.name ? true : false}>
-            {/*Name input */}
-            <Flex justifyContent='space-between' width='100%'>
-              <FormLabel {...formLabelStyle}>Name</FormLabel>
-              <Text
-                fontFamily='main.100'
-                fontSize={{ base: '12px' }}
-                fontWeight='medium'
-                letterSpacing='-0.2'
-                color='#CD2C2C'>
-                {errors.name?.message}
-              </Text>
-            </Flex>
+          <FormControl>
+            {/*Billing Address section */}
+            <FormLabel htmlFor='name' {...FormLabelHeading}>
+              BILLING DETAILS
+            </FormLabel>
 
-            <Input
-              autoComplete='off'
-              _focusVisible={{ borderColor: 'orange.100' }}
+            {/*Name input */}
+            <InputField
               {...register('name', {
                 required: "Field can't be empty",
                 minLength: 4,
               })}
-              {...formInputStyle}
               placeholder='Alexei Ward'
+              errors={errors.name}
+              label='Name'
+              aria-invalid={errors.name ? 'true' : 'false'}
             />
+
             {/*Name input end */}
 
             {/*Email input */}
 
-            <Flex justifyContent='space-between' width='100%'>
-              <FormLabel {...formLabelStyle}>Email Address</FormLabel>
-              <Text
-                fontFamily='main.100'
-                fontSize={{ base: '12px' }}
-                fontWeight='medium'
-                letterSpacing='-0.2'
-                color='#CD2C2C'>
-                {errors.email?.message}
-              </Text>
-            </Flex>
-            <Input
-              autoComplete='off'
-              _focusVisible={{ borderColor: 'orange.100' }}
+            <InputField
               {...register('email', {
                 required: "Field can't be empty",
                 minLength: 4,
@@ -118,30 +107,38 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
               })}
               {...formInputStyle}
               placeholder='alexei@mail.com'
+              label='Email Address'
+              errors={errors.email}
+              aria-invalid={errors.email ? 'true' : 'false'}
             />
 
-            <FormLabel {...formLabelStyle}>Phone Number</FormLabel>
+            {/*Email input end */}
 
-            <Input
-              autoComplete='off'
-              _focusVisible={{ borderColor: 'orange.100' }}
-              {...register('number', {
-                required: "Can't be empty",
+            {/*Phone number input */}
+
+            <InputField
+              {...register('phoneNumber', {
+                required: "Field can't be empty",
                 pattern: {
-                  value: /^[0-9]+$/,
-                  message: 'Please enter a number',
+                  value: /^(0|[1-9]\d*)(\.\d+)?$/,
+                  message: 'Please enter valid number',
                 },
-                minLength: 4,
+                minLength: 8,
               })}
               {...formInputStyle}
               placeholder='+1 202-555-0136'
+              type='number'
+              label='Phone Number'
+              errors={errors.phoneNumber}
             />
-          </FormControl>
-          {/*Billing Address section end */}
 
-          {/*Shipping info  section */}
-          <FormLabel {...FormLabelHeading}>Shipping info</FormLabel>
-          <FormControl>
+            {/*Phone input end */}
+
+            {/*Billing Address section end */}
+
+            {/*Shipping info  section */}
+            {/* <FormLabel {...FormLabelHeading}>Shipping info</FormLabel>
+
             <FormLabel {...formLabelStyle}>Your Address</FormLabel>
             <Input
               {...formInputStyle}
@@ -185,14 +182,13 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
               })}
               {...formInputStyle}
               placeholder='United States'
-            />
-          </FormControl>
+            /> */}
 
-          {/*Shipping info  section end */}
+            {/*Shipping info  section end */}
 
-          {/*Payment method  section */}
-          <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
-          <FormControl>
+            {/*Payment method  section */}
+            {/* <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
+
             <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
             <Flex flexDir={{ base: 'column' }} mb={{ base: '32px' }}>
               <Checkbox
@@ -235,7 +231,7 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
                 <FormLabel {...formLabelStyle}>e-Money PIN</FormLabel>
                 <Input {...formInputStyle} placeholder='6891' />
               </Flex>
-            ) : null}
+            ) : null} */}
           </FormControl>
         </form>
       </Flex>

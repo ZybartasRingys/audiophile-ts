@@ -27,6 +27,13 @@ function App() {
                 title={'string'}
                 image={'string'}
                 slug={'string'}
+                _id={''}
+                price={0}
+                box={[]}
+                productImages={[]}
+                unit={[]}
+                products={[]}
+                isNewProduct={false}
               />
             }
           />

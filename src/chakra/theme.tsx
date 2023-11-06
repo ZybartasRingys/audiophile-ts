@@ -1,5 +1,5 @@
 ;('') // 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react'
+import { StyleFunctionProps, extendTheme } from '@chakra-ui/react'
 import '@fontsource-variable/manrope'
 
 // 2. Extend the theme to include custom colors, fonts, etc
@@ -29,7 +29,6 @@ const colors = {
     100: '#979797',
     200: '#CFCFCF',
   },
-  inputError: '#CD2C2C',
 }
 
 const fonts = {
@@ -49,8 +48,8 @@ const global = {
 }
 
 const components = {
-  input: {
-    defaultProps: { errorBorderColor: 'inputError' },
+  Input: {
+    errorBorderColor: 'CD2C2C',
   },
 }
 

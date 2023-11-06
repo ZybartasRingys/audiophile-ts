@@ -16,13 +16,16 @@ export const formInputStyle: BoxProps = {
   bgColor: 'white.200',
   color: 'black.200',
   mb: { base: '25px' },
-  border: '2px solid',
+  border: '1px solid',
   borderColor: 'grey.200',
   fontFamily: 'main.100',
   fontSize: { base: '14px' },
   letterSpacing: '-0.25',
   fontWeight: 'bold',
-  opacity: '0.5',
+  cursor: 'pointer',
+  _hover: {
+    borderColor: 'orange.100',
+  },
 }
 
 export const FormLabelHeading: BoxProps = {
