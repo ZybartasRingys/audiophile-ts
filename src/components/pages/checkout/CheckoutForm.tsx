@@ -1,6 +1,6 @@
 // React hook form
-import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useForm } from 'react-hook-form'
+import { useState } from 'react'
 
 //Chakra UI
 import {
@@ -11,86 +11,79 @@ import {
   Checkbox,
   Heading,
   Text,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 //Chakra Styles Import
 import {
   formLabelStyle,
   formInputStyle,
   FormLabelHeading,
-} from "./checkoutStyle";
-import { Heading4 } from "../../../chakra/appStyles";
+} from './checkoutStyle'
+import { Heading4 } from '../../../chakra/appStyles'
 
 //components
-import InputField from "./form/InputField";
-import Summary from "./summary/Summary";
+import InputField from './form/InputField'
+import Summary from './summary/Summary'
 
 type Inputs = {
-  name: string;
-  email: string;
-  phoneNumber: string;
-  address: string;
-  ZIPCode: string;
-  city: string;
-  country: string;
-  eMoneyNumber: number;
-  eMoneyPin: number;
-};
-
-interface IFormInputs {
-  name: "string";
+  name: string
+  email: string
+  phoneNumber: string
+  address: string
+  ZIPCode: string
+  city: string
+  country: string
+  eMoneyNumber: number
+  eMoneyPin: number
 }
 
-const CheckoutForm: React.FC<IFormInputs> = () => {
-  const [checked, setChecked] = useState(true);
+const CheckoutForm = () => {
+  const [checked, setChecked] = useState(true)
 
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<Inputs>()
 
-  const onSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    console.log("good");
-  };
+  const onSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+    e.preventDefault()
+    console.log('good')
+  }
 
-  console.log(errors);
   return (
     <Flex
-      width="89%"
-      flexDir={{ base: "column" }}
-      justifyContent="center"
-      borderRadius="8px"
-    >
+      width='89%'
+      flexDir={{ base: 'column' }}
+      justifyContent='center'
+      borderRadius='8px'>
       <Flex
-        width={{ base: "100%" }}
-        height={{ base: "94px" }}
-        alignItems="center"
-        px={{ base: "23px" }}
-      >
-        <Heading {...Heading4} letterSpacing="1px">
+        width={{ base: '100%' }}
+        height={{ base: '94px' }}
+        alignItems='center'
+        px={{ base: '23px' }}>
+        <Heading {...Heading4} letterSpacing='1px'>
           CHECKOUT
         </Heading>
       </Flex>
 
-      <Flex width={{ base: "100%" }} justifyContent="center">
+      <Flex width={{ base: '100%' }} justifyContent='center'>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl>
             {/*Billing Address section */}
-            <FormLabel htmlFor="name" {...FormLabelHeading}>
+            <FormLabel htmlFor='name' {...FormLabelHeading}>
               BILLING DETAILS
             </FormLabel>
 
             {/*Name input */}
             <InputField
-              {...register("name", {
+              {...register('name', {
                 required: "Field can't be empty",
                 minLength: 4,
               })}
-              placeholder="Alexei Ward"
+              placeholder='Alexei Ward'
               errors={errors.name}
-              label="Name"
+              label='Name'
             />
 
             {/*Name input end */}
@@ -98,19 +91,19 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
             {/*Email input */}
 
             <InputField
-              {...register("email", {
+              {...register('email', {
                 required: "Field can't be empty",
                 minLength: 4,
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Wrong format",
+                  message: 'Wrong format',
                 },
               })}
               {...formInputStyle}
-              placeholder="alexei@mail.com"
-              label="Email Address"
+              placeholder='alexei@mail.com'
+              label='Email Address'
               errors={errors.email}
-              aria-invalid={errors.email ? "true" : "false"}
+              aria-invalid={errors.email ? 'true' : 'false'}
             />
 
             {/*Email input end */}
@@ -118,18 +111,18 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
             {/*Phone number input */}
 
             <InputField
-              {...register("phoneNumber", {
+              {...register('phoneNumber', {
                 required: "Field can't be empty",
                 pattern: {
                   value: /^(0|[1-9]\d*)(\.\d+)?$/,
-                  message: "Please enter valid number",
+                  message: 'Please enter valid number',
                 },
                 minLength: 8,
               })}
               {...formInputStyle}
-              placeholder="+1 202-555-0136"
-              type="number"
-              label="Phone Number"
+              placeholder='+1 202-555-0136'
+              type='number'
+              label='Phone Number'
               errors={errors.phoneNumber}
             />
 
@@ -143,13 +136,13 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
             {/*Address input  */}
             <InputField
               {...formInputStyle}
-              {...register("address", {
+              {...register('address', {
                 required: "Field can't be empty",
                 minLength: 4,
               })}
-              placeholder="1137 Williams Avenue"
-              type="text"
-              label="Your Address"
+              placeholder='1137 Williams Avenue'
+              type='text'
+              label='Your Address'
               errors={errors.address}
             />
 
@@ -158,43 +151,43 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
             {/*ZIP Code  input  */}
 
             <InputField
-              autoComplete="off"
-              {...register("ZIPCode", {
+              autoComplete='off'
+              {...register('ZIPCode', {
                 required: "Field can't be empty",
                 minLength: 4,
               })}
               {...formInputStyle}
-              placeholder="10001"
-              label="ZIP Code"
+              placeholder='10001'
+              label='ZIP Code'
               errors={errors.ZIPCode}
-              type="number"
+              type='number'
             />
 
             {/*ZIP Code  input end */}
 
             <InputField
-              autoComplete="off"
-              {...register("city", {
+              autoComplete='off'
+              {...register('city', {
                 required: "Field can't be empty",
                 minLength: 4,
               })}
               {...formInputStyle}
-              placeholder="New York"
-              label="City"
+              placeholder='New York'
+              label='City'
               errors={errors.city}
             />
 
             {/*Country input  */}
 
             <InputField
-              autoComplete="off"
-              {...register("country", {
+              autoComplete='off'
+              {...register('country', {
                 required: "Field can't be empty",
                 minLength: 4,
               })}
               {...formInputStyle}
-              placeholder="United States"
-              label="Country"
+              placeholder='United States'
+              label='Country'
               errors={errors.country}
             />
 
@@ -206,57 +199,83 @@ const CheckoutForm: React.FC<IFormInputs> = () => {
             <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
 
             <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
-            <Flex flexDir={{ base: "column" }} mb={{ base: "32px" }}>
+            <Flex flexDir={{ base: 'column' }} mb={{ base: '32px' }}>
               <Checkbox
-                width={{ base: "280px" }}
-                height={{ base: "58px" }}
-                display="flex"
-                alignItems="center"
-                mb={{ base: "15px" }}
-                border="1px solid red"
-                borderRadius="8px"
-                borderColor="#CFCFCF"
-                bgColor="white.100"
-                variant="circular"
-                colorScheme="orange"
-                paddingLeft={{ base: "15px" }}
+                width={{ base: '280px' }}
+                height={{ base: '58px' }}
+                display='flex'
+                alignItems='center'
+                mb={{ base: '15px' }}
+                border='1px solid red'
+                borderRadius='8px'
+                borderColor='#CFCFCF'
+                bgColor='white.100'
+                variant='circular'
+                colorScheme='orange'
+                paddingLeft={{ base: '15px' }}
                 onChange={() => setChecked(true)}
-                defaultChecked
-              >
+                defaultChecked>
                 e-Money
               </Checkbox>
 
               <Checkbox
-                width={{ base: "280px" }}
-                height={{ base: "58px" }}
-                border="1px solid red"
-                borderRadius="8px"
-                borderColor="#CFCFCF"
-                bgColor="white.100"
-                variant="circular"
-                colorScheme="orange"
-                paddingLeft={{ base: "15px" }}
-                onChange={() => setChecked(false)}
-              >
+                width={{ base: '280px' }}
+                height={{ base: '58px' }}
+                border='1px solid red'
+                borderRadius='8px'
+                borderColor='#CFCFCF'
+                bgColor='white.100'
+                variant='circular'
+                colorScheme='orange'
+                paddingLeft={{ base: '15px' }}
+                onChange={() => setChecked(false)}>
                 Cash On Delivery
               </Checkbox>
             </Flex>
 
             {checked === true ? (
-              <Flex flexDir={{ base: "column" }}>
-                <FormLabel {...formLabelStyle}>e-Money Number</FormLabel>
-                <Input {...formInputStyle} placeholder="238521993" />
-                <FormLabel {...formLabelStyle}>e-Money PIN</FormLabel>
-                <Input {...formInputStyle} placeholder="6891" />
+              <Flex flexDir={{ base: 'column' }}>
+                <InputField
+                  autoComplete='off'
+                  {...register('eMoneyNumber', {
+                    required: "Field can't be empty",
+                    minLength: 4,
+                  })}
+                  {...formInputStyle}
+                  placeholder='238521993'
+                  label='e-Money Number'
+                  errors={errors.eMoneyNumber}
+                />
+
+                <Input
+                  autoComplete='off'
+                  {...register('eMoneyPin', {
+                    required: "Field can't be empty",
+                    minLength: 4,
+                  })}
+                  {...formInputStyle}
+                  placeholder='6891'
+                  label='e-Money Pin'
+                  errors={errors.eMoneyPin}
+                />
               </Flex>
-            ) : null}
+            ) : (
+              <Flex width={{ base: '87%' }} border='1px solid red'>
+                <Text>
+                  The ‘Cash on Delivery’ option enables you to pay in cash when
+                  our delivery courier arrives at your residence. Just make sure
+                  your address is correct so that your order will not be
+                  cancelled.
+                </Text>
+              </Flex>
+            )}
           </FormControl>
         </form>
       </Flex>
 
       <Summary handleSubmit={handleSubmit(onSubmit)} errors={errors} />
     </Flex>
-  );
-};
+  )
+}
 
-export default CheckoutForm;
+export default CheckoutForm
