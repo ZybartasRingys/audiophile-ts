@@ -24,6 +24,7 @@ import { Heading4 } from '../../../chakra/appStyles'
 //components
 import InputField from './form/InputField'
 import Summary from './summary/Summary'
+import RadioInput from './form/RadioInput'
 
 type Inputs = {
   name: string
@@ -199,7 +200,9 @@ const CheckoutForm = () => {
             <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
 
             <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
-            <Flex flexDir={{ base: 'column' }} mb={{ base: '32px' }}>
+
+            <RadioInput />
+            {/* <Flex flexDir={{ base: 'column' }} mb={{ base: '32px' }}>
               <Checkbox
                 width={{ base: '280px' }}
                 height={{ base: '58px' }}
@@ -268,7 +271,7 @@ const CheckoutForm = () => {
                   cancelled.
                 </Text>
               </Flex>
-            )}
+            )} */}
           </FormControl>
         </form>
       </Flex>
