@@ -9,7 +9,7 @@ const cards = [
 
   {
     heading: 'Speakers',
-    image: "/shared/mobile/image-zx9-speaker-removebg-preview.png'",
+    image: '/shared/mobile/image-zx9-speaker-removebg-preview.png',
   },
 
   {
@@ -26,7 +26,7 @@ const Links = () => {
       flexDir={{ base: 'column', md: 'row' }}
       alignItems='center'
       justifyContent='space-between'
-      border='1px solid red'>
+      px={{ md: '40px' }}>
       {cards.map((card) => (
         <LinksCard
           key={card.heading}

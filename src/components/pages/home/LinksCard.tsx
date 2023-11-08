@@ -19,7 +19,7 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
       {/* Links Card */}
       <Card
         width={{ base: '100%', md: '223px' }}
-        height={{ base: '165px', md: '217px' }}
+        height={{ base: '165px' }}
         bgColor='white.300'
         mt={{ base: '99px' }}
         mb={{ base: '67px' }}>

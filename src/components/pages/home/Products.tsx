@@ -10,10 +10,16 @@ import {
 
 const Products = () => {
   return (
-    <Flex flexDir={{ base: 'column' }} height='100%' mt='120px' width='100%'>
+    <Flex
+      flexDir={{ base: 'column' }}
+      height='100%'
+      mt='120px'
+      width='100%'
+      border='1px solid red'
+      alignItems={{ md: 'center' }}>
       <Flex
-        width={{ base: '100%' }}
-        height={{ base: '100%' }}
+        width={{ base: '100%', md: '90%' }}
+        height={{ base: '100%', md: '720px' }}
         minH={{ base: '600px' }}
         flexDir={{ base: 'column' }}
         alignItems='center'
@@ -72,7 +78,7 @@ const Products = () => {
 
       {/* ZX 7 SPEAKER */}
       <Flex
-        width='100%'
+        width={{ base: '100%', md: '90%' }}
         flexDir={{ base: 'column' }}
         justifyContent='center'
         height={{ base: '320px' }}
@@ -97,19 +103,22 @@ const Products = () => {
 
       {/* YX1 EARPHONES */}
 
-      <Flex flexDir={{ base: 'column' }} mt='24px'>
+      <Flex
+        flexDir={{ base: 'column', md: 'row' }}
+        mt='24px'
+        width={{ md: '90%' }}>
         <Box
           borderRadius='10px'
-          height='200px'
-          width='100%'
+          width={{ base: '100%' }}
+          height={{ base: '200px', md: '320px' }}
           bgImg='/home/mobile/image-earphones-yx1.jpg'
           bgPos='center'
           bgSize='cover'
           bgRepeat='no-repeat'
           mb='24px'></Box>
         <Flex
-          height='200px'
-          width='100%'
+          width={{ base: '100%' }}
+          height={{ base: '200px', md: '320px' }}
           bgColor='white.300'
           flexDir={{ base: 'column' }}
           justifyContent='center'
