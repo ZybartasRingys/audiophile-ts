@@ -8,15 +8,18 @@ const Testimonial = () => {
       height="689px"
       mt="120px"
       mb="120px"
-      alignContent="center"
+      alignItems="center"
       justifyContent="center"
       textAlign="center"
       fontFamily="main.100"
     >
       <Box
-        width="100%"
+        width={{ base: "100%", md: "90%" }}
         height={{ base: "300px" }}
-        bgImg="/shared/mobile/image-best-gear.jpg"
+        bgImg={{
+          base: "/shared/mobile/image-best-gear.jpg",
+          md: "/shared/tablet/image-best-gear.jpg",
+        }}
         bgPos="center"
         bgSize="cover"
         bgRepeat="no-repeat"
@@ -24,14 +27,16 @@ const Testimonial = () => {
         mb="43px"
       ></Box>
 
-      <Flex flexDir={{ base: "column" }} width={{ base: "100%" }}>
+      <Flex flexDir={{ base: "column" }} width={{ base: "100%", md: "573px" }}>
         <Heading
-          fontSize={{ base: "28px" }}
+          fontSize={{ base: "28px", md: "40px" }}
           letterSpacing="1px"
           textTransform="uppercase"
           fontWeight="bold"
           fontFamily="main.100"
           mb="32px"
+          lineHeight={{ md: "44px" }}
+          border="1px solid red"
         >
           Bringing you the
           <Text as="span" color="orange.100" textTransform="uppercase">
