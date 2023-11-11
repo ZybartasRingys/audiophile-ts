@@ -1,52 +1,57 @@
-import { Flex, Box, Text, Heading } from '@chakra-ui/react'
+import { Flex, Box, Text, Heading } from "@chakra-ui/react";
 
 const Testimonial = () => {
   return (
     <Flex
-      flexDir={{ base: 'column' }}
-      width='100%'
-      height='689px'
-      mt='120px'
-      mb='120px'
-      alignItems='center'
-      justifyContent='center'
-      textAlign='center'
-      fontFamily='main.100'>
+      flexDir={{ base: "column" }}
+      width="100%"
+      height="689px"
+      mt={{ base: "120px", md: "36px" }}
+      mb="120px"
+      alignItems="center"
+      justifyContent="center"
+      textAlign="center"
+      fontFamily="main.100"
+    >
       <Box
-        width={{ base: '100%', md: '90%' }}
-        height={{ base: '300px' }}
+        width={{ base: "100%", md: "90%" }}
+        height={{ base: "300px" }}
         bgImg={{
-          base: '/shared/mobile/image-best-gear.jpg',
-          md: '/shared/tablet/image-best-gear.jpg',
+          base: "/shared/mobile/image-best-gear.jpg",
+          md: "/shared/tablet/image-best-gear.jpg",
         }}
-        bgPos='center'
-        bgSize='cover'
-        bgRepeat='no-repeat'
-        borderRadius='10px'
-        mb='43px'></Box>
+        bgPos="center"
+        bgSize="cover"
+        bgRepeat="no-repeat"
+        borderRadius="10px"
+        mb="43px"
+      ></Box>
 
-      <Flex flexDir={{ base: 'column' }} width={{ base: '100%', md: '573px' }}>
+      <Flex flexDir={{ base: "column" }} width={{ base: "100%", md: "573px" }}>
         <Heading
-          fontSize={{ base: '28px', md: '40px' }}
-          letterSpacing='1px'
-          textTransform='uppercase'
-          fontWeight='bold'
-          fontFamily='main.100'
-          mb='32px'
-          lineHeight={{ md: '44px' }}>
+          fontSize={{ base: "28px", md: "40px" }}
+          letterSpacing="1px"
+          textTransform="uppercase"
+          fontWeight="bold"
+          fontFamily="main.100"
+          mb="32px"
+          color="black.200"
+          lineHeight={{ md: "44px" }}
+        >
           Bringing you the
-          <Text as='span' color='orange.100' textTransform='uppercase'>
+          <Text as="span" color="orange.100" textTransform="uppercase">
             best
           </Text>
           audio gear
         </Heading>
         <Text
-          fontSize={{ base: '15px' }}
-          lineHeight='25px'
-          fontFamily='main.100'
-          fontWeight='medium'
-          opacity='0.5'
-          color='black.200'>
+          fontSize={{ base: "15px" }}
+          lineHeight="25px"
+          fontFamily="main.100"
+          fontWeight="medium"
+          opacity="0.5"
+          color="black.200"
+        >
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.
           We have a large showroom and luxury demonstration rooms available for
@@ -56,7 +61,7 @@ const Testimonial = () => {
         </Text>
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default Testimonial
+export default Testimonial;

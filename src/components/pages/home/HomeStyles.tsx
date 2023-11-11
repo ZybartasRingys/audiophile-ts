@@ -11,9 +11,9 @@ import { BoxProps } from "@chakra-ui/react";
 // headings
 
 export const homeProductsHeadingStyle: BoxProps = {
-  fontSize: { base: "36px" },
+  fontSize: { base: "36px", md: "56px" },
   fontWeight: "bold",
-  lineHeight: "40px",
+  lineHeight: { base: "40px", md: "58px" },
   fontFamily: "main.100",
   letterSpacing: "1.3px",
   color: "white.100",
