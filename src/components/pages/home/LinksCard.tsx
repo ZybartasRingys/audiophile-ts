@@ -18,11 +18,9 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
     <>
       {/* Links Card */}
       <Card
-        width={{ base: "100%", md: "220px" }}
+        width={{ base: "100%", md: "223px" }}
         height={{ base: "165px" }}
         bgColor="white.300"
-        mt={{ base: "99px" }}
-        mb={{ base: "67px" }}
       >
         <CardBody display="flex" alignItems="center" flexDir="column">
           <Box
@@ -47,7 +45,7 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
           <Link
             display="flex"
             alignItems="center"
-            href="/headphones"
+            href={`/${heading}`}
             textTransform="uppercase"
           >
             <Text
