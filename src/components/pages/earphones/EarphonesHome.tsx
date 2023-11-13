@@ -25,7 +25,11 @@ const EarphonesHome = () => {
         products={[]}
         isNewProduct={false}
       />
-      <Flex width={{ base: "87%" }} flexDir={{ base: "column" }}>
+      <Flex
+        width={{ base: "87%", md: "100%" }}
+        flexDir={{ base: "column" }}
+        alignItems={{ md: "center" }}
+      >
         <Links />
         <Testimonial />
       </Flex>

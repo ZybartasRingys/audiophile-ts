@@ -46,7 +46,7 @@ const ProductsComponent = ({
       <Flex
         flexDir={{ base: "column" }}
         alignItems="center"
-        width={{ base: "100%", md: "80%" }}
+        width={{ base: "100%", md: "83%" }}
       >
         {isNewProduct === true ? (
           <Text
@@ -67,18 +67,22 @@ const ProductsComponent = ({
           flexDir={{ base: "column" }}
           width="99%"
           textAlign="center"
+          alignItems={{ md: "center" }}
         >
-          <Heading
-            fontSize={{ base: "28px", md: "40px" }}
-            letterSpacing={{ base: "1px", md: "1.43px" }}
-            textTransform="uppercase"
-            fontFamily="main.100"
-            fontWeight="bold"
-            color="black.200"
-            lineHeight={{ md: "44px" }}
-          >
-            {title}
-          </Heading>
+          <Flex width={{ md: "50%" }}>
+            <Heading
+              fontSize={{ base: "28px", md: "40px" }}
+              letterSpacing={{ base: "1px", md: "1.43px" }}
+              textTransform="uppercase"
+              fontFamily="main.100"
+              fontWeight="bold"
+              color="black.200"
+              lineHeight={{ md: "44px" }}
+            >
+              {title}
+            </Heading>
+          </Flex>
+
           <Text
             mt="25px"
             fontFamily="main.100"

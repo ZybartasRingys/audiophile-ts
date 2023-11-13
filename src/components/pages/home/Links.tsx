@@ -28,7 +28,6 @@ const Links = () => {
       justifyContent={{ base: "space-between" }}
       mt={{ base: "90px" }}
       px={{ md: "0px" }}
-      border="1px solid red"
     >
       {cards.map((card) => (
         <LinksCard

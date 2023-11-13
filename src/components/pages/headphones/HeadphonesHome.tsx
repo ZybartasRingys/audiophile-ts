@@ -8,7 +8,11 @@ import Testimonial from "../home/Testimonial";
 const HeadphonesHome = () => {
   const headerTitle: string = "headphones";
   return (
-    <Flex flexDir={{ base: "column" }} alignItems="center">
+    <Flex
+      flexDir={{ base: "column" }}
+      alignItems="center"
+      width={{ base: "100%" }}
+    >
       <Header title={headerTitle} />
       <Headphones
         desc={"string"}

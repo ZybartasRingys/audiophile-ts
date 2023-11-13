@@ -6,12 +6,11 @@ const Testimonial = () => {
       flexDir={{ base: "column" }}
       width="100%"
       height={{ base: "689px", md: "100%" }}
-      mt={{ base: "120px", md: "96px" }}
+      mt={{ base: "120px" }}
       mb={{ base: "120px", md: "96px" }}
       alignItems="center"
       textAlign="center"
       fontFamily="main.100"
-      border="1px solid green"
     >
       <Box
         width={{ base: "100%", md: "90%" }}
@@ -25,7 +24,6 @@ const Testimonial = () => {
         bgRepeat="no-repeat"
         borderRadius="8px"
         mb="43px"
-        border="1px solid red"
       ></Box>
 
       <Flex flexDir={{ base: "column" }} width={{ base: "100%", md: "573px" }}>
