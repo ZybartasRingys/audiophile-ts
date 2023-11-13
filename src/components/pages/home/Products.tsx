@@ -13,7 +13,7 @@ const Products = () => {
     <Flex
       flexDir={{ base: "column" }}
       height="100%"
-      mt={{ base: "120px", md: "30px" }}
+      mt={{ base: "120px", md: "96px" }}
       width="100%"
       alignItems={{ md: "center" }}
     >
@@ -123,7 +123,7 @@ const Products = () => {
           bgPos="center"
           bgSize="cover"
           bgRepeat="no-repeat"
-          mb="24px"
+          mb={{ base: "24px", md: "0px" }}
         ></Box>
         <Flex
           width={{ base: "100%", md: "339px" }}

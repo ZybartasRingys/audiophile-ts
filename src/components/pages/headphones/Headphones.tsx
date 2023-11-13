@@ -17,7 +17,11 @@ const Headphones: React.FC<IProduct> = () => {
   const { headphones } = useContext(AppContext);
 
   return (
-    <Flex flexDir={{ base: "column" }} width={{ base: "87%", md: "90%" }}>
+    <Flex
+      flexDir={{ base: "column" }}
+      width={{ base: "87%", md: "90%" }}
+      mb={{ md: "75px" }}
+    >
       {headphones
         .slice(0)
         .reverse()

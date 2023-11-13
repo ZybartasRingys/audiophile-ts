@@ -21,22 +21,27 @@ const ProductsComponent = ({
       alignItems="center"
       mt={{ base: "40px", md: "120px" }}
     >
-      <Box
+      <Flex
         boxShadow="sm"
         height={{ base: "352px" }}
         width="100%"
-        borderRadius="10px"
+        borderRadius="8px"
+        alignItems="center"
+        justifyContent="center"
+        bgColor="white.300"
       >
-        {image && (
-          <Image
-            width="100%"
-            height="100%"
-            borderRadius="10px"
-            src={urlFor(image).url()}
-            alt={title}
-          ></Image>
-        )}
-      </Box>
+        <Box width={{ base: "100%", md: "50%" }} height="100%">
+          {image && (
+            <Image
+              width="100%"
+              height="100%"
+              borderRadius="10px"
+              src={urlFor(image).url()}
+              alt={title}
+            ></Image>
+          )}
+        </Box>
+      </Flex>
 
       <Flex
         flexDir={{ base: "column" }}
@@ -54,7 +59,9 @@ const ProductsComponent = ({
           >
             New product
           </Text>
-        ) : null}
+        ) : (
+          <Flex height="32px"></Flex>
+        )}
         <Flex
           mt={{ base: "32px", md: "15px" }}
           flexDir={{ base: "column" }}
