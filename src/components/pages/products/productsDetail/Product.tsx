@@ -122,7 +122,7 @@ const Product: React.FC<IProduct> = ({
             {/* Add to cart */}
 
             <Flex
-              mt="32px"
+              mt="35px"
               width={{ base: "100%" }}
               height={{ base: "48px" }}
               justifyContent="space-between"

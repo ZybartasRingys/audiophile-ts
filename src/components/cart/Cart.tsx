@@ -35,10 +35,11 @@ const Cart = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent
-          width={{ base: "89%" }}
+          width={{ base: "89%", md: "49%" }}
           height={{ base: "488px" }}
           bgColor="white"
           mt={{ base: "110px" }}
+          left={{ md: "155px" }}
         >
           <Flex
             width={{ base: "100%" }}
@@ -107,10 +108,10 @@ const Cart = () => {
             <Link
               href="/checkout"
               height={{ base: "48px" }}
-              width={{ base: "271px" }}
+              width={{ base: "271px", md: "313px" }}
               borderRadius="none"
               bgColor="orange.100"
-              color="white"
+              color="white.100"
               display="flex"
               alignItems="center"
               justifyContent="center"
@@ -118,6 +119,7 @@ const Cart = () => {
               fontSize={{ base: "13px" }}
               letterSpacing={{ base: "1px" }}
               fontWeight="bold"
+              fontFamily="main.100"
             >
               Checkout
             </Link>

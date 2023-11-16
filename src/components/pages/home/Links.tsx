@@ -21,7 +21,7 @@ const cards = [
 const Links = () => {
   return (
     <Flex
-      width={{ base: "100%", md: "97%" }}
+      width={{ base: "100%", md: "100%" }}
       height={{ base: "631px", md: "167px" }}
       flexDir={{ base: "column", md: "row" }}
       alignItems="center"

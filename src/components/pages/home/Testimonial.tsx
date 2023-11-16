@@ -5,6 +5,7 @@ const Testimonial = () => {
     <Flex
       flexDir={{ base: "column" }}
       width="100%"
+      border="1px solid red"
       height={{ base: "689px", md: "100%" }}
       mt={{ base: "120px" }}
       mb={{ base: "120px", md: "96px" }}
@@ -13,7 +14,7 @@ const Testimonial = () => {
       fontFamily="main.100"
     >
       <Box
-        width={{ base: "100%", md: "90%" }}
+        width={{ base: "100%", md: "100%" }}
         height={{ base: "300px" }}
         bgImg={{
           base: "/shared/mobile/image-best-gear.jpg",
