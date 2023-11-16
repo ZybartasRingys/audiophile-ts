@@ -5,7 +5,6 @@ const Testimonial = () => {
     <Flex
       flexDir={{ base: "column" }}
       width="100%"
-      border="1px solid red"
       height={{ base: "689px", md: "100%" }}
       mt={{ base: "120px" }}
       mb={{ base: "120px", md: "96px" }}

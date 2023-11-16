@@ -27,9 +27,10 @@ const SpeakersHome = () => {
         isNewProduct={false}
       />
       <Flex
-        width={{ base: "87%", md: "100%" }}
+        width={{ base: "100%" }}
         flexDir={{ base: "column" }}
         alignItems={{ md: "center" }}
+        px={{ base: "24px", md: "38px" }}
       >
         <Links />
         <Testimonial />

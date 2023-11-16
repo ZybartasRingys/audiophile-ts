@@ -2,7 +2,6 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  Button,
   useDisclosure,
   Image,
   Text,
@@ -35,11 +34,12 @@ const Cart = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent
-          width={{ base: "89%", md: "49%" }}
+          width={{ base: "100%", md: "100%" }}
           height={{ base: "488px" }}
           bgColor="white"
           mt={{ base: "110px" }}
           left={{ md: "155px" }}
+          border="3px solid red"
         >
           <Flex
             width={{ base: "100%" }}

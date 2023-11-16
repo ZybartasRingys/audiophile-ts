@@ -21,13 +21,12 @@ const cards = [
 const Links = () => {
   return (
     <Flex
-      width={{ base: "100%", md: "100%" }}
+      width={{ base: "100%" }}
       height={{ base: "631px", md: "167px" }}
       flexDir={{ base: "column", md: "row" }}
       alignItems="center"
       justifyContent={{ base: "space-between" }}
       mt={{ base: "90px" }}
-      px={{ md: "0px" }}
     >
       {cards.map((card) => (
         <LinksCard

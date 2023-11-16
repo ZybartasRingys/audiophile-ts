@@ -19,7 +19,8 @@ const Headphones: React.FC<IProduct> = () => {
   return (
     <Flex
       flexDir={{ base: "column" }}
-      width={{ base: "87%", md: "90%" }}
+      width={{ base: "100%" }}
+      px={{ base: "24px", md: "38px" }}
       mb={{ md: "75px" }}
     >
       {headphones

@@ -65,7 +65,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <Flex width="89%" flexDir={{ base: "column" }} borderRadius="8px">
+    <Flex width="100%" flexDir={{ base: "column" }} borderRadius="8px">
       <Flex
         width={{ base: "100%" }}
         height={{ base: "94px" }}

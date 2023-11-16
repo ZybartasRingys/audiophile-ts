@@ -15,8 +15,9 @@ const Home = () => {
     >
       <Banner />
       <Flex
-        width={{ base: "87%", md: "100%" }}
+        width="100%"
         height={{ base: "100%" }}
+        px={{ base: "24px", md: "38px" }}
         flexDir={{ base: "column" }}
         alignItems="center"
         as="section"

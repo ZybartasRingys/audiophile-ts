@@ -19,7 +19,7 @@ const Banner = () => {
       bgPos="center -90px"
     >
       <Flex
-        width={{ base: "87%", md: "50%" }}
+        width={{ base: "100%", md: "50%" }}
         height={{ base: "100%", md: "346px" }}
         flexDir={{ base: "column" }}
         alignItems="center"

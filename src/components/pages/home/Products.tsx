@@ -18,7 +18,7 @@ const Products = () => {
       alignItems={{ md: "center" }}
     >
       <Flex
-        width={{ base: "100%", md: "90%" }}
+        width={{ base: "100%" }}
         height={{ base: "100%", md: "720px" }}
         minH={{ base: "600px" }}
         flexDir={{ base: "column" }}
@@ -83,7 +83,7 @@ const Products = () => {
 
       {/* ZX 7 SPEAKER */}
       <Flex
-        width={{ base: "100%", md: "90%" }}
+        width={{ base: "100%" }}
         flexDir={{ base: "column" }}
         justifyContent="center"
         height={{ base: "320px" }}
@@ -112,7 +112,7 @@ const Products = () => {
       <Flex
         flexDir={{ base: "column", md: "row" }}
         mt={{ base: "20px", md: "32px" }}
-        width={{ md: "90%" }}
+        width={{ md: "100%" }}
         justifyContent={{ md: "space-between" }}
       >
         <Box
