@@ -37,8 +37,8 @@ const Summary = ({ handleSubmit, errors }) => {
       width={{ base: '100%' }}
       alignItems='center'
       justifyContent='center'
-      mt={{ base: '36px' }}
-      border='1px solid red'>
+      mt={{ base: '9' }}
+      px={{ base: '24' }}>
       {/*Summary section */}
       <Flex
         width='100%'

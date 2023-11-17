@@ -27,7 +27,9 @@ const colors = {
 
 const spacing = {
   space: {
-    24: '24px',
+    px: '1px',
+    24: '1.5rem',
+    38: '2.37rem',
   },
 }
 
@@ -58,5 +60,5 @@ export const theme = extendTheme({
   fonts,
   global,
   components,
-  spacing,
+  ...spacing,
 })
