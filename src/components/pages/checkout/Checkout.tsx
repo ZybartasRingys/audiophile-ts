@@ -7,7 +7,7 @@ import { SmallTextOpacity } from '../../../chakra/appStyles'
 
 //Components
 
-import CheckoutForm from './CheckoutForm'
+import CheckoutForm from './form/CheckoutForm'
 
 const Checkout = () => {
   return (
