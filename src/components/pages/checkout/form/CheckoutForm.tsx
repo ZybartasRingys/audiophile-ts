@@ -1,40 +1,40 @@
 // React hook form
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form";
 
 //Chakra UI
-import { Heading, Flex } from '@chakra-ui/react'
+import { Heading, Flex } from "@chakra-ui/react";
 
-import { Heading4 } from '../../../../chakra/appStyles'
+import { Heading4 } from "../../../../chakra/appStyles";
 
 //Components
-import Summary from '../summary/Summary'
-import BillingDetails from './BillingDetails'
-import ShippingInfo from './ShippingInfo'
-import PaymentDetails from './PaymentDetails'
+import Summary from "../summary/Summary";
+import BillingDetails from "./BillingDetails";
+import ShippingInfo from "./ShippingInfo";
+import PaymentDetails from "./PaymentDetails";
 
 type Inputs = {
-  name: string
-  email: string
-  phoneNumber: string
-  address: string
-  ZIPCode: string
-  city: string
-  country: string
-  eMoneyNumber: number
-  eMoneyPin: number
-}
+  name: string;
+  email: string;
+  phoneNumber: string;
+  address: string;
+  ZIPCode: string;
+  city: string;
+  country: string;
+  eMoneyNumber: number;
+  eMoneyPin: number;
+};
 
 const CheckoutForm = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<Inputs>()
+  } = useForm<Inputs>();
 
   const onSubmit = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault()
-    console.log('good')
-  }
+    e.preventDefault();
+    console.log("good");
+  };
 
   return (
     <>
@@ -44,18 +44,22 @@ const CheckoutForm = () => {
 
       {/* Form */}
       <Flex
-        as='form'
+        as="form"
         onSubmit={handleSubmit(onSubmit)}
-        width={{ base: '100%' }}
-        height={{ base: '1400px' }}
-        flexDir={{ base: 'column' }}
-        px={{ base: '47px' }}>
+        width={{ base: "100%" }}
+        height={{ base: "1400px" }}
+        flexDir={{ base: "column" }}
+        px={{ base: "47px" }}
+        border="1px solid red"
+        bgColor="white.100"
+      >
         {/* Form heading */}
         <Flex
-          width={{ base: '100%' }}
-          height={{ base: '94px' }}
-          alignItems='center'>
-          <Heading {...Heading4} letterSpacing='1px'>
+          width={{ base: "100%" }}
+          height={{ base: "94px" }}
+          alignItems="center"
+        >
+          <Heading {...Heading4} letterSpacing="1px">
             CHECKOUT
           </Heading>
         </Flex>
@@ -79,7 +83,7 @@ const CheckoutForm = () => {
 
       <Summary handleSubmit={handleSubmit(onSubmit)} errors={errors} />
     </>
-  )
-}
+  );
+};
 
-export default CheckoutForm
+export default CheckoutForm;
