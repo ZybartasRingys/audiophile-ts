@@ -5,16 +5,16 @@ const Testimonial = () => {
     <Flex
       flexDir={{ base: "column" }}
       width="100%"
-      height={{ base: "689px", md: "100%" }}
-      mt={{ base: "120px" }}
-      mb={{ base: "120px", md: "96px" }}
+      height={{ base: "100%" }}
+      mt={{ base: "7.5rem", md: "6rem" }}
+      mb={{ base: "7.5rem", md: "96px" }}
       alignItems="center"
       textAlign="center"
       fontFamily="main.100"
     >
       <Box
         width={{ base: "100%", md: "100%" }}
-        height={{ base: "300px" }}
+        height={{ base: "18.75rem" }}
         bgImg={{
           base: "/shared/mobile/image-best-gear.jpg",
           md: "/shared/tablet/image-best-gear.jpg",
@@ -22,20 +22,23 @@ const Testimonial = () => {
         bgPos="center"
         bgSize="cover"
         bgRepeat="no-repeat"
-        borderRadius="8px"
-        mb="43px"
+        borderRadius="8"
+        mb="2.68rem"
       ></Box>
 
-      <Flex flexDir={{ base: "column" }} width={{ base: "100%", md: "573px" }}>
+      <Flex
+        flexDir={{ base: "column" }}
+        width={{ base: "100%", md: "35.81rem" }}
+      >
         <Heading
-          fontSize={{ base: "28px", md: "40px" }}
+          fontSize={{ base: "1.75rem", md: "2.5rem" }}
           letterSpacing="1px"
           textTransform="uppercase"
           fontWeight="bold"
           fontFamily="main.100"
-          mb="32px"
+          mb="2rem"
           color="black.200"
-          lineHeight={{ md: "44px" }}
+          lineHeight={{ md: "2.75rem" }}
         >
           Bringing you the
           <Text as="span" color="orange.100" textTransform="uppercase">
@@ -44,8 +47,8 @@ const Testimonial = () => {
           audio gear
         </Heading>
         <Text
-          fontSize={{ base: "15px" }}
-          lineHeight="25px"
+          fontSize={{ base: "1rem" }}
+          lineHeight="1.56rem"
           fontFamily="main.100"
           fontWeight="medium"
           opacity="0.5"

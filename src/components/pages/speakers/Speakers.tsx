@@ -15,7 +15,11 @@ const Speakers: React.FC<IProduct> = () => {
   const { speakers } = useContext(AppContext);
 
   return (
-    <Flex flexDir={{ base: "column" }} width={{ base: "87%", md: "90%" }}>
+    <Flex
+      flexDir={{ base: "column" }}
+      width={{ base: "100%" }}
+      px={{ base: "24", md: "38" }}
+    >
       {speakers
         .slice(0)
         .reverse()

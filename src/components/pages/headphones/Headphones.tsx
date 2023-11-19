@@ -1,27 +1,28 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useContext } from 'react'
+import { useContext } from "react";
 //
-import { Flex } from '@chakra-ui/react'
+import { Flex } from "@chakra-ui/react";
 
 //Types
-import { IProduct } from '../../../types'
+import { IProduct } from "../../../types";
 
 //Context
-import { AppContext } from '../../../context/AppContext'
+import { AppContext } from "../../../context/AppContext";
 
 //Components
-import ProductsComponent from '../products/ProductsComponent'
+import ProductsComponent from "../products/ProductsComponent";
 
 const Headphones: React.FC<IProduct> = () => {
-  const { headphones } = useContext(AppContext)
+  const { headphones } = useContext(AppContext);
 
   return (
     <Flex
-      flexDir={{ base: 'column' }}
-      width={{ base: '100%' }}
-      px={{ base: '24', md: '38' }}
-      mb={{ md: '75px' }}>
+      flexDir={{ base: "column" }}
+      width={{ base: "100%" }}
+      px={{ base: "24", md: "38" }}
+      mb={{ md: "4.6875rem" }}
+    >
       {headphones
         .slice(0)
         .reverse()
@@ -32,7 +33,7 @@ const Headphones: React.FC<IProduct> = () => {
             image={image}
             key={title}
             slug={slug}
-            _id={'string'}
+            _id={"string"}
             price={0}
             box={[]}
             productImages={[]}
@@ -42,7 +43,7 @@ const Headphones: React.FC<IProduct> = () => {
           />
         ))}
     </Flex>
-  )
-}
+  );
+};
 
-export default Headphones
+export default Headphones;

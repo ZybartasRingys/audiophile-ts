@@ -90,7 +90,7 @@ const PaymentDetails: React.FC<PaymentProps> = ({ register, errors }) => {
 
           <GridItem area={"B"} width="100%">
             {checkedOption === options[0] ? (
-              <SimpleGrid columns={{ base: 1, md: 2 }} gap={5}>
+              <SimpleGrid columns={{ base: 1, md: 2 }}>
                 <InputField
                   autoComplete="off"
                   {...register("eMoneyNumber", {

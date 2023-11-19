@@ -10,3 +10,7 @@
 body {
   font-family: "Manrope", sans-serif;
 }
+
+.image-flex {
+  border: "3px solid green";
+}

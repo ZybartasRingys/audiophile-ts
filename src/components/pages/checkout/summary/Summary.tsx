@@ -31,6 +31,7 @@ const Summary = ({ handleSubmit, errors }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleClick = () => {
     handleSubmit();
+    onOpen();
   };
   return (
     <Flex
@@ -38,7 +39,7 @@ const Summary = ({ handleSubmit, errors }) => {
       alignItems="center"
       justifyContent="center"
       mt={{ base: "9" }}
-      px={{ base: "24", md: "38" }}
+      px={{ base: "24", md: "0" }}
     >
       {/*Summary section */}
       <Flex
@@ -120,17 +121,22 @@ const Summary = ({ handleSubmit, errors }) => {
             <ModalOverlay />
             <ModalContent
               bgColor="white.100"
-              width={{ base: "87%" }}
+              width={{ base: "87%", md: "33.75rem" }}
               height={{ base: "600px" }}
               display="flex"
               alignItems="center"
-              mt={{ base: "220px" }}
+              mt={{ base: "220px", md: "0" }}
+              border="1px solid red"
             >
               <ModalHeader width={{ base: "86%" }} pl="0" mt="17px">
                 <Image src="/public/checkout/icon-order-confirmation.svg" />
               </ModalHeader>
 
-              <ModalBody height={{ base: "371px" }}>
+              <ModalBody
+                height={{ base: "371px" }}
+                width="100%"
+                border="3px solid red"
+              >
                 <Flex
                   flexDir={{ base: "column" }}
                   width={{ base: "263px" }}
@@ -157,15 +163,17 @@ const Summary = ({ handleSubmit, errors }) => {
                   </Text>
                 </Flex>
 
-                <Flex flexDir="column">
+                <Flex flexDir={{ base: "column", md: "row" }}>
                   <Flex
                     width={{ base: "100%" }}
-                    borderTopRadius="8px"
+                    borderBottomRadius={{ base: "0.5rem", md: "0" }}
                     flexDir="column"
                     height={{ base: "140px" }}
                     justifyContent="space-evenly"
                     padding="24px"
                     bgColor="white.300"
+                    borderTopLeftRadius={{ base: "0", md: "0.5rem" }}
+                    borderBottomLeftRadius={{ base: "0", md: "0.5rem" }}
                   >
                     {cartItems.map((item, index) => {
                       if (index === 0) {
@@ -176,10 +184,12 @@ const Summary = ({ handleSubmit, errors }) => {
 
                   <Flex
                     width={{ base: "100%" }}
-                    height={{ base: "92px" }}
+                    height={{ base: "92px", md: "8.75rem" }}
                     flexDir={{ base: "column" }}
                     bgColor="black"
-                    borderBottomRadius="8px"
+                    borderBottomRadius={{ base: "0.5rem", md: "0" }}
+                    borderTopRightRadius={{ base: "0", md: "0.5rem" }}
+                    borderBottomRightRadius={{ base: "0", md: "0.5rem" }}
                     color="white"
                     paddingX={{ base: "24px" }}
                     py={{ base: "17px" }}
@@ -219,7 +229,7 @@ const Summary = ({ handleSubmit, errors }) => {
                 </Flex>
 
                 <Link
-                  width={{ base: "263px" }}
+                  width={{ base: "263px", md: "444px" }}
                   height="48px"
                   mt="24px"
                   color="white"

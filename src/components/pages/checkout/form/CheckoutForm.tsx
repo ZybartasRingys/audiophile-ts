@@ -47,10 +47,9 @@ const CheckoutForm = () => {
         as="form"
         onSubmit={handleSubmit(onSubmit)}
         width={{ base: "100%" }}
-        height={{ base: "1400px" }}
+        height={{ base: "100%" }}
         flexDir={{ base: "column" }}
-        px={{ base: "47px" }}
-        border="1px solid red"
+        px={{ base: "47" }}
         bgColor="white.100"
       >
         {/* Form heading */}
@@ -80,7 +79,6 @@ const CheckoutForm = () => {
         <PaymentDetails register={register} errors={errors} />
         {/*Payment method  section end */}
       </Flex>
-
       <Summary handleSubmit={handleSubmit(onSubmit)} errors={errors} />
     </>
   );

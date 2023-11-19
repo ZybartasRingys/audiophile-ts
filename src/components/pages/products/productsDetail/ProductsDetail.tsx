@@ -24,15 +24,15 @@ const ProductsDetail: React.FC<IProduct> = () => {
         <Box
           width="87%"
           textAlign="start"
-          mt={{ base: "20px", md: "24px" }}
-          mb={{ base: "20px", md: "24px" }}
+          mt={{ base: "1.25rem", md: "24" }}
+          mb={{ base: "1.25rem", md: "24" }}
         >
           <Link
-            fontSize="15px"
+            fontSize=".9375rem"
             color="black.200"
             fontFamily="main.100"
             fontWeight="medium"
-            lineHeight="25px"
+            lineHeight="1.5625rem"
             opacity="0.5"
             href="/"
           >

@@ -34,10 +34,11 @@ const Product: React.FC<IProduct> = ({
     <>
       <Flex
         flexDir={{ base: "column" }}
-        width={{ base: "87%", md: "90%" }}
+        width={{ base: "100%" }}
         height="100%"
         alignItems="center"
         justifyContent="center"
+        px={{ base: "24", md: "38" }}
       >
         <Flex
           flexDir={{ base: "column", md: "row" }}
@@ -71,22 +72,22 @@ const Product: React.FC<IProduct> = ({
           >
             {isNewProduct === true ? (
               <Text
-                mt={{ base: "30px", md: "0px" }}
-                mb={{ base: "30px", md: "17px" }}
+                mt={{ base: "2rem", md: "0px" }}
+                mb={{ base: "1.5rem", md: "17px" }}
                 color="orange.100"
-                fontSize={{ base: "14px" }}
+                fontSize={{ base: ".875rem" }}
                 fontFamily="main.100"
-                letterSpacing="10px"
+                letterSpacing=".625rem"
                 textTransform="uppercase"
               >
                 New product
               </Text>
             ) : (
-              <Flex width={{ base: "100%" }} height={{ base: "40px" }} />
+              <Flex width={{ base: "100%" }} height={{ base: "2.5rem" }} />
             )}
-            <Flex width={{ base: "59%" }}>
+            <Flex width={{ base: "62%" }}>
               <Heading
-                fontSize={{ base: "28px" }}
+                fontSize={{ base: "1.75rem" }}
                 letterSpacing="1px"
                 textTransform="uppercase"
                 fontFamily="main.100"
@@ -98,23 +99,23 @@ const Product: React.FC<IProduct> = ({
             </Flex>
 
             <Text
-              mt={{ base: "32px" }}
+              mt={{ base: "2rem" }}
               fontFamily="main.100"
               color="black.200"
-              fontSize={{ base: "15px" }}
-              lineHeight="25px"
+              fontSize={{ base: ".9375rem" }}
+              lineHeight="1.5625rem"
               fontWeight="medium"
               opacity="0.5"
             >
               {desc}
             </Text>
             <Text
-              fontSize={{ base: "18px" }}
+              fontSize={{ base: "1.125rem" }}
               fontWeight="bold"
               fontFamily="main.100"
               color="black.200"
               letterSpacing="1.3px"
-              mt="30px"
+              mt="1.875rem"
             >
               $ {price.toLocaleString("en-US")}
             </Text>
@@ -122,13 +123,17 @@ const Product: React.FC<IProduct> = ({
             {/* Add to cart */}
 
             <Flex
-              mt="35px"
+              mt="2.1875rem"
               width={{ base: "100%" }}
-              height={{ base: "48px" }}
+              height={{ base: "3rem" }}
               justifyContent="space-between"
-              pr={{ base: "28px", md: "50px" }}
+              pr={{ base: "1.75rem", md: "3.125rem" }}
             >
-              <Flex width={{ base: "120px" }} height="48px" bgColor="white.300">
+              <Flex
+                width={{ base: "7.5rem" }}
+                height="3rem"
+                bgColor="white.300"
+              >
                 <Flex
                   width={{ base: "100%" }}
                   alignItems="center"
@@ -141,7 +146,7 @@ const Product: React.FC<IProduct> = ({
                   </Box>
 
                   <Text
-                    fontSize="13px"
+                    fontSize=".8125rem"
                     fontWeight="bold"
                     fontFamily="main.100"
                     color="black.200"
@@ -160,12 +165,12 @@ const Product: React.FC<IProduct> = ({
               </Flex>
               <Flex>
                 <Button
-                  width="160px"
-                  height="48px"
+                  width="10rem"
+                  height="3rem"
                   bgColor="orange.100"
                   color="white"
                   borderRadius="0px"
-                  fontSize={{ base: "13px" }}
+                  fontSize={{ base: ".8125rem" }}
                   letterSpacing="1px"
                   onClick={() => increaseCartQuantity(_id)}
                 >
