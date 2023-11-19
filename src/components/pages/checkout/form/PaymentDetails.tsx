@@ -8,6 +8,9 @@ import {
   Flex,
   Text,
   Image,
+  Grid,
+  GridItem,
+  SimpleGrid,
 } from "@chakra-ui/react";
 
 //Chakra Styles Import
@@ -52,66 +55,90 @@ const PaymentDetails: React.FC<PaymentProps> = ({ register, errors }) => {
     <>
       <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
 
-      <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
-
       <Flex {...group} flexDir={{ base: "column" }}>
-        {options.map((value) => {
-          const radio = getRadioProps({ value });
-          return (
-            <Flex {...formInputStyle} borderRadius="8px" key={value}>
-              <Radio colorScheme="orange" {...radio}>
-                {value}
-              </Radio>
-            </Flex>
-          );
-        })}
+        <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
+        <Grid
+          gridTemplateAreas={{
+            base: `
+          "A A"
+          "B B"
+          `,
+            md: `
+        ". A"
+        "B B"
+        
+        `,
+          }}
+        >
+          <GridItem
+            area={"A"}
+            display="flex"
+            flexDir={{ base: "column" }}
+            alignItems={{ md: "end" }}
+          >
+            {options.map((value) => {
+              const radio = getRadioProps({ value });
+              return (
+                <Flex {...formInputStyle} borderRadius="8px" key={value}>
+                  <Radio colorScheme="orange" {...radio}>
+                    {value}
+                  </Radio>
+                </Flex>
+              );
+            })}
+          </GridItem>
 
-        {checkedOption === options[0] ? (
-          <Flex flexDir={{ base: "column" }} justifyContent="center">
-            <InputField
-              autoComplete="off"
-              {...register("eMoneyNumber", {
-                required: "Field can't be empty",
-                minLength: 4,
-              })}
-              {...formInputStyle}
-              placeholder="238521993"
-              label="e-Money Number"
-              errors={errors.eMoneyNumber}
-            />
-            <InputField
-              autoComplete="off"
-              {...register("eMoneyPin", {
-                required: "Field can't be empty",
-                minLength: 4,
-              })}
-              {...formInputStyle}
-              placeholder="6891"
-              label="e-Money Pin"
-              errors={errors.eMoneyPin}
-            />
-          </Flex>
-        ) : (
-          <Flex width={{ base: "100%" }} alignItems="center">
-            <Image
-              width={{ base: "3rem" }}
-              height={{ base: "3rem" }}
-              mr={{ base: "1.56rem" }}
-              src="/checkout/icon-cash-on-delivery.svg"
-            />
-            <Text
-              fontFamily="main.100"
-              fontSize={{ base: "1rem" }}
-              fontWeight="medium"
-              lineHeight="25px"
-              opacity="0.5"
-            >
-              The ‘Cash on Delivery’ option enables you to pay in cash when our
-              delivery courier arrives at your residence. Just make sure your
-              address is correct so that your order will not be cancelled.
-            </Text>
-          </Flex>
-        )}
+          <GridItem area={"B"} width="100%">
+            {checkedOption === options[0] ? (
+              <SimpleGrid columns={{ base: 1, md: 2 }} gap={5}>
+                <InputField
+                  autoComplete="off"
+                  {...register("eMoneyNumber", {
+                    required: "Field can't be empty",
+                    minLength: 4,
+                  })}
+                  {...formInputStyle}
+                  placeholder="238521993"
+                  label="e-Money Number"
+                  errors={errors.eMoneyNumber}
+                />
+
+                <InputField
+                  autoComplete="off"
+                  {...register("eMoneyPin", {
+                    required: "Field can't be empty",
+                    minLength: 4,
+                  })}
+                  {...formInputStyle}
+                  placeholder="6891"
+                  label="e-Money Pin"
+                  errors={errors.eMoneyPin}
+                />
+              </SimpleGrid>
+            ) : (
+              <Flex width={{ base: "100%" }} alignItems="center">
+                <Image
+                  width={{ base: "3rem" }}
+                  height={{ base: "3rem" }}
+                  mr={{ base: "1.56rem" }}
+                  src="/checkout/icon-cash-on-delivery.svg"
+                />
+                <Text
+                  fontFamily="main.100"
+                  fontSize={{ base: "1rem" }}
+                  fontWeight="medium"
+                  lineHeight="25px"
+                  opacity="0.5"
+                >
+                  The ‘Cash on Delivery’ option enables you to pay in cash when
+                  our delivery courier arrives at your residence. Just make sure
+                  your address is correct so that your order will not be
+                  cancelled.
+                </Text>
+              </Flex>
+            )}
+          </GridItem>
+        </Grid>
       </Flex>
     </>
   );
