@@ -1,0 +1,25 @@
+.grid-box {
+}
+
+.grid-box:nth-child(n) {
+  grid-area: A;
+
+  @media (min-width: 768px) and (max-width: 1440px) {
+    height: 174px;
+    width: 100%;
+  }
+}
+.grid-box:nth-child(2n) {
+  grid-area: B;
+  @media (min-width: 768px) and (max-width: 1440px) {
+    height: 174px;
+  }
+}
+
+.grid-box:nth-child(3n) {
+  grid-area: C;
+  @media (min-width: 768px) and (max-width: 1440px) {
+    height: 368px;
+    width: 100%;
+  }
+}
