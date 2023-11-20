@@ -1,8 +1,8 @@
 import { Flex, Text, Heading, Image, Grid, GridItem } from '@chakra-ui/react'
-import { IProduct } from '../../../../types'
-import { urlFor } from '../../../../../sanity/sanity'
-import { Heading5, BodyText } from '../../../../chakra/appStyles'
-import '../Features.css'
+import { IProduct } from '../../../../../types'
+import { urlFor } from '../../../../../../sanity/sanity'
+import { Heading5, BodyText } from '../../../../../chakra/appStyles'
+import './Features.css'
 const Features: React.FC<IProduct> = ({
   features,
   box,

@@ -1,6 +1,3 @@
-.grid-box {
-}
-
 .grid-box:nth-child(n) {
   grid-area: A;
 
