@@ -22,7 +22,7 @@ type ShippingProps = {
 const ShippingInfo: React.FC<ShippingProps> = ({ register, errors }) => {
   return (
     <>
-      <Flex flexDir={{ base: "column" }}>
+      <Flex flexDir={{ base: "column" }} mb={{ md: "3.875rem" }}>
         <FormLabel {...FormLabelHeading}>Shipping info</FormLabel>
         {/*Address input  */}
 
@@ -40,6 +40,7 @@ const ShippingInfo: React.FC<ShippingProps> = ({ register, errors }) => {
           "D ."`,
           }}
           gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+          gap={5}
         >
           <GridItem gridArea={"A"}>
             {/*Address input end  */}

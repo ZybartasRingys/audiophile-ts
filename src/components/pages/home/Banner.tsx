@@ -35,7 +35,7 @@ const Banner = () => {
           color="white"
           opacity="0.5"
           textTransform="uppercase"
-          letterSpacing="10px"
+          letterSpacing=".625rem"
           mb="1.25rem"
           fontSize={{ base: ".875rem" }}
         >

@@ -50,7 +50,7 @@ const ProductsComponent = ({
       >
         {isNewProduct === true ? (
           <Text
-            mt="2rem"
+            mt={{ base: "2rem", md: "3.25rem" }}
             color="orange.100"
             fontSize=".875rem"
             letterSpacing="10px"
@@ -59,7 +59,9 @@ const ProductsComponent = ({
           >
             New product
           </Text>
-        ) : null}
+        ) : (
+          <Flex height={{ md: "2.375rem" }}></Flex>
+        )}
         <Flex
           mt={{ base: "2rem", md: ".9375rem" }}
           flexDir={{ base: "column" }}
@@ -68,7 +70,8 @@ const ProductsComponent = ({
           alignItems={{ base: "center", md: "center" }}
         >
           <Flex
-            width={{ base: "80%", md: "55%" }}
+            width={{ base: "80%", md: "48%" }}
+            border="1px solid red"
             justifyContent={{ base: "center" }}
           >
             <Heading

@@ -39,7 +39,6 @@ const Summary = ({ handleSubmit, errors }) => {
       alignItems="center"
       justifyContent="center"
       mt={{ base: "9" }}
-      px={{ base: "24", md: "0" }}
     >
       {/*Summary section */}
       <Flex
@@ -122,42 +121,38 @@ const Summary = ({ handleSubmit, errors }) => {
             <ModalContent
               bgColor="white.100"
               width={{ base: "87%", md: "33.75rem" }}
-              height={{ base: "600px" }}
+              height={{ base: "37.5rem" }}
               display="flex"
               alignItems="center"
-              mt={{ base: "220px", md: "0" }}
-              border="1px solid red"
+              px={{ base: "0.5rem" }}
+              mt={{ base: "13.75rem", md: "0" }}
             >
-              <ModalHeader width={{ base: "86%" }} pl="0" mt="17px">
+              <ModalHeader width={{ base: "86%" }} pl="0" mt="1.0625rem">
                 <Image src="/public/checkout/icon-order-confirmation.svg" />
               </ModalHeader>
 
-              <ModalBody
-                height={{ base: "371px" }}
-                width="100%"
-                border="3px solid red"
-              >
+              <ModalBody height={{ base: "23.1875rem" }} width="100%">
                 <Flex
                   flexDir={{ base: "column" }}
-                  width={{ base: "263px" }}
+                  width={{ base: "16.4375rem" }}
                   pt="0"
                 >
                   <Text
-                    fontSize="24px"
-                    lineHeight="28px"
+                    fontSize="1.5rem"
+                    lineHeight="1.75rem"
                     fontWeight="bold"
                     letterSpacing="1px"
                     color="black.200"
-                    mb="20px"
+                    mb="1.25rem"
                   >
                     THANK YOU <br /> FOR YOUR ORDER
                   </Text>
                   <Text
-                    fontSize="15px"
-                    lineHeight="25px"
+                    fontSize=".9375rem"
+                    lineHeight="1.5625rem"
                     color="black.200"
                     opacity="0.5"
-                    mb="20px"
+                    mb="1.25rem"
                   >
                     You will receive an email confirmation shortly.
                   </Text>
@@ -166,13 +161,13 @@ const Summary = ({ handleSubmit, errors }) => {
                 <Flex flexDir={{ base: "column", md: "row" }}>
                   <Flex
                     width={{ base: "100%" }}
-                    borderBottomRadius={{ base: "0.5rem", md: "0" }}
                     flexDir="column"
                     height={{ base: "140px" }}
                     justifyContent="space-evenly"
                     padding="24px"
                     bgColor="white.300"
-                    borderTopLeftRadius={{ base: "0", md: "0.5rem" }}
+                    borderTopRightRadius={{ base: "0.5rem" }}
+                    borderTopLeftRadius={{ base: "0.5rem", md: "0.5rem" }}
                     borderBottomLeftRadius={{ base: "0", md: "0.5rem" }}
                   >
                     {cartItems.map((item, index) => {
@@ -189,7 +184,7 @@ const Summary = ({ handleSubmit, errors }) => {
                     bgColor="black"
                     borderBottomRadius={{ base: "0.5rem", md: "0" }}
                     borderTopRightRadius={{ base: "0", md: "0.5rem" }}
-                    borderBottomRightRadius={{ base: "0", md: "0.5rem" }}
+                    borderBottomRightRadius={{ base: "0.5rem", md: "0.5rem" }}
                     color="white"
                     paddingX={{ base: "24px" }}
                     py={{ base: "17px" }}

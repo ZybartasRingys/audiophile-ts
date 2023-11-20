@@ -69,6 +69,7 @@ const PaymentDetails: React.FC<PaymentProps> = ({ register, errors }) => {
         
         `,
           }}
+          gap={5}
         >
           <GridItem
             area={"A"}

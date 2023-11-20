@@ -11,12 +11,15 @@ import CheckoutForm from "./form/CheckoutForm";
 
 const Checkout = () => {
   return (
-    <Flex flexDir={{ base: "column" }} bgColor="white.200">
+    <Flex
+      flexDir={{ base: "column" }}
+      px={{ base: "24", md: "47" }}
+      bgColor="white.200"
+    >
       <Flex
         width={{ base: "100%" }}
         height={{ base: "65px" }}
         alignItems="center"
-        px={{ base: "24px", md: "47" }}
       >
         <Text {...SmallTextOpacity}>Go Back</Text>
       </Flex>
@@ -26,7 +29,6 @@ const Checkout = () => {
         height={{ base: "100%" }}
         flexDir={{ base: "column" }}
         alignItems="center"
-        px={{ md: "47" }}
       >
         <CheckoutForm name={"string"} />
       </Flex>

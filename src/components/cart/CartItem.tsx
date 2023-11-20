@@ -22,8 +22,14 @@ const CartItem = ({ _id }: CartItemProps) => {
   if (item === null) return null;
   const cartQuantity = getItemsQuantity(_id);
 
+  console.log(item.title);
+
   return (
-    <Flex justifyContent="space-between" alignItems="center">
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      mb={{ base: "24" }}
+    >
       <Box width={{ base: "64px" }} height={{ base: "64px" }}>
         {item.image && (
           <Image
@@ -41,7 +47,10 @@ const CartItem = ({ _id }: CartItemProps) => {
         height={{ base: "50px" }}
       >
         <Text {...ItemHeading}>
-          {item.title.replace("Headphones", "").replace("speaker", "")}
+          {item.title
+            .replace("Headphones", "")
+            .replace("speaker", "")
+            .replace("SPEAKER", "")}
         </Text>
         <Text
           {...SmallTextOpacity}

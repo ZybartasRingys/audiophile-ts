@@ -49,14 +49,15 @@ const CheckoutForm = () => {
         width={{ base: "100%" }}
         height={{ base: "100%" }}
         flexDir={{ base: "column" }}
-        px={{ base: "47" }}
+        padding={{ base: "24" }}
         bgColor="white.100"
       >
         {/* Form heading */}
         <Flex
           width={{ base: "100%" }}
-          height={{ base: "94px" }}
+          height={{ base: "100%" }}
           alignItems="center"
+          mb={{ base: "2rem" }}
         >
           <Heading {...Heading4} letterSpacing="1px">
             CHECKOUT
