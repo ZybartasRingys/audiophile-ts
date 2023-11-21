@@ -50,6 +50,7 @@ const CheckoutForm = () => {
         height={{ base: "100%" }}
         flexDir={{ base: "column" }}
         padding={{ base: "24" }}
+        borderRadius="0.5rem"
         bgColor="white.100"
       >
         {/* Form heading */}

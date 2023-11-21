@@ -54,9 +54,8 @@ const PaymentDetails: React.FC<PaymentProps> = ({ register, errors }) => {
   return (
     <>
       <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
-
+      <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
       <Flex {...group} flexDir={{ base: "column" }}>
-        <FormLabel {...formLabelStyle}>Payment Method</FormLabel>
         <Grid
           gridTemplateAreas={{
             base: `
@@ -80,7 +79,13 @@ const PaymentDetails: React.FC<PaymentProps> = ({ register, errors }) => {
             {options.map((value) => {
               const radio = getRadioProps({ value });
               return (
-                <Flex {...formInputStyle} borderRadius="8px" key={value}>
+                <Flex
+                  {...formInputStyle}
+                  borderRadius="8px"
+                  key={value}
+                  marginBottom={{ md: "1rem" }}
+                  pl="1rem"
+                >
                   <Radio colorScheme="orange" {...radio}>
                     {value}
                   </Radio>
@@ -91,7 +96,7 @@ const PaymentDetails: React.FC<PaymentProps> = ({ register, errors }) => {
 
           <GridItem area={"B"} width="100%">
             {checkedOption === options[0] ? (
-              <SimpleGrid columns={{ base: 1, md: 2 }}>
+              <SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
                 <InputField
                   autoComplete="off"
                   {...register("eMoneyNumber", {
