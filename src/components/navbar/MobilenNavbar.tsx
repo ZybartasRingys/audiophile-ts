@@ -21,54 +21,43 @@ const MobileNav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex
-      width={{ base: "100%" }}
-      justifyContent="center"
-      bg="black.300"
-      height="87px"
-      px="20px"
-      borderBottom={{
-        base: "1px solid rgb(151, 151, 151, 0.1)",
-        md: "0px solid",
-      }}
+      width={{ base: "100%", md: "100%" }}
+      height="100%"
+      justifyContent="space-between"
+      alignItems="center"
+      px={{ base: "1.5rem", md: "0" }}
+      mx={{ md: "38" }}
+      borderBottom="1px solid rgb(151, 151, 151, 0.2)"
+      display={{ lg: "none" }}
     >
       <Flex
-        width={{ base: "100%", md: "95%" }}
-        height="100%"
-        justifyContent="space-between"
+        width={{ base: "70%" }}
         alignItems="center"
-        borderBottom={{
-          md: "1px solid rgb(151, 151, 151, 0.1)",
-        }}
+        justifyContent={{ base: "space-between", md: "start" }}
       >
-        <Flex
-          width={{ base: "70%" }}
-          alignItems="center"
-          justifyContent={{ base: "space-between", md: "start" }}
+        <Box
+          onClick={onOpen}
+          bgColor="transparent"
+          _hover={{ bgColor: "transparent" }}
+          width={{ base: "16px" }}
+          height={{ base: "15px" }}
+          cursor="pointer"
+          mr={{ md: "40px" }}
         >
-          <Box
-            onClick={onOpen}
-            bgColor="transparent"
-            _hover={{ bgColor: "transparent" }}
-            width={{ base: "16px" }}
-            height={{ base: "15px" }}
+          <Image src="shared/tablet/icon-hamburger.svg" alt="h" />
+        </Box>
+
+        <Link href="/">
+          <Image
+            loading="lazy"
+            src="/shared/desktop/logo.svg"
+            alt="logo"
             cursor="pointer"
-            mr={{ md: "40px" }}
-          >
-            <Image src="shared/tablet/icon-hamburger.svg" alt="h" />
-          </Box>
-
-          <Link href="/">
-            <Image
-              loading="lazy"
-              src="/shared/desktop/logo.svg"
-              alt="logo"
-              cursor="pointer"
-            />
-          </Link>
-        </Flex>
-
-        <Cart />
+          />
+        </Link>
       </Flex>
+
+      <Cart />
     </Flex>
   );
 };

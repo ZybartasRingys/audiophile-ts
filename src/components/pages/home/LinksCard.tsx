@@ -18,8 +18,9 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
     <>
       {/* Links Card */}
       <Card
-        width={{ base: "100%", md: "223px" }}
-        height={{ base: "165px" }}
+        width={{ base: "100%", md: "223px", lg: "21.875rem" }}
+        maxW={{ md: "13.9375rem", lg: "21.875rem" }}
+        height={{ base: "165px", lg: "12.75rem" }}
         bgColor="white.300"
       >
         <CardBody display="flex" alignItems="center" flexDir="column">

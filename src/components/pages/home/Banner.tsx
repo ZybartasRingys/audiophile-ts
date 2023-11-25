@@ -1,4 +1,4 @@
-import { Text, Heading, Link, Flex, Image } from "@chakra-ui/react";
+import { Text, Heading, Link, Flex } from "@chakra-ui/react";
 import { Default1btn } from "../../../chakra/appStyles";
 
 const Banner = () => {
@@ -7,30 +7,28 @@ const Banner = () => {
       width="100%"
       height={{ base: "31.81rem", md: "39.8125rem", lg: "39.5rem" }}
       mb={{ base: "1.4375rem" }}
-      justifyContent={{ base: "center", lg: "start" }}
-      alignItems="center"
+      justifyContent={{ md: "center", lg: "start" }}
+      alignItems={{ md: "center", lg: "center" }}
       fontFamily="main.100"
       bgColor="black.300"
       bgImg={{
         base: "/home/mobile/image-header.jpg",
         md: "home/tablet/image-header.jpg",
-        lg: "",
+        lg: "/home/desktop/image-hero.jpg",
       }}
       backgroundPosition="center"
       bgSize="cover"
       bgRepeat="no-repeat"
-      bgPos={{ base: "center -5.625rem", lg: "center" }}
-      border="1px solid red"
+      bgPos={{ base: "center -5.625rem" }}
       px={{ lg: "10.3125rem" }}
     >
       <Flex
         width={{ base: "100%", md: "50%", lg: "100%" }}
-        maxW={{ lg: "24.875rem" }}
+        maxW={{ lg: "22.875rem" }}
         height={{ base: "100%", md: "21.625rem" }}
         flexDir={{ base: "column" }}
         alignItems={{ base: "center", lg: "start" }}
-        justifyContent={{ base: "center" }}
-        px={{ base: "1rem", lg: "0" }}
+        px={{ base: "3.25rem", lg: "0" }}
         pt={{ base: "5.9375rem", md: "0" }}
         textAlign={{ base: "center", lg: "start" }}
       >
@@ -70,9 +68,6 @@ const Banner = () => {
           for the passionate music enthusiast.
         </Text>
         <Link {...Default1btn}>See product</Link>
-      </Flex>
-      <Flex width="100%" height="100%">
-        <Image src="/home/tablet/image-header.jpg" />
       </Flex>
     </Flex>
   );

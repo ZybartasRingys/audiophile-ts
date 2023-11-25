@@ -1,16 +1,9 @@
 import { Flex } from "@chakra-ui/react";
 import MobileNav from "./MobilenNavbar";
 
-import { useWindowWidth } from "@react-hook/window-size";
-
-type NavbarProps = {
-  windowWidth: number;
-};
-
 import DesktopNav from "./DesktopNav";
 
-const Navbar: React.FC<NavbarProps> = () => {
-  const onlyWidth = useWindowWidth();
+const Navbar = () => {
   return (
     <Flex
       as="nav"
@@ -18,7 +11,8 @@ const Navbar: React.FC<NavbarProps> = () => {
       height="5.4375rem"
       bgColor="black.300"
     >
-      {onlyWidth >= 992 ? <DesktopNav /> : <MobileNav />}
+      <MobileNav />
+      <DesktopNav />
     </Flex>
   );
 };
