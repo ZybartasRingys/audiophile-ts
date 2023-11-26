@@ -18,28 +18,33 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
     <>
       {/* Links Card */}
       <Card
-        width={{ base: "100%", md: "223px", lg: "21.875rem" }}
+        width={{ base: "100%", md: "13.9375rem", lg: "21.875rem" }}
         maxW={{ md: "13.9375rem", lg: "21.875rem" }}
-        height={{ base: "165px", lg: "12.75rem" }}
-        bgColor="white.300"
+        height={{ base: "10.3125rem", lg: "12.75rem" }}
       >
-        <CardBody display="flex" alignItems="center" flexDir="column">
+        <CardBody
+          display="flex"
+          alignItems="center"
+          flexDir="column"
+          bgColor="white.300"
+          pb={{ lg: "1.875rem" }}
+        >
           <Box
-            width="140px"
-            height="140px"
-            mt="-70px"
+            width="100%"
+            height="100%"
             bgImage={image}
             bgRepeat="no-repeat"
-            bgPos="bottom"
             bgSize="cover"
+            bgPos="top"
+            mt={{ base: "-4.5rem" }}
           ></Box>
 
           <Heading
-            fontSize="15px"
+            fontSize=".9375rem"
             fontFamily="main.100"
             textTransform="uppercase"
             letterSpacing="1px"
-            mb="17px"
+            mb="1.0625rem"
           >
             {heading}
           </Heading>
@@ -50,7 +55,7 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
             textTransform="uppercase"
           >
             <Text
-              fontSize="13px"
+              fontSize=".8125rem"
               fontWeight="bold"
               letterSpacing="1px"
               opacity="0.6"
@@ -58,9 +63,9 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
               SHOP
             </Text>
             <Image
-              width="7px"
-              height="12px"
-              ml="10px"
+              width=".4375rem"
+              height=".75rem"
+              ml=".625rem"
               src="/shared/desktop/icon-arrow-right.svg"
             />
           </Link>

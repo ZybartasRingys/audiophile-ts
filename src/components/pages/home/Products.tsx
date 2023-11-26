@@ -13,38 +13,39 @@ const Products = () => {
     <Flex
       flexDir={{ base: "column" }}
       height="100%"
-      mt={{ base: "120px", md: "96px" }}
+      mt={{ base: "7.5rem", md: "6rem" }}
       width="100%"
       alignItems={{ md: "center" }}
     >
       <Flex
         width={{ base: "100%" }}
-        height={{ base: "100%", md: "720px" }}
-        minH={{ base: "600px" }}
+        height={{ base: "37.5rem", md: "45rem" }}
+        pt={{ md: ".625rem" }}
         flexDir={{ base: "column" }}
         alignItems="center"
-        justifyContent="center"
         overflow="hidden"
         borderRadius="8px"
         bgColor="orange.100"
         bgImg={{ base: "/home/desktop/pattern-circles.svg" }}
         bgRepeat="no-repeat"
-        bgSize="cover"
-        bgPos={{ base: "center -132px", md: "center -189px" }}
+        bgSize={{ base: "173%", md: "126%" }}
+        bgPos={{ base: "center -7.6875rem", md: "center -15rem" }}
       >
         <Image
           position="relative"
-          width="173px"
-          height="207px"
+          width={{ base: "10.625rem", md: "11.875rem" }}
+          height={{ base: "12.9375rem", md: "13.625rem" }}
           src="/home/mobile/image-speaker-zx9.png"
           alt="ZX9"
+          loading="lazy"
+          mt={{ base: "3.4375rem" }}
         ></Image>
         <Flex
           width={{ base: "86%", md: "349px" }}
           flexDir={{ base: "column" }}
           textAlign="center"
-          pt={{ base: "50px" }}
-          mb={{ base: "25px" }}
+          pt={{ base: "2.25rem", md: "4rem" }}
+          mb={{ base: "1.6rem", md: "1.875rem" }}
         >
           <Text {...homeProductsHeadingStyle}>ZX9</Text>
           <Text {...homeProductsHeadingStyle}>speaker</Text>
@@ -54,7 +55,7 @@ const Products = () => {
             lineHeight="25px"
             opacity="0.75"
             color="white.100"
-            mt={{ base: "25px" }}
+            mt={{ base: "1.625rem", md: "1.25rem" }}
           >
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.

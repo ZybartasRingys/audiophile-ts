@@ -4,12 +4,12 @@ import LinksCard from "./LinksCard";
 const cards = [
   {
     heading: "Headphones",
-    image: "/shared/mobile/image-xx99-mark-one-headphones-removebg-preview.png",
+    image: "shared/desktop/image-category-thumbnail-headphones.png",
   },
 
   {
     heading: "Speakers",
-    image: "/shared/mobile/image-zx9-speaker-removebg-preview.png",
+    image: "/shared/desktop/image-category-thumbnail-speakers.png",
   },
 
   {
@@ -22,12 +22,11 @@ const Links = () => {
   return (
     <Flex
       width={{ base: "100%" }}
-      height={{ base: "631px", md: "167px", lg: "17.75rem" }}
+      height={{ base: "41.75rem", md: "10.4375rem", lg: "17.75rem" }}
       flexDir={{ base: "column", md: "row" }}
       alignItems="center"
       justifyContent={{ base: "space-between" }}
-      mt={{ base: "90px" }}
-      border="1px solid red"
+      mt={{ base: "4.5625rem" }}
     >
       {cards.map((card) => (
         <LinksCard

@@ -28,7 +28,7 @@ const MobileNav = () => {
       px={{ base: "1.5rem", md: "0" }}
       mx={{ md: "38" }}
       borderBottom="1px solid rgb(151, 151, 151, 0.2)"
-      display={{ lg: "none" }}
+      display={{ base: "flex", lg: "none" }}
     >
       <Flex
         width={{ base: "70%" }}
