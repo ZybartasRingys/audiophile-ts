@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 import Banner from "./Banner";
 import Links from "./Links";
-import Products from "./Products";
+import Products from "./products/Products";
 import Testimonial from "./Testimonial";
 
 const Home = () => {
