@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&family=Manrope:wght@200;300;400;500;600;700;800&family=Outfit:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&family=Manrope:wght@200;300;400;500;600;700;800&family=Outfit:wght@300;400;500&display=swap");
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
+}
+
+.best {
+  color: #d87d4a;
 }
