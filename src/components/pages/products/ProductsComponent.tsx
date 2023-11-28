@@ -20,6 +20,7 @@ const ProductsComponent = ({
       height={{ base: "100%" }}
       alignItems="center"
       mt={{ base: "3.875rem", md: "7.5rem" }}
+      mb={{ base: "3.5rem" }}
     >
       <Flex
         boxShadow="sm"
@@ -71,7 +72,6 @@ const ProductsComponent = ({
         >
           <Flex
             width={{ base: "80%", md: "48%" }}
-            border="1px solid red"
             justifyContent={{ base: "center" }}
           >
             <Heading
