@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useContext } from "react";
-//
+import "./Headphones.css";
+
+// Chakra UI
 import { Flex } from "@chakra-ui/react";
 
 //Types
@@ -16,11 +18,13 @@ import ProductsComponent from "../products/ProductsComponent";
 const Headphones: React.FC<IProduct> = () => {
   const { headphones } = useContext(AppContext);
 
+  console.log(headphones);
+
   return (
     <Flex
       flexDir={{ base: "column" }}
       width={{ base: "100%" }}
-      px={{ base: "24", md: "38" }}
+      px={{ base: "24", md: "38", lg: "10.3125rem" }}
       mb={{ md: "4.6875rem" }}
     >
       {headphones
@@ -31,7 +35,6 @@ const Headphones: React.FC<IProduct> = () => {
             title={title}
             desc={desc}
             image={image}
-            key={title}
             slug={slug}
             _id={"string"}
             price={0}
@@ -40,6 +43,8 @@ const Headphones: React.FC<IProduct> = () => {
             unit={[]}
             products={[]}
             isNewProduct={isNewProduct}
+            key={title}
+            className={`${slug.current}`}
           />
         ))}
     </Flex>

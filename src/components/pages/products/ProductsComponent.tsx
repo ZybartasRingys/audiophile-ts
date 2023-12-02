@@ -1,6 +1,6 @@
 import { urlFor } from "../../../../sanity/sanity";
 import { Box, Text, Heading, Flex, Link, Image } from "@chakra-ui/react";
-
+import "../headphones/Headphones.css";
 // Types
 
 import { IProduct } from "../../../types";
@@ -11,27 +11,30 @@ const ProductsComponent = ({
   image,
   slug,
   isNewProduct,
+  className,
 }: IProduct) => {
   return (
     <Flex
       key={title}
-      flexDir={{ base: "column" }}
+      flexDir={{ base: "column", lg: "row" }}
       width="100%"
       height={{ base: "100%" }}
       alignItems="center"
+      gap={{ lg: "7.5rem" }}
       mt={{ base: "3.875rem", md: "7.5rem" }}
       mb={{ base: "3.5rem" }}
+      className={className}
     >
       <Flex
         boxShadow="sm"
-        height={{ base: "22rem" }}
-        width="100%"
+        height={{ base: "22rem", lg: "35rem" }}
+        width={{ base: "100%", lg: "100%" }}
         borderRadius=".5rem"
         alignItems="center"
-        justifyContent="center"
+        justifyContent={{ base: "center" }}
         bgColor="white.300"
       >
-        <Box width={{ base: "100%", md: "50%" }} height="100%">
+        <Box width={{ base: "100%", md: "50%", lg: "100%" }} height="100%">
           {image && (
             <Image
               width="100%"
@@ -46,7 +49,7 @@ const ProductsComponent = ({
 
       <Flex
         flexDir={{ base: "column" }}
-        alignItems="center"
+        alignItems={{ base: "center", lg: "start" }}
         width={{ base: "100%", md: "83%" }}
       >
         {isNewProduct === true ? (
@@ -66,12 +69,14 @@ const ProductsComponent = ({
         <Flex
           mt={{ base: "2rem", md: ".9375rem" }}
           flexDir={{ base: "column" }}
-          width="100%"
-          textAlign="center"
-          alignItems={{ base: "center", md: "center" }}
+          width={{ base: "100%", lg: "99%" }}
+          height="100%"
+          alignItems={{ base: "center", lg: "start" }}
+          justifyContent={{ base: "center" }}
+          textAlign={{ base: "center", lg: "start" }}
         >
           <Flex
-            width={{ base: "80%", md: "48%" }}
+            width={{ base: "80%", md: "48%", lg: "100%" }}
             justifyContent={{ base: "center" }}
           >
             <Heading

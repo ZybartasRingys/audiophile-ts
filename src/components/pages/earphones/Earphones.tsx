@@ -14,7 +14,7 @@ const Earphones: React.FC<IProduct> = () => {
   const { earphones } = useContext(AppContext);
 
   return (
-    <Flex flexDir={{ base: "column" }} width={{ base: "87%" }}>
+    <Flex flexDir={{ base: "column" }} width={{ base: "87%" }} as="section">
       {earphones.map(({ title, desc, image, slug, isNewProduct }) => (
         <ProductsComponent
           title={title}

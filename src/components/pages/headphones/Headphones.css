@@ -1,0 +1,6 @@
+.xx99-mark-i-headphones:nth-child(1n) {
+  @media (min-width: 62rem) {
+    flex-direction: row-reverse;
+    margin-right: 0px;
+  }
+}

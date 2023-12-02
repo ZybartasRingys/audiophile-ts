@@ -19,6 +19,7 @@ const Speakers: React.FC<IProduct> = () => {
       flexDir={{ base: "column" }}
       width={{ base: "100%" }}
       px={{ base: "24", md: "38" }}
+      as="section"
     >
       {speakers
         .slice(0)
