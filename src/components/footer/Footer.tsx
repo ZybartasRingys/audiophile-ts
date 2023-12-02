@@ -6,46 +6,55 @@ const Footer = () => {
     <Flex
       bgColor="black.100"
       width="100%"
-      height={{ base: "654px", md: "100%" }}
+      height={{ base: "100%" }}
       flexDir={{ base: "column" }}
       color="white"
       alignItems={{ base: "center", md: "start" }}
-      px={{ md: "25px" }}
+      px={{ md: "2.375rem", lg: "10.3125rem" }}
+      pb={{ base: "2.25rem", md: "3rem" }}
     >
       <Flex
         width={{ base: "104px" }}
         height={{ base: "4px" }}
         bgColor="orange.100"
-        mb={{ base: "48px" }}
+        mb={{ base: "3rem", lg: "4.375rem" }}
       ></Flex>
-      <Image src="/public/shared/desktop/logo.svg" />
 
       <Flex
-        flexDir={{ base: "column", md: "row" }}
-        mt={{ base: "50px" }}
-        textAlign="center"
-        width={{ base: "100%", md: "429px" }}
-        height={{ base: "148px", md: "22px" }}
-        justifyContent="space-between"
+        width="100%"
+        justifyContent={{ md: "space-between" }}
+        alignItems={{ base: "center", md: "start" }}
+        height={{ base: "100%", lg: "1.5625rem" }}
+        flexDir={{ base: "column", lg: "row" }}
       >
-        <Link href="/" {...FooterLinkStyle}>
-          Home
-        </Link>
-        <Link href="/headphones" {...FooterLinkStyle}>
-          Headphones
-        </Link>
-        <Link href="/speakers" {...FooterLinkStyle}>
-          Speakers
-        </Link>
-        <Link href="/earphones" {...FooterLinkStyle}>
-          Earphones
-        </Link>
+        <Image src="/public/shared/desktop/logo.svg" />
+        <Flex
+          flexDir={{ base: "column", md: "row" }}
+          mt={{ base: "50px", md: "2rem", lg: "0rem" }}
+          textAlign="center"
+          width={{ base: "100%", md: "26.8125rem" }}
+          height={{ base: "9.25rem", md: "22px", lg: "1.5625rem" }}
+          justifyContent="space-between"
+        >
+          <Link href="/" {...FooterLinkStyle}>
+            Home
+          </Link>
+          <Link href="/headphones" {...FooterLinkStyle}>
+            Headphones
+          </Link>
+          <Link href="/speakers" {...FooterLinkStyle}>
+            Speakers
+          </Link>
+          <Link href="/earphones" {...FooterLinkStyle}>
+            Earphones
+          </Link>
+        </Flex>
       </Flex>
 
       <Flex
-        width={{ base: "100%" }}
+        width={{ base: "100%", lg: "49%" }}
         height={{ base: "100%" }}
-        mt={{ base: "50px" }}
+        mt={{ base: "3.125rem", md: "2rem" }}
         textAlign={{ base: "center", md: "start" }}
         px={{ base: "25px", md: "0px" }}
       >
@@ -66,11 +75,12 @@ const Footer = () => {
       <Flex
         width={{ base: "100%" }}
         flexDir={{ base: "column", md: "row" }}
-        alignItems="center"
+        alignItems={{ base: "center" }}
         justifyContent={{ md: "space-between" }}
+        pb={{ lg: "1.5rem" }}
+        mt={{ base: "3rem", md: "4rem" }}
       >
         <Text
-          mt={{ base: "50px", md: "0px" }}
           fontSize={{ base: "15px" }}
           fontFamily="main.100"
           fontWeight="medium"
@@ -81,10 +91,9 @@ const Footer = () => {
         </Text>
 
         <Flex
-          mt={{ base: "48px" }}
-          mb={{ base: "38px" }}
-          width={{ base: "104px" }}
-          height={{ base: "24px" }}
+          mt={{ base: "3rem", md: "0px", lg: "-5.5rem" }}
+          width={{ base: "6.5rem" }}
+          height={{ base: "100%" }}
           justifyContent="space-between"
         >
           <Link href="https://facebook.com" isExternal>
