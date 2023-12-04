@@ -44,11 +44,11 @@ const Product: React.FC<IProduct> = ({
           flexDir={{ base: "column", md: "row" }}
           justifyContent={{ md: "space-between" }}
           alignItems={{ md: "center" }}
-          gap={{ md: "58px", lg: "7.8125rem" }}
+          gap={{ md: "3.625rem" }}
         >
           <Flex
             height={{ base: "327px", md: "480px", lg: "560px" }}
-            width={{ base: "100%", md: "100%" }}
+            width={{ base: "100%", md: "80%" }}
             borderRadius="8px"
             bgColor="white.300"
             alignItems={{ md: "center" }}
@@ -58,7 +58,7 @@ const Product: React.FC<IProduct> = ({
               <Image
                 width={{ base: "100%", md: "100%" }}
                 height={{ base: "100%", md: "100%" }}
-                borderRadius="8px"
+                borderRadius=".5rem"
                 src={urlFor(image).url()}
                 alt={title}
               ></Image>
@@ -67,7 +67,7 @@ const Product: React.FC<IProduct> = ({
           <Flex
             flexDir={{ base: "column" }}
             textAlign="start"
-            width={{ base: "100%", md: "100%", lg: "86%" }}
+            width={{ base: "100%", md: "100%", lg: "90%" }}
             height={{ md: "100%" }}
             alignItems={{ md: "start" }}
           >

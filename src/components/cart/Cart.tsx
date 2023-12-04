@@ -38,9 +38,9 @@ const Cart = () => {
           maxW={{ md: "23.5625rem" }}
           height={{ base: "30.5rem" }}
           bgColor="white.100"
-          mt={{ base: "7.2rem" }}
+          mt={{ base: "7.2rem", md: "7.125rem" }}
           mx={{ base: "24" }}
-          left={{ md: "155px" }}
+          left={{ md: "9.6875rem" }}
         >
           <Flex
             width={{ base: "100%" }}
