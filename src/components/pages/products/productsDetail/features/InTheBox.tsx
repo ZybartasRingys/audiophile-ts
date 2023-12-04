@@ -1,9 +1,15 @@
+// Chakra UI
 import { Flex, Text, Heading } from "@chakra-ui/react";
+
+// App styles
 import { Heading5, BodyText } from "../../../../../chakra/appStyles";
 
-import { IProduct } from "../../../../../types";
-import React from "react";
-const InTheBox: React.FC<IProduct> = ({ unit, box }) => {
+type InTheBoxProps = {
+  unit: Array<string>;
+  box: Array<string>;
+};
+
+const InTheBox: React.FC<InTheBoxProps> = ({ unit, box }) => {
   return (
     <Flex
       width={{ md: "87%", lg: "55%" }}
