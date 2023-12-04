@@ -77,7 +77,7 @@ const ProductsComponent = ({
         >
           <Flex
             width={{ base: "80%", md: "48%", lg: "100%" }}
-            justifyContent={{ base: "center" }}
+            justifyContent={{ base: "center", lg: "start" }}
           >
             <Heading
               fontSize={{ base: "1.75rem", md: "2.5rem" }}

@@ -22,10 +22,11 @@ const ProductsDetail: React.FC<IProduct> = () => {
         justifyContent="center"
       >
         <Box
-          width="87%"
+          width="100%"
           textAlign="start"
-          mt={{ base: "1.25rem", md: "24" }}
-          mb={{ base: "1.25rem", md: "24" }}
+          px={{ base: "24", md: "38", lg: "10.3125rem" }}
+          mt={{ base: "1.25rem", md: "24", lg: "5rem" }}
+          mb={{ base: "1.25rem", md: "24", lg: "3.5rem" }}
         >
           <Link
             fontSize=".9375rem"

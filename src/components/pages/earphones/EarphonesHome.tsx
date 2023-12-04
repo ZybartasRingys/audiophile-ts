@@ -29,7 +29,7 @@ const EarphonesHome = () => {
         width={{ base: "100%" }}
         flexDir={{ base: "column" }}
         alignItems={{ md: "center" }}
-        px={{ base: "24px", md: "38px" }}
+        px={{ base: "24px", md: "38px", lg: "10.3125rem" }}
       >
         <Links />
         <Testimonial />

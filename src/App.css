@@ -7,3 +7,9 @@ body {
 .best {
   color: #d87d4a;
 }
+
+.zx7-speaker:nth-child(n) {
+  @media (min-width: 62rem) {
+    flex-direction: row-reverse;
+  }
+}

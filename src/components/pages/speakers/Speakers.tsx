@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty-pattern */
 import { useContext } from "react";
+import "../../../App.css";
 
 import ProductsComponent from "../products/ProductsComponent";
 import { Flex } from "@chakra-ui/react";
@@ -14,17 +15,19 @@ import { AppContext } from "../../../context/AppContext";
 const Speakers: React.FC<IProduct> = () => {
   const { speakers } = useContext(AppContext);
 
+  console.log(speakers);
+
   return (
     <Flex
       flexDir={{ base: "column" }}
       width={{ base: "100%" }}
-      px={{ base: "24", md: "38" }}
+      px={{ base: "24", md: "38", lg: "10.3125rem" }}
       as="section"
     >
       {speakers
         .slice(0)
         .reverse()
-        .map(({ title, desc, image, slug, isNewProduct }) => (
+        .map(({ title, desc, image, slug, isNewProduct, className }) => (
           <ProductsComponent
             title={title}
             desc={desc}
@@ -38,6 +41,7 @@ const Speakers: React.FC<IProduct> = () => {
             unit={[]}
             products={[]}
             isNewProduct={isNewProduct}
+            className={slug.current}
           />
         ))}
     </Flex>

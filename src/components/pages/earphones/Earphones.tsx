@@ -14,23 +14,31 @@ const Earphones: React.FC<IProduct> = () => {
   const { earphones } = useContext(AppContext);
 
   return (
-    <Flex flexDir={{ base: "column" }} width={{ base: "87%" }} as="section">
-      {earphones.map(({ title, desc, image, slug, isNewProduct }) => (
-        <ProductsComponent
-          title={title}
-          desc={desc}
-          image={image}
-          key={title}
-          slug={slug}
-          _id={"string"}
-          price={0}
-          box={[]}
-          productImages={[]}
-          unit={[]}
-          products={[]}
-          isNewProduct={isNewProduct}
-        />
-      ))}
+    <Flex
+      flexDir={{ base: "column" }}
+      width={{ base: "100%" }}
+      as="section"
+      px={{ base: "24", md: "38", lg: "10.3125rem" }}
+    >
+      {earphones.map(
+        ({ title, desc, image, slug, isNewProduct, className }) => (
+          <ProductsComponent
+            title={title}
+            desc={desc}
+            image={image}
+            key={title}
+            slug={slug}
+            _id={"string"}
+            price={0}
+            box={[]}
+            productImages={[]}
+            unit={[]}
+            products={[]}
+            isNewProduct={isNewProduct}
+            className={className}
+          />
+        )
+      )}
     </Flex>
   );
 };
