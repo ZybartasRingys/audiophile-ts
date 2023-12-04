@@ -5,11 +5,17 @@
     height: 174px;
     width: 100%;
   }
+  @media (min-width: 1440px) {
+    height: 280px;
+  }
 }
 .grid-box:nth-child(2n) {
   grid-area: B;
   @media (min-width: 768px) and (max-width: 1440px) {
     height: 174px;
+  }
+  @media (min-width: 1440px) {
+    height: 280px;
   }
 }
 
@@ -18,5 +24,10 @@
   @media (min-width: 768px) and (max-width: 1440px) {
     height: 368px;
     width: 100%;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 635px;
+    height: 592px;
   }
 }

@@ -1,55 +1,60 @@
-import { Flex, Text, Heading } from '@chakra-ui/react'
-import { Heading5, BodyText } from '../../../../../chakra/appStyles'
+import { Flex, Text, Heading } from "@chakra-ui/react";
+import { Heading5, BodyText } from "../../../../../chakra/appStyles";
 
-import { IProduct } from '../../../../../types'
-import React from 'react'
+import { IProduct } from "../../../../../types";
+import React from "react";
 const InTheBox: React.FC<IProduct> = ({ unit, box }) => {
   return (
     <Flex
-      width={{ md: '87%', lg: '100%' }}
-      flexDir={{ base: 'column', md: 'row', lg: 'column' }}
-      border='2px solid red'>
+      width={{ md: "87%", lg: "55%" }}
+      flexDir={{ base: "column", md: "row", lg: "column" }}
+      mt={{ base: "5.5rem", lg: "0" }}
+    >
       <Heading
         {...Heading5}
-        letterSpacing={{ base: '0.86px', md: '1.14px' }}
-        mb='24px'
-        mr={{ md: '9.25rem', lg: '0rem' }}>
+        letterSpacing={{ base: "0.86px", md: "1.14px" }}
+        mb="1.5rem"
+        mr={{ md: "9.25rem", lg: "9.0625rem" }}
+      >
         IN THE BOX
       </Heading>
-      <Flex height={{ base: '157px' }} mb={{ base: '5.5rem', md: '7.5rem' }}>
+      <Flex height={{ base: "9.8125rem" }}>
         {/* Unit */}
         <Flex
-          flexDir={{ base: 'column' }}
-          height={{ base: '157px' }}
-          justifyContent='space-between'
-          mr={{ base: '24px' }}>
+          flexDir={{ base: "column" }}
+          height={{ base: "9.8125rem" }}
+          justifyContent="space-between"
+          mr={{ base: "1.5rem" }}
+        >
           {unit.map((number, i) => (
             <Text
-              color='orange.100'
-              fontSize='15px'
-              lineHeight='25px'
-              fontFamily='main.100'
-              fontWeight='bold'
-              key={i}>
+              color="orange.100"
+              fontSize=".9375rem"
+              lineHeight="1.5625rem"
+              fontFamily="main.100"
+              fontWeight="bold"
+              key={i}
+            >
               {number}
             </Text>
           ))}
         </Flex>
         {/* Box item */}
         <Flex
-          flexDir={{ base: 'column' }}
-          height={{ base: '157px' }}
-          justifyContent='space-between'
-          mb='90px'>
+          flexDir={{ base: "column" }}
+          height={{ base: "9.8125rem" }}
+          justifyContent="space-between"
+          mb="5.625rem"
+        >
           {box.map((item) => (
-            <Text {...BodyText} fontSize='15px' opacity='0.5' key={item}>
+            <Text {...BodyText} fontSize="15px" opacity="0.5" key={item}>
               {item}
             </Text>
           ))}
         </Flex>
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default InTheBox
+export default InTheBox;
