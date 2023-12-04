@@ -1,52 +1,50 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Box, Flex, Link } from "@chakra-ui/react";
-import Product from "./Product";
-import { IProduct } from "../../../../types";
-import { useParams } from "react-router-dom";
+import { Box, Flex, Link } from '@chakra-ui/react'
+import Product from './Product'
+import { IProduct } from '../../../../types'
+import { useParams } from 'react-router-dom'
 
 //Context
-import { useContext } from "react";
-import { CartContext } from "../../../../context/CartContext";
+import { useContext } from 'react'
+import { CartContext } from '../../../../context/CartContext'
 
 const ProductsDetail: React.FC<IProduct> = () => {
-  const { products } = useContext(CartContext);
-  const { slug } = useParams();
+  const { products } = useContext(CartContext)
+  const { slug } = useParams()
 
   return (
     <>
       <Flex
-        flexDir={{ base: "column" }}
-        width={{ base: "100%" }}
-        height={{ base: "100%" }}
-        alignItems="center"
-        justifyContent="center"
-      >
+        flexDir={{ base: 'column' }}
+        width={{ base: '100%' }}
+        height={{ base: '100%' }}
+        alignItems='center'
+        justifyContent='center'
+        border='5px solid yellow'
+        as='section'>
         <Box
-          width="100%"
-          textAlign="start"
-          px={{ base: "24", md: "38", lg: "10.3125rem" }}
-          mt={{ base: "1.25rem", md: "24", lg: "5rem" }}
-          mb={{ base: "1.25rem", md: "24", lg: "3.5rem" }}
-        >
+          width='100%'
+          textAlign='start'
+          px={{ base: '24', md: '38', lg: '10.3125rem' }}
+          mt={{ base: '1.25rem', md: '24', lg: '5rem' }}
+          mb={{ base: '1.25rem', md: '24', lg: '3.5rem' }}>
           <Link
-            fontSize=".9375rem"
-            color="black.200"
-            fontFamily="main.100"
-            fontWeight="medium"
-            lineHeight="1.5625rem"
-            opacity="0.5"
-            href="/"
-          >
+            fontSize='.9375rem'
+            color='black.200'
+            fontFamily='main.100'
+            fontWeight='medium'
+            lineHeight='1.5625rem'
+            opacity='0.5'
+            href='/'>
             Go Back
           </Link>
         </Box>
 
         <Flex
-          flexDir={{ base: "column" }}
-          width="100%"
-          height="100%"
-          alignItems="center"
-        >
+          flexDir={{ base: 'column' }}
+          width='100%'
+          height='100%'
+          alignItems='center'>
           {products
             .filter((product: IProduct) => product.slug.current == slug)
             .map(
@@ -83,7 +81,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
         </Flex>
       </Flex>
     </>
-  );
-};
+  )
+}
 
-export default ProductsDetail;
+export default ProductsDetail
