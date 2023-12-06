@@ -40,7 +40,7 @@ export const Heading4: BoxProps = {
 };
 
 export const Heading5: BoxProps = {
-  fontSize: { base: "24px" },
+  fontSize: { base: "1.5rem", lg: "2rem" },
   textTransform: "uppercase",
   letterSpacing: "1.71px",
   lineHeight: "auto",

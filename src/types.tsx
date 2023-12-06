@@ -52,6 +52,9 @@ export interface ICartContext {
   decreaseCartQuantity: (_id: string) => void;
   removeAllCartItems: () => void;
   products: IProduct[];
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
 }
 
 export type ShoppingCartProvider = {

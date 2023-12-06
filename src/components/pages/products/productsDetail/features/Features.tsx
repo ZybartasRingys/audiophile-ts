@@ -33,10 +33,10 @@ const Features: React.FC<IProduct> = ({
           >
             <Heading
               mb={{ base: "1.5rem", md: "2rem" }}
-              fontSize={{ base: "1.5rem" }}
+              fontSize={{ base: "1.5rem", lg: "2rem" }}
               fontWeight="bold"
               lineHeight={{ base: "2.25rem" }}
-              letterSpacing={{ base: ".0537rem" }}
+              letterSpacing={{ base: ".0537rem", lg: ".0712rem" }}
               fontFamily="main.100"
               color="black.200"
             >

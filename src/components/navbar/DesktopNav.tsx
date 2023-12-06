@@ -4,7 +4,14 @@ import {
   NavLink as RouterLink,
 } from "react-router-dom";
 
+//Context
+
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+
 const DesktopNav = () => {
+  const { onOpen } = useContext(CartContext);
+
   return (
     <Flex
       width="100%"
@@ -47,7 +54,7 @@ const DesktopNav = () => {
           </Link>
         </Flex>
         <Flex>
-          <Image src="/shared/desktop/icon-cart.svg" />
+          <Image src="/shared/desktop/icon-cart.svg" onClick={onOpen} />
         </Flex>
       </Flex>
     </Flex>

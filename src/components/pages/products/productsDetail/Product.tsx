@@ -44,11 +44,11 @@ const Product: React.FC<IProduct> = ({
           flexDir={{ base: "column", md: "row" }}
           justifyContent={{ md: "space-between" }}
           alignItems={{ md: "center" }}
-          gap={{ md: "3.625rem" }}
+          gap={{ md: "3.625rem", lg: "7.5rem" }}
         >
           <Flex
             height={{ base: "327px", md: "480px", lg: "560px" }}
-            width={{ base: "100%", md: "80%" }}
+            width={{ base: "100%" }}
             borderRadius="8px"
             bgColor="white.300"
             alignItems={{ md: "center" }}
@@ -88,7 +88,7 @@ const Product: React.FC<IProduct> = ({
             )}
             <Flex width={{ base: "62%" }}>
               <Heading
-                fontSize={{ base: "1.75rem" }}
+                fontSize={{ base: "1.75rem", lg: "2.5rem" }}
                 letterSpacing="1px"
                 textTransform="uppercase"
                 fontFamily="main.100"

@@ -9,8 +9,9 @@ import {
 } from "../types";
 
 // Sanity
-
 import { getProductsBySlug } from "../../sanity/sanity";
+
+import { useDisclosure } from "@chakra-ui/react";
 
 export const CartContext = createContext({} as ICartContext);
 
@@ -19,6 +20,8 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
     "shopping-cart",
     []
   );
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [products, setProducts] = useState<IProduct[]>([]);
   //get all products
 
@@ -35,11 +38,11 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
     0
   );
 
-  const getItemsQuantity = (_id: "string") => {
+  const getItemsQuantity = (_id: string) => {
     return cartItems.find((item) => item._id === _id)?.quantity || 1;
   };
 
-  const increaseCartQuantity = (_id: "string") => {
+  const increaseCartQuantity = (_id: string) => {
     setCartItems((currItems) => {
       if (currItems.find((item) => item._id === _id) == null) {
         return [...currItems, { _id, quantity: 1 }];
@@ -55,7 +58,7 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
     });
   };
 
-  const decreaseCartQuantity = (_id: "string") => {
+  const decreaseCartQuantity = (_id: string) => {
     setCartItems((currItems) => {
       if (currItems.find((item) => item._id === _id)?.quantity === 1) {
         return [...currItems.filter((item) => item._id !== _id)];
@@ -85,6 +88,9 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
         cartItems,
         totalCartQuantity,
         products,
+        isOpen,
+        onOpen,
+        onClose,
       }}
     >
       {children}

@@ -2,7 +2,6 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  useDisclosure,
   Image,
   Text,
   Flex,
@@ -19,9 +18,15 @@ import { CartContext } from "../../context/CartContext";
 import CartItem from "./CartItem";
 
 const Cart = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const { totalCartQuantity, cartItems, removeAllCartItems, products } =
-    useContext(CartContext);
+  const {
+    totalCartQuantity,
+    cartItems,
+    removeAllCartItems,
+    products,
+    onOpen,
+    onClose,
+    isOpen,
+  } = useContext(CartContext);
 
   return (
     <>
@@ -40,7 +45,7 @@ const Cart = () => {
           bgColor="white.100"
           mt={{ base: "7.2rem", md: "7.125rem" }}
           mx={{ base: "24" }}
-          left={{ md: "9.6875rem" }}
+          left={{ md: "9.6875rem", lg: "342px" }}
         >
           <Flex
             width={{ base: "100%" }}
