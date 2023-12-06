@@ -75,13 +75,14 @@ const PaymentDetails: React.FC<PaymentProps> = ({ register, errors }) => {
             display="flex"
             flexDir={{ base: "column" }}
             alignItems={{ md: "end" }}
+            gap={{ base: "1rem" }}
           >
             {options.map((value) => {
               const radio = getRadioProps({ value });
               return (
                 <Flex
                   {...formInputStyle}
-                  borderRadius="8px"
+                  borderRadius=".5rem"
                   key={value}
                   marginBottom={{ md: "1rem" }}
                   pl="1rem"

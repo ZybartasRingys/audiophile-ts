@@ -25,7 +25,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           <Flex width="100%" flexDir={{ base: "column" }}>
             <Flex
               justifyContent={{ base: "space-between" }}
-              mb={{ base: "10px" }}
+              mb={{ base: ".5625rem" }}
               width="100%"
             >
               <Box as="label" {...formLabelStyle}>

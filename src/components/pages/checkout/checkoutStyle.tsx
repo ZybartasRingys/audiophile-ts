@@ -13,9 +13,9 @@ export const formLabelStyle: BoxProps = {
 export const formInputStyle: BoxProps = {
   width: { base: "280px" },
   height: { base: "56px" },
-  bgColor: "white.200",
+  bgColor: "white.100",
   color: "black.200",
-  mb: { base: "25px", md: "0" },
+  mb: { base: "0", md: "0" },
   border: "1px solid",
   borderColor: "grey.200",
   fontFamily: "main.100",
@@ -34,7 +34,7 @@ export const FormLabelHeading: BoxProps = {
   lineHeight: "25px",
   letterSpacing: "1px",
   fontWeight: "bold",
-  mb: { base: "20px" },
+  mb: { base: "1rem" },
   textTransform: "uppercase",
 };
 

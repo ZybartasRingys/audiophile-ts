@@ -49,7 +49,7 @@ const CheckoutForm = () => {
         width={{ base: "100%" }}
         height={{ base: "100%" }}
         flexDir={{ base: "column" }}
-        padding={{ base: "24" }}
+        px={{ base: "24" }}
         borderRadius="0.5rem"
         bgColor="white.100"
       >

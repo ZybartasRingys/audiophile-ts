@@ -18,7 +18,7 @@ const InTheBox: React.FC<InTheBoxProps> = ({ unit, box }) => {
     >
       <Heading
         {...Heading5}
-        letterSpacing={{ base: "0.86px", md: "1.14px" }}
+        letterSpacing={{ base: ".0537rem", md: ".0712rem" }}
         mb="1.5rem"
         mr={{ md: "9.25rem", lg: "9.0625rem" }}
       >

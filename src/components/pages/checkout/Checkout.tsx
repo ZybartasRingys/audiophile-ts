@@ -18,8 +18,10 @@ const Checkout = () => {
     >
       <Flex
         width={{ base: "100%" }}
-        height={{ base: "65px" }}
+        height={{ base: "100%" }}
         alignItems="center"
+        mt={{ base: "1rem" }}
+        mb={{ base: "3rem" }}
       >
         <Text {...SmallTextOpacity}>Go Back</Text>
       </Flex>
