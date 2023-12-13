@@ -28,8 +28,8 @@ const BillingDetails: React.FC<BillingProps> = ({ errors, register }) => {
 
       <Grid
         gridTemplateColumns={{ md: "repeat(2,1fr)" }}
-        gap={{ base: "1.5625rem" }}
-        mb={{ base: "2.1875rem", md: "3.875rem" }}
+        gap={{ base: "1.5625rem", md: "1rem" }}
+        mb={{ base: "2.1875rem", md: "3.3125rem" }}
       >
         <GridItem gridArea={""}>
           {/*Name input */}

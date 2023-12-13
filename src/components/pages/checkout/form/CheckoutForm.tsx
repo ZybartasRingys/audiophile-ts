@@ -38,50 +38,55 @@ const CheckoutForm = () => {
 
   return (
     <>
-      {/* Form heading end */}
-
-      {/* Form container */}
-
-      {/* Form */}
       <Flex
-        as="form"
-        onSubmit={handleSubmit(onSubmit)}
-        width={{ base: "100%" }}
-        height={{ base: "100%" }}
-        flexDir={{ base: "column" }}
-        px={{ base: "24" }}
-        borderRadius="0.5rem"
-        bgColor="white.100"
+        as="section"
+        flexDir={{ base: "column", lg: "row" }}
+        gap={{ lg: "1.875rem" }}
       >
-        {/* Form heading */}
+        {/* Form */}
         <Flex
+          as="form"
+          onSubmit={handleSubmit(onSubmit)}
           width={{ base: "100%" }}
           height={{ base: "100%" }}
-          alignItems="center"
-          mb={{ base: "2rem" }}
+          flexDir={{ base: "column" }}
+          px={{ base: "24", lg: "3rem" }}
+          borderRadius="0.5rem"
+          bgColor="white.100"
+          pt={{ base: "1.5rem", md: "1.875rem", lg: "3.375rem" }}
+          pb={{ base: "1.5rem", md: "1.875rem", lg: "3rem" }}
+          border="1px solid red"
         >
-          <Heading {...Heading4} letterSpacing="1px">
-            CHECKOUT
-          </Heading>
+          {/* Form heading */}
+          <Flex
+            width={{ base: "100%" }}
+            height={{ base: "100%" }}
+            alignItems="center"
+            mb={{ base: "2rem" }}
+          >
+            <Heading {...Heading4} letterSpacing="1px">
+              CHECKOUT
+            </Heading>
+          </Flex>
+
+          {/*Billing Address section */}
+
+          <BillingDetails register={register} errors={errors} />
+
+          {/*Billing Address section end */}
+
+          {/*Shipping info  section */}
+
+          <ShippingInfo register={register} errors={errors} />
+
+          {/*Shipping info  section end */}
+
+          {/*Payment method  section */}
+          <PaymentDetails register={register} errors={errors} />
+          {/*Payment method  section end */}
         </Flex>
-
-        {/*Billing Address section */}
-
-        <BillingDetails register={register} errors={errors} />
-
-        {/*Billing Address section end */}
-
-        {/*Shipping info  section */}
-
-        <ShippingInfo register={register} errors={errors} />
-
-        {/*Shipping info  section end */}
-
-        {/*Payment method  section */}
-        <PaymentDetails register={register} errors={errors} />
-        {/*Payment method  section end */}
+        <Summary handleSubmit={handleSubmit(onSubmit)} errors={errors} />
       </Flex>
-      <Summary handleSubmit={handleSubmit(onSubmit)} errors={errors} />
     </>
   );
 };

@@ -35,10 +35,12 @@ const Summary = ({ handleSubmit, errors }) => {
   };
   return (
     <Flex
-      width={{ base: "100%" }}
+      width={{ base: "100%", lg: "31%" }}
+      height={{ base: "100%", lg: "38.75rem" }}
       alignItems="center"
       justifyContent="center"
       mt={{ base: "9" }}
+      borderRadius={{ base: ".5rem" }}
     >
       {/*Summary section */}
       <Flex
@@ -48,6 +50,7 @@ const Summary = ({ handleSubmit, errors }) => {
         bgColor="white.100"
         borderRadius="0.5rem"
         mb={{ base: "5.93rem" }}
+        border="1px solid red"
       >
         <Text
           fontSize="1.1rem"

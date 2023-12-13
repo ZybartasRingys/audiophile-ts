@@ -11,7 +11,7 @@ export const formLabelStyle: BoxProps = {
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const formInputStyle: BoxProps = {
-  width: { base: "280px" },
+  width: { base: "280px", md: "309px" },
   height: { base: "56px" },
   bgColor: "white.100",
   color: "black.200",

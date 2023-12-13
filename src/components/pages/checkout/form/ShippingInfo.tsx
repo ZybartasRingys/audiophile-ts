@@ -40,7 +40,7 @@ const ShippingInfo: React.FC<ShippingProps> = ({ register, errors }) => {
           "D ."`,
           }}
           gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
-          mb={{ base: "2.1875rem", md: "3.875rem" }}
+          mb={{ base: "2.1875rem", md: "0" }}
           gap={5}
         >
           <GridItem gridArea={"A"}>
