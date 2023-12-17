@@ -129,18 +129,25 @@ const Summary = ({ handleSubmit, errors }) => {
               display="flex"
               alignItems="center"
               p={{ base: "0.5rem", md: "1.5rem" }}
-              mt={{ base: "13.75rem", md: "0" }}
-              top={{ md: "9.18rem" }}
+              mt={{ base: "13.75rem", md: "13.5625rem" }}
             >
-              <ModalHeader width={{ base: "86%" }} pl="0" mt="1.0625rem">
+              <ModalHeader
+                width={{ base: "86%" }}
+                mt={{ base: "2rem" }}
+                p={{ base: "0" }}
+              >
                 <Image src="/checkout/icon-order-confirmation.svg" />
               </ModalHeader>
 
-              <ModalBody height={{ base: "23.1875rem" }} width="100%">
+              <ModalBody
+                height={{ base: "23.1875rem" }}
+                width="100%"
+                py={{ base: "0rem" }}
+              >
                 <Flex
                   flexDir={{ base: "column" }}
                   width={{ base: "16.4375rem", md: "100%" }}
-                  pt="0"
+                  mt={{ base: "1.4375rem" }}
                 >
                   <Text
                     fontSize={{ base: "1.5rem", md: "2rem" }}
@@ -148,7 +155,7 @@ const Summary = ({ handleSubmit, errors }) => {
                     fontWeight="bold"
                     letterSpacing="1.14px"
                     color="black.200"
-                    mb="1.25rem"
+                    mb={{ base: "1rem" }}
                   >
                     THANK YOU <br /> FOR YOUR ORDER
                   </Text>
@@ -157,7 +164,8 @@ const Summary = ({ handleSubmit, errors }) => {
                     lineHeight="1.5625rem"
                     color="black.200"
                     opacity="0.5"
-                    mb={{ base: "1.25rem", md: "2.0625rem" }}
+                    fontWeight="medium"
+                    mb={{ base: "1.5rem", md: "2.0625rem" }}
                   >
                     You will receive an email confirmation shortly.
                   </Text>
@@ -189,13 +197,14 @@ const Summary = ({ handleSubmit, errors }) => {
                     width={{ base: "100%", md: "80%" }}
                     height={{ base: "92px", md: "8.75rem" }}
                     flexDir={{ base: "column" }}
-                    bgColor="black"
+                    justifyContent={{ md: "center" }}
+                    bgColor="black.200"
                     borderBottomRadius={{ base: "0.5rem", md: "0" }}
                     borderTopRightRadius={{ base: "0", md: "0.5rem" }}
                     borderBottomRightRadius={{ base: "0.5rem", md: "0.5rem" }}
-                    color="white"
-                    paddingX={{ base: "24px" }}
-                    py={{ base: "17px" }}
+                    color="white.100"
+                    paddingX={{ base: "1.5rem" }}
+                    py={{ base: "1.0625rem" }}
                   >
                     <Text
                       fontSize="15px"
@@ -232,17 +241,18 @@ const Summary = ({ handleSubmit, errors }) => {
                 </Flex>
 
                 <Link
-                  width={{ base: "263px", md: "444px" }}
-                  height="48px"
+                  width={{ base: "16.4375rem", md: "27.75rem" }}
+                  height="3rem"
                   mt={{ base: "1.5rem", md: "2.875rem" }}
                   color="white"
                   bgColor="orange.100"
-                  fontSize="13px"
-                  letterSpacing="1px"
+                  fontSize=".8125rem"
+                  letterSpacing=".0625rem"
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
                   fontWeight="bold"
+                  fontFamily="main.100"
                   textTransform="uppercase"
                   borderRadius="none"
                   href="/"
@@ -268,6 +278,7 @@ const Summary = ({ handleSubmit, errors }) => {
               alignItems="center"
               fontWeight="bold"
               textTransform="uppercase"
+              textDecoration="none"
               borderRadius="none"
               onClick={handleClick}
               disabled={errors}
