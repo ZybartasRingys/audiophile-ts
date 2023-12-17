@@ -39,7 +39,7 @@ const Summary = ({ handleSubmit, errors }) => {
       height={{ base: "100%", lg: "38.75rem" }}
       alignItems="center"
       justifyContent="center"
-      mt={{ base: "9" }}
+      mt={{ base: "9", lg: "0" }}
       borderRadius={{ base: ".5rem" }}
     >
       {/*Summary section */}
@@ -49,8 +49,7 @@ const Summary = ({ handleSubmit, errors }) => {
         flexDir={{ base: "column" }}
         bgColor="white.100"
         borderRadius="0.5rem"
-        mb={{ base: "5.93rem" }}
-        border="1px solid red"
+        mb={{ base: "5.93rem", lg: "0" }}
       >
         <Text
           fontSize="1.1rem"
@@ -62,6 +61,7 @@ const Summary = ({ handleSubmit, errors }) => {
           mt={{ base: "2rem" }}
           ml={{ base: "1.rem" }}
           mb={{ base: "0.37rem" }}
+          pl={{ base: "24" }}
         >
           Summary
         </Text>
@@ -256,7 +256,7 @@ const Summary = ({ handleSubmit, errors }) => {
           {cartItems.length ? (
             <Button
               mt="1.5625rem"
-              width={{ base: "279px", md: "623px" }}
+              width={{ base: "17.4375rem", md: "38.9375rem", lg: "17.75rem" }}
               height="48px"
               color="white"
               bgColor="orange.100"

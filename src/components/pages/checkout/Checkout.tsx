@@ -14,7 +14,7 @@ const Checkout = () => {
     <Flex
       flexDir={{ base: "column" }}
       px={{ base: "24", md: "47", lg: "10.3125rem" }}
-      bgColor="white.200"
+      bgColor="grey"
     >
       <Flex
         width={{ base: "100%" }}
@@ -22,7 +22,6 @@ const Checkout = () => {
         alignItems="center"
         mt={{ base: "1rem", md: "3rem" }}
         mb={{ base: "1.5rem" }}
-        border="1px solid red"
       >
         <Text {...SmallTextOpacity}>Go Back</Text>
       </Flex>

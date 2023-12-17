@@ -77,6 +77,7 @@ const PaymentDetails: React.FC<PaymentProps> = ({ register, errors }) => {
             display="flex"
             flexDir={{ base: "column" }}
             alignItems={{ md: "end" }}
+            gap={{ base: "4", md: "0" }}
           >
             {options.map((value) => {
               const radio = getRadioProps({ value });

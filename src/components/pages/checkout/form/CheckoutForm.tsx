@@ -42,6 +42,8 @@ const CheckoutForm = () => {
         as="section"
         flexDir={{ base: "column", lg: "row" }}
         gap={{ lg: "1.875rem" }}
+        width="100%"
+        mb={{ lg: "8.8125rem" }}
       >
         {/* Form */}
         <Flex
@@ -55,7 +57,6 @@ const CheckoutForm = () => {
           bgColor="white.100"
           pt={{ base: "1.5rem", md: "1.875rem", lg: "3.375rem" }}
           pb={{ base: "1.5rem", md: "1.875rem", lg: "3rem" }}
-          border="1px solid red"
         >
           {/* Form heading */}
           <Flex
