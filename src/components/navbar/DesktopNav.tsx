@@ -6,6 +6,10 @@ import { NavLink as RouterLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
+// Styles
+
+import { DesktopNavbarLink } from "../../chakra/appStyles";
+
 const DesktopNav = () => {
   const { onOpen } = useContext(CartContext);
 
@@ -32,21 +36,16 @@ const DesktopNav = () => {
           justifyContent="space-between"
           textTransform="uppercase"
         >
-          <Link as={RouterLink} to="/">
+          <Link as={RouterLink} to="/" {...DesktopNavbarLink}>
             Home
           </Link>
-          <Link
-            as={RouterLink}
-            to="/headphones"
-            _active={{ bgColor: "red" }}
-            textTransform="uppercase"
-          >
+          <Link as={RouterLink} to="/headphones" {...DesktopNavbarLink}>
             Headphones
           </Link>
-          <Link as={RouterLink} to="/speakers" textTransform="uppercase">
+          <Link as={RouterLink} to="/speakers" {...DesktopNavbarLink}>
             Speakers
           </Link>
-          <Link as={RouterLink} to="/earphones" textTransform="uppercase">
+          <Link as={RouterLink} to="/earphones" {...DesktopNavbarLink}>
             Earphones
           </Link>
         </Flex>

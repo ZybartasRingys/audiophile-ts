@@ -109,3 +109,16 @@ export const Default2btn: BoxProps = {
   border: "1px solid black",
   color: "black.200",
 };
+
+// Desktop navbar link styles
+
+export const DesktopNavbarLink: BoxProps = {
+  _activeLink: { color: "orange.100" },
+  fontSize: ".8125rem",
+  fontFamily: "main.100",
+  fontWeight: "bold",
+  letterSpacing: ".125rem",
+  lineHeight: "1.5625rem",
+  cursor: "pointer",
+  _hover: { textDecoration: "none" },
+};
