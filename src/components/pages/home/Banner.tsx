@@ -67,7 +67,9 @@ const Banner = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </Text>
-        <Link {...Default1btn}>See product</Link>
+        <Link {...Default1btn} href="/products/xx99-mark-ii-headphones">
+          See product
+        </Link>
       </Flex>
     </Flex>
   );

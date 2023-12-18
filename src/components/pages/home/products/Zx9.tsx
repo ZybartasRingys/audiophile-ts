@@ -70,7 +70,7 @@ const Zx9 = () => {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          href="/speakers"
+          href="/products/zx9-speaker"
         >
           See product
         </Link>

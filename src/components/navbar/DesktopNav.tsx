@@ -1,8 +1,5 @@
 import { Flex, Image, Link } from "@chakra-ui/react";
-import {
-  BrowserRouter as Router,
-  NavLink as RouterLink,
-} from "react-router-dom";
+import { NavLink as RouterLink } from "react-router-dom";
 
 //Context
 
@@ -46,10 +43,10 @@ const DesktopNav = () => {
           >
             Headphones
           </Link>
-          <Link as={RouterLink} to="/" textTransform="uppercase">
+          <Link as={RouterLink} to="/speakers" textTransform="uppercase">
             Speakers
           </Link>
-          <Link as={RouterLink} to="/" textTransform="uppercase">
+          <Link as={RouterLink} to="/earphones" textTransform="uppercase">
             Earphones
           </Link>
         </Flex>

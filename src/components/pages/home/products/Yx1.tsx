@@ -38,7 +38,9 @@ const Yx1 = () => {
         <Heading {...homeProductsHeadingStyle2} mb="2.125rem">
           yx1 earphones
         </Heading>
-        <Link {...seeProductButton}>See product</Link>
+        <Link {...seeProductButton} href="/products/yx1-wireless-earphones">
+          See product
+        </Link>
       </Flex>
     </Flex>
   );

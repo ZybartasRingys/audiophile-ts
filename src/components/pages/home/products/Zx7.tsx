@@ -28,7 +28,7 @@ const Zx7 = () => {
       <Heading {...homeProductsHeadingStyle2} mb="2rem">
         ZX7 speaker
       </Heading>
-      <Link href="/speakers" {...seeProductButton}>
+      <Link href="/products/zx7-speaker" {...seeProductButton}>
         See product
       </Link>
     </Flex>
