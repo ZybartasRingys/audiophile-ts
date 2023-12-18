@@ -17,6 +17,8 @@ import { CartContext } from "../../context/CartContext";
 
 import CartItem from "./CartItem";
 
+import NavbarModal from "../navbar/NavbarModal";
+
 const Cart = () => {
   const {
     totalCartQuantity,
@@ -35,6 +37,8 @@ const Cart = () => {
         cursor="pointer"
         onClick={onOpen}
       />
+
+     
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
