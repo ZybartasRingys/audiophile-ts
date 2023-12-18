@@ -15,8 +15,6 @@ import { AppContext } from "../../../context/AppContext";
 const Speakers: React.FC<IProduct> = () => {
   const { speakers } = useContext(AppContext);
 
-  console.log(speakers);
-
   return (
     <Flex
       flexDir={{ base: "column" }}

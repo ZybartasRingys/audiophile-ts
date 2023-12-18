@@ -28,7 +28,9 @@ const DesktopNav = () => {
         borderBottom="1px solid rgb(151, 151, 151, 0.2)"
       >
         <Flex width="8.9375rem" height="1.5625rem">
-          <Image src="/shared/desktop/logo.svg" />
+          <Link as={RouterLink} to="/">
+            <Image src="/shared/desktop/logo.svg" />
+          </Link>
         </Flex>
         <Flex
           color="white"

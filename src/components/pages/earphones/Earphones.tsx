@@ -12,6 +12,7 @@ import { AppContext } from "../../../context/AppContext";
 
 const Earphones: React.FC<IProduct> = () => {
   const { earphones } = useContext(AppContext);
+  console.log(earphones);
 
   return (
     <Flex
