@@ -1,21 +1,14 @@
 import {
   Box,
   Flex,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
   useDisclosure,
-  Text,
   Image,
-  Card,
-  CardBody,
-  Heading,
   Link,
-  Button,
+ 
 } from "@chakra-ui/react";
 
 import Cart from "../cart/Cart";
+import NavbarModal from "./NavbarModal";
 
 const MobileNav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -57,6 +50,10 @@ const MobileNav = () => {
         </Link>
       </Flex>
 
+      {/* Navbar Modal */}
+      <NavbarModal isOpen={isOpen} onClose={onClose}/>
+      {/* Navbar Modal */}
+      
       <Cart />
     </Flex>
   );
