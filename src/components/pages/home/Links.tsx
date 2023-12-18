@@ -26,7 +26,7 @@ const Links = () => {
       flexDir={{ base: "column", md: "row" }}
       alignItems="center"
       justifyContent={{ base: "space-between" }}
-      mt={{ base: "4.5625rem" }}
+      mt={{ base: "4.25rem" }}
     >
       {cards.map((card) => (
         <LinksCard

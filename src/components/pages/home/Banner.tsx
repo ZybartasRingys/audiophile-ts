@@ -23,12 +23,12 @@ const Banner = () => {
       px={{ lg: "10.3125rem" }}
     >
       <Flex
-        width={{ base: "100%", md: "50%", lg: "100%" }}
+        width={{ base: "100%", md: "55%", lg: "100%" }}
         maxW={{ lg: "22.875rem" }}
         height={{ base: "100%", md: "21.625rem" }}
         flexDir={{ base: "column" }}
         alignItems={{ base: "center", lg: "start" }}
-        px={{ base: "3.25rem", lg: "0" }}
+        px={{ base: "2.8125rem", md: "1.25rem", lg: "0" }}
         pt={{ base: "5.9375rem", md: "0" }}
         textAlign={{ base: "center", lg: "start" }}
       >
@@ -49,7 +49,7 @@ const Banner = () => {
           fontSize={{ base: "2.25rem", md: "3.5rem" }}
           fontFamily="main.100"
           textTransform="uppercase"
-          letterSpacing={{ base: "1,4px", md: "2px" }}
+          letterSpacing={{ base: ".25rem", md: ".125rem" }}
           mb="1.375rem"
           lineHeight={{ base: "2.5rem", md: "3.625rem" }}
         >

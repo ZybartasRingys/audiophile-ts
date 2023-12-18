@@ -1,3 +1,4 @@
+//Chakra ui
 import {
   Card,
   CardBody,
@@ -30,13 +31,13 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
           pb={{ lg: "1.875rem" }}
         >
           <Box
-            width="100%"
-            height="100%"
+            width={{ base: "8.75rem", lg: "160px" }}
+            height={{ base: "8.75rem", lg: "210px" }}
+            mt="-4.375rem"
             bgImage={image}
             bgRepeat="no-repeat"
+            bgPos="bottom"
             bgSize="cover"
-            bgPos="top"
-            mt={{ base: "-4.5rem" }}
           ></Box>
 
           <Heading
