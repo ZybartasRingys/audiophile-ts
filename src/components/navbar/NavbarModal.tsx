@@ -1,11 +1,9 @@
 import {
   Box,
-  Flex,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalBody,
-  useDisclosure,
   Text,
   Image,
   Card,
@@ -14,7 +12,13 @@ import {
   Link,
 } from '@chakra-ui/react'
 
-const NavbarModal = (isOpen, onClose) => {
+type NavbarModalProps = {
+  isOpen: boolean
+  onClose: () => void
+}
+
+const NavbarModal:React.FC<NavbarModalProps> = ({isOpen, onClose}) => {
+  
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
