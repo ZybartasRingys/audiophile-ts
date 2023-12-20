@@ -141,8 +141,8 @@ const Product: React.FC<IProduct> = ({
                   alignItems="center"
                   justifyContent="space-around"
                 >
-                  <Box opacity="0.5" cursor="pointer">
-                    <HiMiniMinusSmall
+                  <Box opacity="0.5" cursor="pointer" >
+                    <HiMiniMinusSmall _hover={{fill:'orange.200'}}
                       onClick={() => decreaseCartQuantity(_id)}
                     />
                   </Box>
@@ -170,6 +170,7 @@ const Product: React.FC<IProduct> = ({
                   width="10rem"
                   height="3rem"
                   bgColor="orange.100"
+                  _hover={{bgColor:'orange.200'}}
                   color="white"
                   borderRadius="0px"
                   fontSize={{ base: ".8125rem" }}

@@ -121,6 +121,8 @@ const OrderComfirmModal = (isOpen, onClose) => {
               textTransform="uppercase"
               borderRadius="none"
               href="/"
+            
+              _hover={{bgColor:"orange.100"}}
             >
               Back to home
             </Link>

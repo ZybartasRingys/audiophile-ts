@@ -45,4 +45,5 @@ export const seeProductButton: BoxProps = {
   letterSpacing: "1px",
   border: "1px solid black",
   color: "black.200",
+  _hover: {bgColor:"black.200", color:"white.100"}
 };

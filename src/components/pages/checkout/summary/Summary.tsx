@@ -256,6 +256,8 @@ const Summary = ({ handleSubmit, errors }) => {
                   textTransform="uppercase"
                   borderRadius="none"
                   href="/"
+                  _hover={{bgColor:'orange.200'}}
+              
                 >
                   Back to home
                 </Link>
@@ -283,6 +285,7 @@ const Summary = ({ handleSubmit, errors }) => {
               onClick={handleClick}
               disabled={errors}
               padding="0"
+              _hover={{bgColor:"orange.200"}}
             >
               Continue & pay
             </Button>

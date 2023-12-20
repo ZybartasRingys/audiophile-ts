@@ -13,6 +13,7 @@ import { IProduct } from "../../../../types";
 import { Heading5 } from "../../../../chakra/appStyles";
 
 const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
+  
   return (
     <Flex
       flexDir={{ base: "column" }}
@@ -52,12 +53,14 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
                 borderRadius=".5rem"
               >
                 <Image
-                  width={{ md: "100%" }}
-                  height={{ base: "120px", md: "90%" }}
+                  width={{base:'40%', md: "100%" }}
+                  height={{ base: "100%", md: "85%" }}
                   mb={{ base: "1.875rem", md: "2.5rem" }}
                   borderRadius="10px"
                   src={urlFor(item.image).url()}
                   alt={item.title}
+                  
+                  
                 ></Image>
               </Flex>
               <Heading {...Heading5} mb={{ base: "2rem" }}>
@@ -71,12 +74,13 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
-                color="white"
+                color="white.100"
                 borderRadius="0px"
                 fontFamily="main.100"
                 fontWeight="medium"
                 fontSize={{ base: "13px" }}
                 letterSpacing="1px"
+                _hover={{bgColor:'orange.200'}}
                 href={`/products/${slug.current}`}
               >
                 SEE PRODUCT
