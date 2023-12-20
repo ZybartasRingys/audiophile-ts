@@ -18,7 +18,7 @@ import ProductsComponent from "../products/ProductsComponent";
 const Headphones: React.FC<IProduct> = () => {
   const { headphones } = useContext(AppContext);
 
-  console.log(headphones);
+  
 
   return (
     <Flex

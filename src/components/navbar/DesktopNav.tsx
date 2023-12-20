@@ -52,7 +52,7 @@ const DesktopNav = () => {
           </Link>
         </Flex>
         <Flex>
-          <Image src="/shared/desktop/icon-cart.svg" onClick={onOpen} />
+          <Image src="/shared/desktop/icon-cart.svg" onClick={onOpen} cursor="pointer" />
         </Flex>
       </Flex>
     </Flex>

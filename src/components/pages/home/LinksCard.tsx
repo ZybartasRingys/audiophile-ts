@@ -54,12 +54,17 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
             alignItems="center"
             href={`/${heading}`}
             textTransform="uppercase"
+            _hover={{textDecoration:'none'}}
+            
           >
             <Text
               fontSize=".8125rem"
               fontWeight="bold"
               letterSpacing="1px"
               opacity="0.6"
+              cursor="pointer"
+              _hover={{color:"orange.100", opacity:"1"}}
+              
             >
               SHOP
             </Text>

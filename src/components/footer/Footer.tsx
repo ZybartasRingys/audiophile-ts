@@ -1,4 +1,4 @@
-import { Flex, Text, Image, Link } from "@chakra-ui/react";
+import { Flex, Text, Image, Link, } from "@chakra-ui/react";
 import { FooterLinkStyle } from "./FooterStyles";
 
 const Footer = () => {
@@ -96,14 +96,14 @@ const Footer = () => {
           height={{ base: "100%" }}
           justifyContent="space-between"
         >
-          <Link href="https://facebook.com" isExternal>
-            <Image src="/shared/desktop/icon-facebook.svg" />
+          <Link href="https://facebook.com" isExternal >
+            <Image src="/shared/desktop/icon-facebook.svg"  />
           </Link>
           <Link href="https://twitter.com" isExternal>
-            <Image src="/shared/desktop/icon-twitter.svg" />
+            <Image src="/shared/desktop/icon-twitter.svg"  />
           </Link>
           <Link href="https://instagram.com" isExternal>
-            <Image src="/shared/desktop/icon-instagram.svg" />
+            <Image src="/shared/desktop/icon-instagram.svg"  />
           </Link>
         </Flex>
       </Flex>

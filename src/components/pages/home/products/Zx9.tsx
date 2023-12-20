@@ -71,6 +71,7 @@ const Zx9 = () => {
           justifyContent="center"
           alignItems="center"
           href="/products/zx9-speaker"
+          _hover={{bgColor:'grey.300'}}
         >
           See product
         </Link>

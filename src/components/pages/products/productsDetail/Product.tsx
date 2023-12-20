@@ -44,7 +44,7 @@ const Product: React.FC<IProduct> = ({
           flexDir={{ base: "column", md: "row" }}
           justifyContent={{ md: "space-between" }}
           alignItems={{ md: "center" }}
-          gap={{ md: "3.625rem", lg: "7.5rem" }}
+          gap={{ md: "3.625rem", lg: "125px" }}
         >
           <Flex
             height={{ base: "327px", md: "480px", lg: "560px" }}
@@ -53,21 +53,23 @@ const Product: React.FC<IProduct> = ({
             bgColor="white.300"
             alignItems={{ md: "center" }}
             justifyContent={{ md: "center" }}
+            
           >
             {image && (
               <Image
-                width={{ base: "100%", md: "100%" }}
-                height={{ base: "100%", md: "100%" }}
+                width={{ base: "100%", md: "90%", lg:"100%" }}
+                height={{ base: "100%", md: "60%", lg:"100%" }}
                 borderRadius=".5rem"
                 src={urlFor(image).url()}
                 alt={title}
+                
               ></Image>
             )}
           </Flex>
           <Flex
             flexDir={{ base: "column" }}
             textAlign="start"
-            width={{ base: "100%", md: "100%", lg: "90%" }}
+            width={{ base: "100%", md: "100%", lg: "83%" }}
             height={{ md: "100%" }}
             alignItems={{ md: "start" }}
           >
@@ -139,8 +141,8 @@ const Product: React.FC<IProduct> = ({
                   alignItems="center"
                   justifyContent="space-around"
                 >
-                  <Box opacity="0.5" cursor="pointer">
-                    <HiMiniMinusSmall
+                  <Box opacity="0.5" cursor="pointer" >
+                    <HiMiniMinusSmall _hover={{fill:'orange.200'}}
                       onClick={() => decreaseCartQuantity(_id)}
                     />
                   </Box>
@@ -168,6 +170,7 @@ const Product: React.FC<IProduct> = ({
                   width="10rem"
                   height="3rem"
                   bgColor="orange.100"
+                  _hover={{bgColor:'orange.200'}}
                   color="white"
                   borderRadius="0px"
                   fontSize={{ base: ".8125rem" }}

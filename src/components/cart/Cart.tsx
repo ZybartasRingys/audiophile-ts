@@ -65,8 +65,10 @@ const Cart = () => {
               bgColor="transparent"
               outline="none"
               textDecor="underline"
+              cursor="pointer"
               {...SmallTextOpacity}
               onClick={() => removeAllCartItems()}
+              _hover={{color:"orange.100", opacity:'1'}}
             >
               Remove all
             </Text>
@@ -129,6 +131,7 @@ const Cart = () => {
               letterSpacing={{ base: "1px" }}
               fontWeight="bold"
               fontFamily="main.100"
+              _hover={{bgColor:"orange.200", outline:"none"}}
             >
               Checkout
             </Link>

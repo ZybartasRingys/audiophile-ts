@@ -118,6 +118,7 @@ const ProductsComponent = ({
           justifyContent="center"
           alignItems="center"
           fontWeight="bold"
+          _hover={{textDecoration:"none", bgColor:"orange.200"}}
         >
           SEE PRODUCT
         </Link>
