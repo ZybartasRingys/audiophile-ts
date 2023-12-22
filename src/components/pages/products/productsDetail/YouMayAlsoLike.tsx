@@ -14,6 +14,7 @@ import { Heading5 } from "../../../../chakra/appStyles";
 
 const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
   
+  
   return (
     <Flex
       flexDir={{ base: "column" }}
@@ -33,7 +34,10 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
         {products
           .slice(0, 3)
           .filter((product) => product.slug.current !== slug.current)
-          .map((item: { title: string; image: string }) => (
+          .map((item: {
+            slug: any; title: string; image: string 
+}) => (
+            
             <Flex
               key={item.title}
               width={{ md: "100%" }}
@@ -81,7 +85,7 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
                 fontSize={{ base: "13px" }}
                 letterSpacing="1px"
                 _hover={{bgColor:'orange.200'}}
-                href={`/products/${slug.current}`}
+                href={`/products/${item.slug.current}`}
               >
                 SEE PRODUCT
               </Link>

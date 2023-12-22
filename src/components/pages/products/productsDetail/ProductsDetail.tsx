@@ -11,6 +11,7 @@ import { CartContext } from "../../../../context/CartContext";
 const ProductsDetail: React.FC<IProduct> = () => {
   const { products } = useContext(CartContext);
   const { slug } = useParams();
+  
 
   return (
     <>

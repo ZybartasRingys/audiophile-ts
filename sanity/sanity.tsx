@@ -10,6 +10,8 @@ export const client = createClient({
   apiVersion: '2023-05-03',
 })
 
+
+
 const builder = imageUrlBuilder(client)
 
 export const urlFor = (source: SanityImageSource) => {
@@ -33,7 +35,8 @@ export async function getSpeakers() {
 // Earphones Query
 
 export async function getEarphones() {
-  const earphones = await client.fetch('*[_type == "earphones"]')
+  const earphones = await client.fetch('*[_type == "cars"]')
+  console.log(earphones)
   return earphones
 }
 
@@ -41,8 +44,21 @@ export async function getEarphones() {
 
 export async function getProductsBySlug() {
   const products = await client.fetch(
-    '*[_type in ["headphones", "speakers", "earphones" && slug.current == slug]]'
+    
+    '*[_type in ["headphones", "speakers", "cars" && slug.current == slug]]'
   )
-
+ console.log(products)
   return products
 }
+
+
+export async function getEarphonesBySlug() {
+  const earphones = await client.fetch(
+    '*[_type in ["cars" && slug.current == slug]]'
+  )
+  console.log(earphones)
+
+  return earphones
+}
+
+getEarphonesBySlug()
