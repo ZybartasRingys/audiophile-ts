@@ -222,6 +222,8 @@ const Product: React.FC<IProduct> = ({
           unit={[]}
           isNewProduct={false}
           className={""}
+          features1={""}
+          features2={""}
         />
 
         {/* Links Section */}

@@ -38,8 +38,14 @@ export default defineType({
     }),
 
     defineField({
-      name: 'features',
-      title: 'Features',
+      name: 'features1',
+      title: 'Features1',
+      type: 'string',
+    }),
+    
+    defineField({
+      name: 'features2',
+      title: 'Features2',
       type: 'string',
     }),
     defineField({
