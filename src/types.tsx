@@ -72,3 +72,9 @@ export type CheckoutItemProps = {
   _id: string;
   quantity: number;
 };
+
+// Modal types
+export type ModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};

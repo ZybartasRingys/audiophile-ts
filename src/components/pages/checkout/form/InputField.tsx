@@ -51,6 +51,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             id={label}
             {...other}
             width="100%"
+            autoComplete="off"
           />
         </Flex>
       </>

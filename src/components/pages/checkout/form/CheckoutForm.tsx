@@ -11,6 +11,7 @@ import Summary from "../summary/Summary";
 import BillingDetails from "./BillingDetails";
 import ShippingInfo from "./ShippingInfo";
 import PaymentDetails from "./PaymentDetails";
+import { useEffect, useState } from "react";
 
 type Inputs = {
   name: string;
@@ -31,8 +32,7 @@ const CheckoutForm = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
+  const onSubmit = () => {
     console.log("good");
   };
 

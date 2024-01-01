@@ -1,6 +1,11 @@
+// Chakra UI
 import { Flex, Box, Text, Heading, Image, Button } from "@chakra-ui/react";
 import { urlFor } from "../../../../../sanity/sanity";
+
+// Types
 import { IProduct } from "../../../../types";
+
+// Components
 import Features from "./features/Features";
 import YouMayAlsoLike from "./YouMayAlsoLike";
 import Links from "../../home/Links";
@@ -17,7 +22,8 @@ const Product: React.FC<IProduct> = ({
   desc,
   image,
   price,
-  features,
+  features1,
+  features2,
   box,
   productImages,
   products,
@@ -53,16 +59,14 @@ const Product: React.FC<IProduct> = ({
             bgColor="white.300"
             alignItems={{ md: "center" }}
             justifyContent={{ md: "center" }}
-            
           >
             {image && (
               <Image
-                width={{ base: "100%", md: "90%", lg:"100%" }}
-                height={{ base: "100%", md: "60%", lg:"100%" }}
+                width={{ base: "100%", md: "90%", lg: "100%" }}
+                height={{ base: "100%", md: "60%", lg: "100%" }}
                 borderRadius=".5rem"
                 src={urlFor(image).url()}
                 alt={title}
-                
               ></Image>
             )}
           </Flex>
@@ -120,7 +124,7 @@ const Product: React.FC<IProduct> = ({
               letterSpacing="1.3px"
               mt="1.875rem"
             >
-              $ {price.toLocaleString("en-US")}
+              $ {price}
             </Text>
 
             {/* Add to cart */}
@@ -141,8 +145,9 @@ const Product: React.FC<IProduct> = ({
                   alignItems="center"
                   justifyContent="space-around"
                 >
-                  <Box opacity="0.5" cursor="pointer" >
-                    <HiMiniMinusSmall _hover={{fill:'orange.200'}}
+                  <Box opacity="0.5" cursor="pointer">
+                    <HiMiniMinusSmall
+                      _hover={{ fill: "orange.200" }}
                       onClick={() => decreaseCartQuantity(_id)}
                     />
                   </Box>
@@ -170,7 +175,7 @@ const Product: React.FC<IProduct> = ({
                   width="10rem"
                   height="3rem"
                   bgColor="orange.100"
-                  _hover={{bgColor:'orange.200'}}
+                  _hover={{ bgColor: "orange.200" }}
                   color="white"
                   borderRadius="0px"
                   fontSize={{ base: ".8125rem" }}
@@ -186,7 +191,8 @@ const Product: React.FC<IProduct> = ({
 
         {/* Features Component */}
         <Features
-          features={features}
+          features1={features1}
+          features2={features2}
           box={box}
           productImages={productImages}
           desc={"string"}

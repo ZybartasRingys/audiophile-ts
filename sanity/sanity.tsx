@@ -3,6 +3,9 @@ import {createClient} from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 import {SanityImageSource} from '@sanity/image-url/lib/types/types'
 
+
+
+
 export const client = createClient({
   projectId: '6otw5j9e',
   dataset: 'production',
@@ -35,30 +38,32 @@ export async function getSpeakers() {
 // Earphones Query
 
 export async function getEarphones() {
-  const earphones = await client.fetch('*[_type == "cars"]')
-  console.log(earphones)
+  const earphones = await client.fetch('*[_type == "earphones"]')
   return earphones
 }
 
 // Fetch all products
 
-export async function getProductsBySlug() {
-  const products = await client.fetch(
+export async function getProductsBySlug(slug) {
+  try {
+    const query = `*[_type in ['earphones', 'headphones', 'speakers'] && slug.current == "${slug}"]`
+    const products = await client.fetch(query);
     
-    '*[_type in ["headphones", "speakers", "cars" && slug.current == slug]]'
-  )
- console.log(products)
-  return products
+    return products;
+  } catch (error) {
+    // Handle errors (log them or throw a custom error)
+    console.error('Error fetching products by slug:', error);
+   
+  }
 }
 
 
-export async function getEarphonesBySlug() {
-  const earphones = await client.fetch(
-    '*[_type in ["cars" && slug.current == slug]]'
-  )
-  console.log(earphones)
 
-  return earphones
-}
 
-getEarphonesBySlug()
+
+
+
+
+
+
+

@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'cars',
-  title: 'Cars',
+  name: 'earphones',
+  title: 'Earphones',
   type: 'document',
   fields: [
     defineField({
@@ -17,12 +17,12 @@ export default defineType({
     }),
     defineField({
       name: 'slug',
-      title: 'slug',
+      title: 'Slug',
       type: 'slug',
       options: {
         source: 'title',
         maxLength: 96,
-        slugify: (input) => input.toLowerCase(),
+        slugify: (input) => input.toLowerCase().replace(/["]+/g, '').replace(/\s+/g, '-'),
       },
     }),
     defineField({
@@ -38,8 +38,14 @@ export default defineType({
     }),
 
     defineField({
-      name: 'features',
-      title: 'Features',
+      name: 'features1',
+      title: 'Features1',
+      type: 'string',
+    }),
+    
+    defineField({
+      name: 'features2',
+      title: 'Features2',
       type: 'string',
     }),
     defineField({

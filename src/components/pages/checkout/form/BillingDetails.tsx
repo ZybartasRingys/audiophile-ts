@@ -14,9 +14,12 @@ import {
 } from "react-hook-form";
 
 type BillingProps = {
-  errors: string;
+  errors: {
+    name: string;
+    email: string;
+    phoneNumber: number;
+  };
   register: UseFormRegister<FieldValues>;
-  name: string;
 };
 
 const BillingDetails: React.FC<BillingProps> = ({ errors, register }) => {

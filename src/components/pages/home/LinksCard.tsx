@@ -38,6 +38,8 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
             bgRepeat="no-repeat"
             bgPos="bottom"
             bgSize="cover"
+            bgColor="transparent"
+            border="1px solid transparent"
           ></Box>
 
           <Heading
@@ -54,8 +56,7 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
             alignItems="center"
             href={`/${heading}`}
             textTransform="uppercase"
-            _hover={{textDecoration:'none'}}
-            
+            _hover={{ textDecoration: "none" }}
           >
             <Text
               fontSize=".8125rem"
@@ -63,8 +64,7 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
               letterSpacing="1px"
               opacity="0.6"
               cursor="pointer"
-              _hover={{color:"orange.100", opacity:"1"}}
-              
+              _hover={{ color: "orange.100", opacity: "1" }}
             >
               SHOP
             </Text>

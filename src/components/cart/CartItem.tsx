@@ -22,8 +22,6 @@ const CartItem = ({ _id }: CartItemProps) => {
   if (item === null) return null;
   const cartQuantity = getItemsQuantity(_id);
 
-  console.log(item.title);
-
   return (
     <Flex
       justifyContent="space-between"

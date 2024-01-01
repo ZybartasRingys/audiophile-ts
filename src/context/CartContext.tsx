@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 // Types
 import {
@@ -7,9 +7,6 @@ import {
   CartItemProps,
   IProduct,
 } from "../types";
-
-// Sanity
-import { getProductsBySlug } from "../../sanity/sanity";
 
 import { useDisclosure } from "@chakra-ui/react";
 
@@ -23,15 +20,8 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [products, setProducts] = useState<IProduct[]>([]);
-  //get all products
 
-  useEffect(() => {
-    const getData = async () => {
-      const allProducts = await getProductsBySlug();
-      setProducts(allProducts);
-    };
-    getData();
-  }, []);
+  //get all products
 
   const totalCartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -91,6 +81,7 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
         isOpen,
         onOpen,
         onClose,
+        setProducts,
       }}
     >
       {children}

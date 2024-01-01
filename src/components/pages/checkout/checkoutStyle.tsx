@@ -23,6 +23,11 @@ export const formInputStyle: BoxProps = {
   letterSpacing: "-0.25",
   fontWeight: "bold",
   cursor: "pointer",
+  _focus: {
+    borderColor: "orange.100",
+    outline: "none",
+    boxShadow: "none",
+  },
   _hover: {
     borderColor: "orange.100",
   },

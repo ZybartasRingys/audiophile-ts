@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Flex, Link } from "@chakra-ui/react";
 import Product from "./Product";
@@ -8,10 +10,23 @@ import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContext";
 
+//sanity
+
+import { getProductsBySlug } from "../../../../../sanity/sanity";
+
 const ProductsDetail: React.FC<IProduct> = () => {
-  const { products } = useContext(CartContext);
+  const { products, setProducts } = useContext(CartContext);
   const { slug } = useParams();
-  
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const products = await getProductsBySlug(slug);
+      console.log(products);
+      setProducts(products);
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <>

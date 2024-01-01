@@ -10,13 +10,16 @@ import {
 // Context
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-
 //Styles
 import { SmallTextOpacity, BodyText } from "../../chakra/appStyles";
-
+//Components
 import CartItem from "./CartItem";
+// React Icons
+import { MdOutlineAddShoppingCart } from "react-icons/md";
+// Types
+import { ModalProps } from "@chakra-ui/react";
 
-const CartModal = ({ isOpen, onClose }) => {
+const CartModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const { totalCartQuantity, cartItems, removeAllCartItems, products } =
     useContext(CartContext);
   return (
@@ -30,23 +33,18 @@ const CartModal = ({ isOpen, onClose }) => {
         bgColor="white.100"
         mt={{ base: "7.2rem", md: "7.125rem" }}
         mx={{ base: "24" }}
-        left={{ md: "9.6875rem", lg: "342px" }}
+        left={{ md: "9.6875rem", lg: "21.375rem" }}
       >
         {cartItems.length > 0 ? (
-          <Flex
-            flexDir={{ base: "column" }}
-            border="1px solid red"
-            width="100%"
-            height="100%"
-          >
+          <Flex flexDir={{ base: "column" }} width="100%" height="100%">
             <Flex
               width={{ base: "100%" }}
               height={{ base: "80px" }}
               justifyContent={{ base: "space-between" }}
               alignItems="center"
-              paddingX={{ base: "28px" }}
+              paddingX={{ base: "1.75rem" }}
             >
-              <Text {...BodyText} fontWeight="bold" letterSpacing="1.29px">
+              <Text {...BodyText} fontWeight="bold" letterSpacing=".0806rem">
                 CART {`(${totalCartQuantity})`}
               </Text>
               <Text
@@ -76,21 +74,21 @@ const CartModal = ({ isOpen, onClose }) => {
             </Flex>
             <Flex
               width={{ base: "100%" }}
-              height={{ base: "140px" }}
+              height={{ base: "8.75rem" }}
               flexDir={{ base: "column" }}
               alignItems="center"
-              pt={{ base: "10px" }}
+              pt={{ base: ".625rem" }}
             >
               <Flex
                 width={{ base: "100%" }}
                 justifyContent="space-between"
-                paddingX={{ base: "28px" }}
-                mb={{ base: "24px" }}
+                paddingX={{ base: "1.75rem" }}
+                mb={{ base: "1.5rem" }}
               >
                 <Text {...SmallTextOpacity}>TOTAL</Text>
                 <Text
                   fontWeight="bold"
-                  fontSize={{ base: "18px" }}
+                  fontSize={{ base: "1.125rem" }}
                   fontFamily="main.100"
                   color="black.200"
                 >
@@ -106,8 +104,8 @@ const CartModal = ({ isOpen, onClose }) => {
 
               <Link
                 href="/checkout"
-                height={{ base: "48px" }}
-                width={{ base: "271px", md: "313px" }}
+                height={{ base: "3rem" }}
+                width={{ base: "16.9375rem", md: "19.5625rem" }}
                 borderRadius="none"
                 bgColor="orange.100"
                 color="white.100"
@@ -115,18 +113,35 @@ const CartModal = ({ isOpen, onClose }) => {
                 alignItems="center"
                 justifyContent="center"
                 textTransform="uppercase"
-                fontSize={{ base: "13px" }}
-                letterSpacing={{ base: "1px" }}
+                fontSize={{ base: ".8125rem" }}
+                letterSpacing={{ base: ".0625rem" }}
                 fontWeight="bold"
                 fontFamily="main.100"
                 _hover={{ bgColor: "orange.200", outline: "none" }}
+                _focus={{ outline: "none" }}
               >
                 Checkout
               </Link>
             </Flex>
           </Flex>
         ) : (
-          "CART EMPTY"
+          <Flex
+            width="100%"
+            height="100%"
+            flexDir={{ base: "column" }}
+            alignItems={{ base: "center" }}
+            justifyContent={{ base: "center" }}
+          >
+            <Text
+              fontFamily="main.100"
+              fontSize="1.375rem"
+              fontWeight="bold"
+              mb={{ base: "1.5625rem" }}
+            >
+              Your cart is empty
+            </Text>
+            <MdOutlineAddShoppingCart size={130} />
+          </Flex>
         )}
       </ModalContent>
     </Modal>

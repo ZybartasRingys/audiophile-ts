@@ -19,7 +19,7 @@ const Cart = () => {
         onClick={onOpen}
       />
 
-      <CartModal isOpen={isOpen} onClose={onClose} />
+      <CartModal isOpen={isOpen} onClose={onClose} children={undefined} />
     </>
   );
 };

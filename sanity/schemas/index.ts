@@ -1,8 +1,8 @@
 import blockContent from './blockContent'
 import Headphones from './Headphones'
 import Speakers from './Speakers'
-import Cars from './Cars'
+import Earphones from "./Earphones"
 
 
 
-export const schemaTypes = [blockContent, Headphones, Speakers, Cars ]
+export const schemaTypes = [blockContent, Headphones, Speakers, Earphones ]

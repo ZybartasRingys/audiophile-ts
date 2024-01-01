@@ -22,7 +22,7 @@ const colors = {
   grey: {
     100: "#979797",
     200: "#CFCFCF",
-    300:"#4C4C4C"
+    300: "#4C4C4C",
   },
 };
 
@@ -53,16 +53,10 @@ const global = {
   },
 };
 
-const components = {
-  Input: {
-    errorBorderColor: "CD2C2C",
-  },
-};
-
 export const theme = extendTheme({
   colors,
   fonts,
   global,
-  components,
+
   ...spacing,
 });

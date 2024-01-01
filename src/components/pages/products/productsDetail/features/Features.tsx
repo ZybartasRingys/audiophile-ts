@@ -11,7 +11,7 @@ import "./Features.css";
 import ProductImages from "./ProductImages";
 import InTheBox from "./InTheBox";
 const Features: React.FC<IProduct> = ({
-  features,
+  features1,
   box,
   productImages,
   unit,
@@ -50,7 +50,7 @@ const Features: React.FC<IProduct> = ({
               opacity="0.5"
               color="black.200"
             >
-              {features}
+              {features1}
             </Text>
           </Flex>
 
