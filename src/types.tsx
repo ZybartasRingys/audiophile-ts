@@ -11,7 +11,8 @@ export interface IProduct {
   };
   _id: string;
   price: number;
-  features?: string;
+  features1: string;
+  features2: string;
   box: Array<string>;
   productImages: Array<string>;
   unit: Array<string>;

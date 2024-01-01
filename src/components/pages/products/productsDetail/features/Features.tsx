@@ -12,6 +12,7 @@ import ProductImages from "./ProductImages";
 import InTheBox from "./InTheBox";
 const Features: React.FC<IProduct> = ({
   features1,
+  features2,
   box,
   productImages,
   unit,
@@ -49,8 +50,19 @@ const Features: React.FC<IProduct> = ({
               fontWeight="medium"
               opacity="0.5"
               color="black.200"
+              mb={{ base: "30px" }}
             >
               {features1}
+            </Text>
+            <Text
+              fontSize={{ base: ".9375rem" }}
+              fontFamily="main.100"
+              lineHeight={{ base: "1.5625rem" }}
+              fontWeight="medium"
+              opacity="0.5"
+              color="black.200"
+            >
+              {features2}
             </Text>
           </Flex>
 

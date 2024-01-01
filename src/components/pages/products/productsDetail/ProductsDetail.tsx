@@ -73,7 +73,8 @@ const ProductsDetail: React.FC<IProduct> = () => {
                 image,
                 slug,
                 price,
-                features,
+                features1,
+                features2,
                 box,
                 productImages,
                 unit,
@@ -87,7 +88,8 @@ const ProductsDetail: React.FC<IProduct> = () => {
                   image={image}
                   slug={slug}
                   price={price}
-                  features={features}
+                  features1={features1}
+                  features2={features2}
                   box={box}
                   productImages={productImages}
                   products={products}
