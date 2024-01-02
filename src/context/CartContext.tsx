@@ -10,6 +10,8 @@ import {
 
 import { useDisclosure } from "@chakra-ui/react";
 
+import { getAllProducts } from "../../sanity/sanity";
+
 export const CartContext = createContext({} as ICartContext);
 
 export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
@@ -20,6 +22,15 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [products, setProducts] = useState<IProduct[]>([]);
+
+  useEffect(() => {
+    const fetchAllProducts = async () => {
+      const products = await getAllProducts();
+
+      setProducts(products);
+    };
+    fetchAllProducts();
+  }, []);
 
   //get all products
 
