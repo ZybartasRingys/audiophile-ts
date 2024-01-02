@@ -3,17 +3,12 @@ import {createClient} from '@sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 import {SanityImageSource} from '@sanity/image-url/lib/types/types'
 
-
-
-
 export const client = createClient({
   projectId: '6otw5j9e',
   dataset: 'production',
   useCdn: true,
   apiVersion: '2023-05-03',
 })
-
-
 
 const builder = imageUrlBuilder(client)
 
@@ -42,28 +37,23 @@ export async function getEarphones() {
   return earphones
 }
 
-// Fetch all products
+//fetch all products
 
-export async function getProductsBySlug(slug) {
-  try {
-    const query = `*[_type in ['earphones', 'headphones', 'speakers'] && slug.current == "${slug}"]`
-    const products = await client.fetch(query);
-    
-    return products;
-  } catch (error) {
-    // Handle errors (log them or throw a custom error)
-    console.error('Error fetching products by slug:', error);
-   
-  }
+export async function getAllProducts() {
+  const allProducts = await client.fetch('*[_type in ["earphones", "headphones", "speakers"]]')
+  return allProducts
 }
 
+// Fetch product by slug
 
-
-
-
-
-
-
-
-
-
+export async function getProductsBySlug(slug: string) {
+  try {
+    const query = `*[_type in ['earphones', 'headphones', 'speakers'] && slug.current == "${slug}"]`
+    const products = await client.fetch(query)
+    console.log(products)
+    return products
+  } catch (error) {
+    // Handle errors (log them or throw a custom error)
+    console.error('Error fetching products by slug:', error)
+  }
+}

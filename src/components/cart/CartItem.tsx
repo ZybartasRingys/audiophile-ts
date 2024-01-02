@@ -29,7 +29,7 @@ const CartItem = ({ _id }: CartItemProps) => {
       mb={{ base: "24" }}
     >
       <Box width={{ base: "64px" }} height={{ base: "64px" }}>
-        {item.image && (
+        {item?.image && (
           <Image
             width="100%"
             height="100%"

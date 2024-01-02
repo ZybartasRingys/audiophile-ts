@@ -19,6 +19,11 @@ export interface IProduct {
   products: IProduct[];
   isNewProduct: boolean;
   className: string;
+  item: {
+    image: string;
+    price: number;
+    title: string;
+  };
 }
 
 export type ProductsProps = {
@@ -56,6 +61,7 @@ export interface ICartContext {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
+  setProducts: () => void;
 }
 
 export type ShoppingCartProvider = {
