@@ -116,14 +116,14 @@ const SummaryModal: React.FC<SummaryModalProps> = ({ isOpen, onClose }) => {
                 py={{ base: "1.0625rem" }}
               >
                 <Text
-                  fontSize="15px"
-                  lineHeight="25px"
+                  fontSize=".9375rem"
+                  lineHeight="1.5625rem"
                   fontWeight="medium"
                   textTransform="uppercase"
                   color="white.100"
                   fontFamily="main.100"
                   opacity="0.5"
-                  mb={{ base: "5px" }}
+                  mb={{ base: ".3125rem" }}
                 >
                   Grand total
                 </Text>

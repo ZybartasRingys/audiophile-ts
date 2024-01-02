@@ -11,7 +11,6 @@ import Summary from "../summary/Summary";
 import BillingDetails from "./BillingDetails";
 import ShippingInfo from "./ShippingInfo";
 import PaymentDetails from "./PaymentDetails";
-import { useEffect, useState } from "react";
 
 type Inputs = {
   name: string;
@@ -29,8 +28,8 @@ const CheckoutForm = () => {
   const {
     handleSubmit,
     register,
-    formState: { errors },
-  } = useForm<Inputs>();
+    formState: { errors, isValid },
+  } = useForm<Inputs>({ mode: "all" });
 
   const onSubmit = () => {
     console.log("good");
@@ -86,7 +85,11 @@ const CheckoutForm = () => {
           <PaymentDetails register={register} errors={errors} />
           {/*Payment method  section end */}
         </Flex>
-        <Summary handleSubmit={handleSubmit(onSubmit)} errors={errors} />
+        <Summary
+          handleSubmit={handleSubmit(onSubmit)}
+          errors={errors}
+          isValid={isValid}
+        />
       </Flex>
     </>
   );

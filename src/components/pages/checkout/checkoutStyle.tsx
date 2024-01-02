@@ -28,9 +28,6 @@ export const formInputStyle: BoxProps = {
     outline: "none",
     boxShadow: "none",
   },
-  _hover: {
-    borderColor: "orange.100",
-  },
 };
 
 export const FormLabelHeading: BoxProps = {

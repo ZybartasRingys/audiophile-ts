@@ -39,7 +39,10 @@ const BillingDetails: React.FC<BillingProps> = ({ errors, register }) => {
           <InputField
             {...register("name", {
               required: "Field can't be empty",
-              minLength: 4,
+              minLength: {
+                value: 4,
+                message: "At least 4 letters",
+              },
             })}
             placeholder="Alexei Ward"
             errors={errors.name}
@@ -53,7 +56,10 @@ const BillingDetails: React.FC<BillingProps> = ({ errors, register }) => {
           <InputField
             {...register("email", {
               required: "Field can't be empty",
-              minLength: 4,
+              minLength: {
+                value: 4,
+                message: "At least 4 letters",
+              },
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 message: "Wrong format",
@@ -77,7 +83,10 @@ const BillingDetails: React.FC<BillingProps> = ({ errors, register }) => {
                 value: /^(0|[1-9]\d*)(\.\d+)?$/,
                 message: "Please enter valid number",
               },
-              minLength: 8,
+              minLength: {
+                value: 8,
+                message: "At least 8 numbers",
+              },
             })}
             {...formInputStyle}
             placeholder="+1 202-555-0136"

@@ -29,7 +29,7 @@ const CheckoutItem = ({ _id }: CheckoutItemProps) => {
               <Image
                 width="100%"
                 height="100%"
-                borderRadius="10px"
+                borderRadius="0.5rem"
                 src={urlFor(item.image).url()}
                 alt={item.title}
               ></Image>

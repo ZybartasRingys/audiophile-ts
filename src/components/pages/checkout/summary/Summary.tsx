@@ -3,7 +3,7 @@
 import { Flex, Text, Button, useDisclosure } from "@chakra-ui/react";
 
 //Context
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../../../context/CartContext";
 
 //Styles props imports
@@ -19,22 +19,20 @@ type SummaryProps = {
   handleSubmit: () => void;
 };
 
-const Summary: React.FC<SummaryProps> = ({ handleSubmit, errors }) => {
+const Summary: React.FC<SummaryProps> = ({ handleSubmit, errors, isValid }) => {
   const { cartItems, products } = useContext(CartContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [inputErrors, setInputErrors] = useState<string[]>([]);
-  console.log(errors);
 
-  useEffect(() => {
-    const errorsArray = Object.values(errors);
-    console.log(errorsArray);
-    setInputErrors([...errorsArray]);
-  }, [errors]);
+  console.log(isValid);
 
-  const handleClick = () => {
+  const handleForm = () => {
     handleSubmit();
-    onOpen();
+
+    if (isValid) {
+      onOpen();
+    }
   };
+
   return (
     <Flex
       width={{ base: "100%", lg: "31%" }}
@@ -139,8 +137,7 @@ const Summary: React.FC<SummaryProps> = ({ handleSubmit, errors }) => {
               textTransform="uppercase"
               textDecoration="none"
               borderRadius="none"
-              onClick={handleClick}
-              isDisabled={inputErrors.length > 0}
+              onClick={handleForm}
               padding="0"
               _hover={{ bgColor: "orange.200" }}
             >
