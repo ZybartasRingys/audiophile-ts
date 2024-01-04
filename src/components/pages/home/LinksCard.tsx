@@ -30,17 +30,12 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
           bgColor="white.300"
           pb={{ lg: "1.875rem" }}
         >
-          <Box
-            width={{ base: "8.75rem", lg: "160px" }}
-            height={{ base: "8.75rem", lg: "210px" }}
-            mt="-4.375rem"
-            bgImage={image}
-            bgRepeat="no-repeat"
-            bgPos="bottom"
-            bgSize="cover"
-            bgColor="transparent"
-            border="1px solid transparent"
-          ></Box>
+          <Image
+            src={image}
+            mt={{ base: "-70px", lg: "-90px" }}
+            width={{ base: "150px", lg: "200px" }}
+            height={{ base: "132px", lg: "180px" }}
+          />
 
           <Heading
             fontSize=".9375rem"

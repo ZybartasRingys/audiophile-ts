@@ -17,13 +17,12 @@ import SummaryModal from "./SummaryModal";
 
 type SummaryProps = {
   handleSubmit: () => void;
+  isValid: boolean;
 };
 
-const Summary: React.FC<SummaryProps> = ({ handleSubmit, errors, isValid }) => {
+const Summary: React.FC<SummaryProps> = ({ handleSubmit, isValid }) => {
   const { cartItems, products } = useContext(CartContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  console.log(isValid);
 
   const handleForm = () => {
     handleSubmit();

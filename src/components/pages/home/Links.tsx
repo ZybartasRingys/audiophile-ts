@@ -4,7 +4,7 @@ import LinksCard from "./LinksCard";
 const cards = [
   {
     heading: "Headphones",
-    image: "shared/desktop/image-category-thumbnail-headphones.png",
+    image: "/shared/desktop/image-category-thumbnail-headphones.png",
   },
 
   {
