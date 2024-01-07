@@ -21,7 +21,6 @@ const ProductsDetail: React.FC<IProduct> = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProductsBySlug(slug);
-      console.log(products);
       setProducts(products);
     };
 
@@ -53,6 +52,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
             lineHeight="1.5625rem"
             opacity="0.5"
             href="/"
+            _hover={{ color: "orange.100", opacity: "1" }}
           >
             Go Back
           </Link>
@@ -97,6 +97,11 @@ const ProductsDetail: React.FC<IProduct> = () => {
                   _id={_id}
                   isNewProduct={isNewProduct}
                   className={""}
+                  item={{
+                    image: "",
+                    price: 0,
+                    title: "",
+                  }}
                 />
               )
             )}

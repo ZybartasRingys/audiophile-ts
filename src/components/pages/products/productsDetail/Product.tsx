@@ -224,6 +224,11 @@ const Product: React.FC<IProduct> = ({
           className={""}
           features1={""}
           features2={""}
+          item={{
+            image: "",
+            price: 0,
+            title: "",
+          }}
         />
 
         {/* Links Section */}

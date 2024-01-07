@@ -1,13 +1,5 @@
 //Chakra ui
-import {
-  Card,
-  CardBody,
-  Heading,
-  Image,
-  Link,
-  Text,
-  Box,
-} from "@chakra-ui/react";
+import { Card, CardBody, Heading, Image, Link, Text } from "@chakra-ui/react";
 
 type LinksProps = {
   heading: string;
@@ -19,8 +11,8 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
     <>
       {/* Links Card */}
       <Card
-        width={{ base: "100%", md: "13.9375rem", lg: "21.875rem" }}
-        maxW={{ md: "13.9375rem", lg: "21.875rem" }}
+        width={{ base: "100%" }}
+        maxW={{ md: "13.6rem", lg: "22.2rem" }}
         height={{ base: "10.3125rem", lg: "12.75rem" }}
       >
         <CardBody

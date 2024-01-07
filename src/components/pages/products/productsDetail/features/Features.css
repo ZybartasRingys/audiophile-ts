@@ -1,6 +1,11 @@
 .grid-box:nth-child(n) {
   grid-area: A;
 
+  @media (max-width: 768px) {
+    height: 174px;
+    width: 100%;
+  }
+
   @media (min-width: 768px) and (max-width: 1440px) {
     height: 174px;
     width: 100%;
@@ -10,10 +15,17 @@
     min-width: 27.8125rem;
   }
 }
+
 .grid-box:nth-child(2n) {
   grid-area: B;
+
+  @media (max-width: 768px) {
+    height: 174px;
+    width: 100%;
+  }
   @media (min-width: 768px) and (max-width: 1440px) {
     height: 174px;
+    min-width: 277px;
   }
   @media (min-width: 1440px) {
     height: 280px;
@@ -22,9 +34,16 @@
 
 .grid-box:nth-child(3n) {
   grid-area: C;
+
+  @media (max-width: 768px) {
+    height: 368px;
+    width: 100%;
+  }
+
   @media (min-width: 768px) and (max-width: 1440px) {
     height: 368px;
     width: 100%;
+    max-width: 395px;
   }
 
   @media (min-width: 1440px) {

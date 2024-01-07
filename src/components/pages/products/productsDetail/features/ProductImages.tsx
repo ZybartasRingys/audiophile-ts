@@ -1,5 +1,5 @@
 // Chakra UI
-import { Image, Grid, GridItem } from "@chakra-ui/react";
+import { Image, Grid, GridItem, Box } from "@chakra-ui/react";
 // Sanity
 import { urlFor } from "../../../../../../sanity/sanity";
 // Css
@@ -11,7 +11,7 @@ type ProductImagesProps = {
 const ProductImages: React.FC<ProductImagesProps> = ({ productImages }) => {
   return (
     <Grid
-      gridTemplateColumns={{ base: "1fr", lg: "1fr 2fr" }}
+      gridTemplateColumns={{ base: "1fr", md: "1fr 2fr" }}
       gap={5}
       gridTemplateAreas={{
         base: `
@@ -20,8 +20,8 @@ const ProductImages: React.FC<ProductImagesProps> = ({ productImages }) => {
              "C C"
             `,
         md: `
-            "A C"
-            "B C"
+            "A C C"
+            "B C C"
             `,
 
         lg: `
@@ -32,12 +32,15 @@ const ProductImages: React.FC<ProductImagesProps> = ({ productImages }) => {
     >
       {productImages.map((image, index) => (
         <GridItem key={index} className="grid-box">
-          <Image
+          <Box
             mb="20px"
             width={{ base: "100%" }}
             height={{ base: "100%" }}
             borderRadius=".5rem"
-            src={urlFor(image).url()}
+            bgImage={urlFor(image).url()}
+            bgSize="cover"
+            bgPos="center"
+            bgRepeat="no-repeat"
           />
         </GridItem>
       ))}

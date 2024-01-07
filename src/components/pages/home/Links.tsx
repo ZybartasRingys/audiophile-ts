@@ -1,22 +1,9 @@
 import { Flex } from "@chakra-ui/react";
 import LinksCard from "./LinksCard";
 
-const cards = [
-  {
-    heading: "Headphones",
-    image: "/shared/desktop/image-category-thumbnail-headphones.png",
-  },
+//Cards
 
-  {
-    heading: "Speakers",
-    image: "/shared/desktop/image-category-thumbnail-speakers.png",
-  },
-
-  {
-    heading: "Earphones",
-    image: "/shared/desktop/image-category-thumbnail-earphones.png",
-  },
-];
+import { cards } from "../../../utils/ProductsCards.tsx/ProductsCards";
 
 const Links = () => {
   return (

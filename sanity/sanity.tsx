@@ -50,7 +50,6 @@ export async function getProductsBySlug(slug: string) {
   try {
     const query = `*[_type in ['earphones', 'headphones', 'speakers'] && slug.current == "${slug}"]`
     const products = await client.fetch(query)
-    console.log(products)
     return products
   } catch (error) {
     // Handle errors (log them or throw a custom error)
