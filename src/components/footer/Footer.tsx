@@ -1,5 +1,4 @@
-import { Flex, Text, Image, Link, } from "@chakra-ui/react";
-import { FooterLinkStyle } from "./FooterStyles";
+import { Flex, Text, Image, Link } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
@@ -36,16 +35,52 @@ const Footer = () => {
           height={{ base: "9.25rem", md: "22px", lg: "1.5625rem" }}
           justifyContent="space-between"
         >
-          <Link href="/" {...FooterLinkStyle}>
+          <Link
+            href="/"
+            fontFamily="main.100"
+            fontSize={{ base: "13px" }}
+            letterSpacing="2px"
+            lineHeight="25px"
+            fontWeight="bold"
+            textTransform="uppercase"
+            _hover={{ textDecor: "none", color: "orange.100" }}
+          >
             Home
           </Link>
-          <Link href="/headphones" {...FooterLinkStyle}>
+          <Link
+            href="/headphones"
+            fontFamily="main.100"
+            fontSize={{ base: "13px" }}
+            letterSpacing="2px"
+            lineHeight="25px"
+            fontWeight="bold"
+            textTransform="uppercase"
+            _hover={{ textDecor: "none", color: "orange.100" }}
+          >
             Headphones
           </Link>
-          <Link href="/speakers" {...FooterLinkStyle}>
+          <Link
+            href="/speakers"
+            fontFamily="main.100"
+            fontSize={{ base: "13px" }}
+            letterSpacing="2px"
+            lineHeight="25px"
+            fontWeight="bold"
+            textTransform="uppercase"
+            _hover={{ textDecor: "none", color: "orange.100" }}
+          >
             Speakers
           </Link>
-          <Link href="/earphones" {...FooterLinkStyle}>
+          <Link
+            href="/earphones"
+            fontFamily="main.100"
+            fontSize={{ base: "13px" }}
+            letterSpacing="2px"
+            lineHeight="25px"
+            fontWeight="bold"
+            textTransform="uppercase"
+            _hover={{ textDecor: "none", color: "orange.100" }}
+          >
             Earphones
           </Link>
         </Flex>
@@ -96,14 +131,14 @@ const Footer = () => {
           height={{ base: "100%" }}
           justifyContent="space-between"
         >
-          <Link href="https://facebook.com" isExternal >
-            <Image src="/shared/desktop/icon-facebook.svg"  />
+          <Link href="https://facebook.com" isExternal>
+            <Image src="/shared/desktop/icon-facebook.svg" />
           </Link>
           <Link href="https://twitter.com" isExternal>
-            <Image src="/shared/desktop/icon-twitter.svg"  />
+            <Image src="/shared/desktop/icon-twitter.svg" />
           </Link>
           <Link href="https://instagram.com" isExternal>
-            <Image src="/shared/desktop/icon-instagram.svg"  />
+            <Image src="/shared/desktop/icon-instagram.svg" />
           </Link>
         </Flex>
       </Flex>

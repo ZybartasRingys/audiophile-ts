@@ -67,6 +67,7 @@ const Product: React.FC<IProduct> = ({
                 borderRadius=".5rem"
                 src={urlFor(image).url()}
                 alt={title}
+                loading="lazy"
               ></Image>
             )}
           </Flex>

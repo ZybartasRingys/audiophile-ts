@@ -7,5 +7,5 @@ export const FooterLinkStyle: BoxProps = {
   lineHeight: "25px",
   fontWeight: "bold",
   textTransform: "uppercase",
-  _hover: { textDecor: "none", color:"orange.100" },
+  _hover: { textDecor: "none", color: "orange.100" },
 };

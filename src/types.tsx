@@ -6,9 +6,11 @@ export interface IProduct {
   desc: string;
   title: string;
   image: string;
-  slug: {
-    current: string;
-  };
+  slug:
+    | string
+    | {
+        current: string;
+      };
   _id: string;
   price: number;
   features1: string;
@@ -19,7 +21,7 @@ export interface IProduct {
   products: IProduct[];
   isNewProduct: boolean;
   className: string;
-  item: {
+  item?: {
     image: string;
     price: number;
     title: string;

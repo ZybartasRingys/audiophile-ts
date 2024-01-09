@@ -34,6 +34,15 @@ function App() {
                 unit={[]}
                 products={[]}
                 isNewProduct={false}
+                features1={""}
+                features2={""}
+                className={""}
+                item={{
+                  image: "",
+                  price: 0,
+                  title: "",
+                  slug: "",
+                }}
               />
             }
           />

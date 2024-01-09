@@ -27,6 +27,7 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
             mt={{ base: "-70px", lg: "-90px" }}
             width={{ base: "150px", lg: "200px" }}
             height={{ base: "132px", lg: "180px" }}
+            loading="lazy"
           />
 
           <Heading

@@ -1,17 +1,12 @@
 //Chakra UI
-import { FormLabel, GridItem, Grid } from "@chakra-ui/react";
+import { Text, GridItem, Grid } from "@chakra-ui/react";
 
 //Chakra Styles Import
 import { formInputStyle, FormLabelHeading } from "../checkoutStyle";
 
 //Components
 import InputField from "./InputField";
-
-import {
-  FieldValues,
-  UseFormRegister,
-  // useForm, // don't need this import
-} from "react-hook-form";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 
 type BillingProps = {
   errors: {
@@ -19,15 +14,14 @@ type BillingProps = {
     email: string;
     phoneNumber: number;
   };
-  register: UseFormRegister<FieldValues>;
 };
 
-const BillingDetails: React.FC<BillingProps> = ({ errors, register }) => {
+const BillingDetails: React.FC<BillingProps> = ({ register, errors }) => {
   return (
     <>
-      <FormLabel htmlFor="name" {...FormLabelHeading}>
+      <Text as="label" htmlFor="name" {...FormLabelHeading}>
         BILLING DETAILS
-      </FormLabel>
+      </Text>
 
       <Grid
         gridTemplateColumns={{ md: "repeat(2,1fr)" }}
