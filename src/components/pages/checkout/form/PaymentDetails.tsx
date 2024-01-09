@@ -24,12 +24,7 @@ import {
 //Components
 import InputField from "./InputField";
 
-type PaymentProps = {
-  errors: string;
-  name: string;
-};
-
-const PaymentDetails: React.FC<PaymentProps> = ({ register, errors }) => {
+const PaymentDetails = ({ register, errors }) => {
   const options = ["e-Money", "Cash on Delivery"];
   const [checkedOption, setCheckedOption] = useState(options[0]);
 

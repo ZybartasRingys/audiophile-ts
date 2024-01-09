@@ -1,5 +1,5 @@
 // React hook form
-import { FieldValues, UseFormRegister, useForm } from "react-hook-form";
+import { FieldErrors, UseFormRegister, useForm } from "react-hook-form";
 
 //Chakra UI
 import { Heading, Flex } from "@chakra-ui/react";
@@ -15,16 +15,23 @@ import PaymentDetails from "./PaymentDetails";
 type Inputs = {
   name: string;
   email: string;
-  phoneNumber: string;
+  phoneNumber: number;
   address: string;
-  ZIPCode: string;
+  ZIPCode: number;
   city: string;
   country: string;
   eMoneyNumber: number;
   eMoneyPin: number;
 };
 
-const CheckoutForm = () => {
+type CheckoutFormProps = {
+  register: UseFormRegister<Inputs>;
+  errors: FieldErrors<Inputs>;
+  handleSubmit: () => void;
+  isValid: boolean;
+};
+
+const CheckoutForm: React.FC<CheckoutFormProps> = () => {
   const {
     handleSubmit,
     register,
