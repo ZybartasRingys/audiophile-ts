@@ -17,31 +17,39 @@ import { CartContext } from "../../../../context/CartContext";
 //components
 import OrderComfirmItem from "./OrderComfirmItem";
 
-const OrderComfirmModal = (isOpen, onClose) => {
+//Types
+
+import { ModalProps } from "@chakra-ui/react";
+
+const OrderComfirmModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const { cartItems, products } = useContext(CartContext);
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay border="1px solid red" />
+        <ModalOverlay />
         <ModalContent
           bgColor="white.100"
           width={{ base: "100%" }}
-          height={{ base: "600px" }}
+          height={{ base: "37.5rem" }}
           display="flex"
           alignItems="center"
         >
-          <ModalHeader width={{ base: "86%" }} pl="0" mt="17px">
+          <ModalHeader width={{ base: "86%" }} pl="0" mt="1.0625rem">
             <Image src="/checkout/icon-order-confirmation.svg" />
           </ModalHeader>
 
-          <ModalBody height={{ base: "371px" }}>
-            <Flex flexDir={{ base: "column" }} width={{ base: "263px" }} pt="0">
+          <ModalBody height={{ base: "23.1875rem" }}>
+            <Flex
+              flexDir={{ base: "column" }}
+              width={{ base: "16.4375rem" }}
+              pt="0"
+            >
               <Text
-                fontSize="24px"
-                lineHeight="28px"
+                fontSize="1.5rem"
+                lineHeight="1.75rem"
                 fontWeight="bold"
-                letterSpacing="0.9px"
-                mb="20px"
+                letterSpacing=".0563rem"
+                mb="1.25rem"
               >
                 THANK YOU FOR YOUR ORDER
               </Text>
@@ -121,8 +129,7 @@ const OrderComfirmModal = (isOpen, onClose) => {
               textTransform="uppercase"
               borderRadius="none"
               href="/"
-            
-              _hover={{bgColor:"orange.100"}}
+              _hover={{ bgColor: "orange.100" }}
             >
               Back to home
             </Link>

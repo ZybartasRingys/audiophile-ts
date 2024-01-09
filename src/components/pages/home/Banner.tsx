@@ -1,5 +1,4 @@
 import { Text, Heading, Link, Flex } from "@chakra-ui/react";
-import { Default1btn } from "../../../chakra/appStyles";
 
 const Banner = () => {
   return (
@@ -67,7 +66,23 @@ const Banner = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </Text>
-        <Link {...Default1btn} href="/products/xx99-mark-ii-headphones">
+        <Link
+          width="160px"
+          height="48px"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          cursor="pointer"
+          textTransform="uppercase"
+          fontSize="13px"
+          fontWeight="bold"
+          fontFamily="main.100"
+          letterSpacing="1px"
+          color="white"
+          bgColor="orange.100"
+          _hover={{ textDecoration: "none", bgcolor: "orange.200" }}
+          href="/products/xx99-mark-ii-headphones"
+        >
           See product
         </Link>
       </Flex>

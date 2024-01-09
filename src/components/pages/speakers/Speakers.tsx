@@ -25,7 +25,7 @@ const Speakers: React.FC<IProduct> = () => {
       {speakers
         .slice(0)
         .reverse()
-        .map(({ title, desc, image, slug, isNewProduct, className }) => (
+        .map(({ title, desc, image, slug, isNewProduct }) => (
           <ProductsComponent
             title={title}
             desc={desc}
@@ -40,6 +40,8 @@ const Speakers: React.FC<IProduct> = () => {
             products={[]}
             isNewProduct={isNewProduct}
             className={slug.current}
+            features1={""}
+            features2={""}
           />
         ))}
     </Flex>

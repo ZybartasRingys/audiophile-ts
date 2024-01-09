@@ -34,9 +34,7 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
           .filter((product) => product.slug.current !== slug.current)
           .map(
             (item: {
-              slug: {
-                current: string;
-              };
+              slug: { current: string };
               title: string;
               image: string;
               price: number;

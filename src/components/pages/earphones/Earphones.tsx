@@ -12,7 +12,6 @@ import { AppContext } from "../../../context/AppContext";
 
 const Earphones: React.FC<IProduct> = () => {
   const { earphones } = useContext(AppContext);
- 
 
   return (
     <Flex
@@ -37,6 +36,8 @@ const Earphones: React.FC<IProduct> = () => {
             products={[]}
             isNewProduct={isNewProduct}
             className={className}
+            features1={""}
+            features2={""}
           />
         )
       )}

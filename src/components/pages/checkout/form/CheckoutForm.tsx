@@ -22,15 +22,9 @@ type Inputs = {
   country: string;
   eMoneyNumber: number;
   eMoneyPin: number;
-} & FieldValues;
-
-type ExtendedFieldValues = FieldValues & Inputs;
-
-type CheckoutFormProps = {
-  register: UseFormRegister<ExtendedFieldValues>;
 };
 
-const CheckoutForm: React.FC<CheckoutFormProps> = () => {
+const CheckoutForm = () => {
   const {
     handleSubmit,
     register,

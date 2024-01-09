@@ -18,8 +18,6 @@ import ProductsComponent from "../products/ProductsComponent";
 const Headphones: React.FC<IProduct> = () => {
   const { headphones } = useContext(AppContext);
 
-  
-
   return (
     <Flex
       flexDir={{ base: "column" }}
@@ -45,6 +43,8 @@ const Headphones: React.FC<IProduct> = () => {
             isNewProduct={isNewProduct}
             key={title}
             className={`${slug.current}`}
+            features1={""}
+            features2={""}
           />
         ))}
     </Flex>

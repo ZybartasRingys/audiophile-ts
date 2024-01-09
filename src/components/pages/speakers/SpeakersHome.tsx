@@ -17,7 +17,6 @@ const SpeakersHome = () => {
         title={"string"}
         desc={"string"}
         image={"string"}
-        slug={"string"}
         _id={"string"}
         price={0}
         box={[]}
@@ -26,6 +25,11 @@ const SpeakersHome = () => {
         products={[]}
         isNewProduct={false}
         className={""}
+        features1={""}
+        features2={""}
+        slug={{
+          current: "",
+        }}
       />
       <Flex
         width={{ base: "100%" }}

@@ -1,5 +1,5 @@
 // Chakra UI
-import { Image, Grid, GridItem, Box } from "@chakra-ui/react";
+import { Grid, GridItem, Box } from "@chakra-ui/react";
 // Sanity
 import { urlFor } from "../../../../../../sanity/sanity";
 // Css

@@ -24,15 +24,8 @@ import {
 //Components
 import InputField from "./InputField";
 
-import {
-  FieldValues,
-  UseFormRegister,
-  // useForm, // don't need this import
-} from "react-hook-form";
-
 type PaymentProps = {
   errors: string;
-  register: UseFormRegister<FieldValues>;
   name: string;
 };
 

@@ -1,5 +1,5 @@
 //Chakra UI
-import { Grid, FormLabel, Flex, GridItem } from "@chakra-ui/react";
+import { Grid, Flex, GridItem, Text } from "@chakra-ui/react";
 
 //Chakra Styles Import
 import { formInputStyle, FormLabelHeading } from "../checkoutStyle";
@@ -16,7 +16,9 @@ const ShippingInfo: React.FC<ShippingProps> = ({ register, errors }) => {
   return (
     <>
       <Flex flexDir={{ base: "column" }} mb={{ md: "3.875rem" }}>
-        <FormLabel {...FormLabelHeading}>Shipping info</FormLabel>
+        <Text as="label" {...FormLabelHeading}>
+          Shipping info
+        </Text>
         {/*Address input  */}
 
         <Grid

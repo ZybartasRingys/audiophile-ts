@@ -199,7 +199,7 @@ const Product: React.FC<IProduct> = ({
           desc={"string"}
           title={"string"}
           image={"string"}
-          slug={"string"}
+          slug={slug}
           price={0}
           unit={unit}
           _id={"string"}
@@ -229,6 +229,7 @@ const Product: React.FC<IProduct> = ({
             image: "",
             price: 0,
             title: "",
+            slug: "",
           }}
         />
 

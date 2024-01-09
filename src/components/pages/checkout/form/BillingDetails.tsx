@@ -6,17 +6,8 @@ import { formInputStyle, FormLabelHeading } from "../checkoutStyle";
 
 //Components
 import InputField from "./InputField";
-import { FieldValues, UseFormRegister } from "react-hook-form";
 
-type BillingProps = {
-  errors: {
-    name: string;
-    email: string;
-    phoneNumber: number;
-  };
-};
-
-const BillingDetails: React.FC<BillingProps> = ({ register, errors }) => {
+const BillingDetails = ({ register, errors }) => {
   return (
     <>
       <Text as="label" htmlFor="name" {...FormLabelHeading}>

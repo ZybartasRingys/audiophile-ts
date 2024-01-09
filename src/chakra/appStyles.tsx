@@ -92,7 +92,7 @@ export const Default1btn: BoxProps = {
   letterSpacing: "1px",
   color: "white",
   bgColor: "orange.100",
-  _hover:{textDecoration:'none', bgcolor:"orange.200"}
+  _hover: { textDecoration: "none", bgcolor: "orange.200" },
 };
 
 export const Default2btn: BoxProps = {
@@ -121,6 +121,5 @@ export const DesktopNavbarLink: BoxProps = {
   letterSpacing: ".125rem",
   lineHeight: "1.5625rem",
   cursor: "pointer",
-  _hover: { textDecoration: "none", color:"orange.100" },
-
+  _hover: { textDecoration: "none", color: "orange.100" },
 };

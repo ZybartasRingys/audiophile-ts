@@ -16,7 +16,6 @@ const EarphonesHome = () => {
         title={"string"}
         desc={"string"}
         image={"string"}
-        slug={"string"}
         _id={"string"}
         price={0}
         box={[]}
@@ -24,6 +23,12 @@ const EarphonesHome = () => {
         unit={[]}
         products={[]}
         isNewProduct={false}
+        features1={""}
+        features2={""}
+        className={""}
+        slug={{
+          current: "",
+        }}
       />
       <Flex
         width={{ base: "100%" }}

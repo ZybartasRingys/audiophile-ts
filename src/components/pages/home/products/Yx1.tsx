@@ -1,7 +1,7 @@
 import { Box, Heading, Flex, Link } from "@chakra-ui/react";
 
 //Styles
-import { homeProductsHeadingStyle2, seeProductButton } from "../HomeStyles";
+import { homeProductsHeadingStyle2 } from "../HomeStyles";
 
 const Yx1 = () => {
   return (
@@ -38,7 +38,23 @@ const Yx1 = () => {
         <Heading {...homeProductsHeadingStyle2} mb="2.125rem">
           yx1 earphones
         </Heading>
-        <Link {...seeProductButton} href="/products/yx1-wireless-earphones">
+        <Link
+          width="160px"
+          height="48px"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          cursor="pointer"
+          textTransform="uppercase"
+          fontSize="13px"
+          fontWeight="bold"
+          fontFamily="main.100"
+          letterSpacing="1px"
+          color="white"
+          bgColor="orange.100"
+          _hover={{ textDecoration: "none", bgcolor: "orange.200" }}
+          href="/products/yx1-wireless-earphones"
+        >
           See product
         </Link>
       </Flex>

@@ -25,6 +25,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
     };
 
     fetchProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -101,6 +102,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
                     image: "",
                     price: 0,
                     title: "",
+                    slug: "",
                   }}
                 />
               )

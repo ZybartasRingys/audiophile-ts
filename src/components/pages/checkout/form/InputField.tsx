@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Input, Flex, Text, Box } from "@chakra-ui/react";
+import { Input, Flex, Text } from "@chakra-ui/react";
 import { formInputStyle, formLabelStyle } from "../checkoutStyle";
 
 type InputFieldProps = {
@@ -28,9 +28,9 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
               mb={{ base: ".5625rem" }}
               width="100%"
             >
-              <Box as="label" {...formLabelStyle}>
+              <Text as="label" {...formLabelStyle}>
                 {label}
-              </Box>
+              </Text>
 
               <Text
                 fontFamily="main.100"

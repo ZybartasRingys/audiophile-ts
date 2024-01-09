@@ -26,7 +26,6 @@ function App() {
                 desc={"string"}
                 title={"string"}
                 image={"string"}
-                slug={"string"}
                 _id={""}
                 price={0}
                 box={[]}
@@ -42,6 +41,9 @@ function App() {
                   price: 0,
                   title: "",
                   slug: "",
+                }}
+                slug={{
+                  current: "",
                 }}
               />
             }

@@ -8,8 +8,6 @@ import { CartContext } from "../../context/CartContext";
 
 // Styles
 
-import { DesktopNavbarLink } from "../../chakra/appStyles";
-
 const DesktopNav = () => {
   const { onOpen } = useContext(CartContext);
 
@@ -38,21 +36,69 @@ const DesktopNav = () => {
           justifyContent="space-between"
           textTransform="uppercase"
         >
-          <Link as={RouterLink} to="/" {...DesktopNavbarLink}>
+          <Link
+            as={RouterLink}
+            to="/"
+            _activeLink={{ color: "orange.100" }}
+            fontSize=".8125rem"
+            fontFamily="main.100"
+            fontWeight="bold"
+            letterSpacing=".125rem"
+            lineHeight="1.5625rem"
+            cursor="pointer"
+            _hover={{ textDecoration: "none", color: "orange.100" }}
+          >
             Home
           </Link>
-          <Link as={RouterLink} to="/headphones" {...DesktopNavbarLink}>
+          <Link
+            as={RouterLink}
+            to="/headphones"
+            _activeLink={{ color: "orange.100" }}
+            fontSize=".8125rem"
+            fontFamily="main.100"
+            fontWeight="bold"
+            letterSpacing=".125rem"
+            lineHeight="1.5625rem"
+            cursor="pointer"
+            _hover={{ textDecoration: "none", color: "orange.100" }}
+          >
             Headphones
           </Link>
-          <Link as={RouterLink} to="/speakers" {...DesktopNavbarLink}>
+          <Link
+            as={RouterLink}
+            to="/speakers"
+            _activeLink={{ color: "orange.100" }}
+            fontSize=".8125rem"
+            fontFamily="main.100"
+            fontWeight="bold"
+            letterSpacing=".125rem"
+            lineHeight="1.5625rem"
+            cursor="pointer"
+            _hover={{ textDecoration: "none", color: "orange.100" }}
+          >
             Speakers
           </Link>
-          <Link as={RouterLink} to="/earphones" {...DesktopNavbarLink}>
+          <Link
+            as={RouterLink}
+            to="/earphones"
+            _activeLink={{ color: "orange.100" }}
+            fontSize=".8125rem"
+            fontFamily="main.100"
+            fontWeight="bold"
+            letterSpacing=".125rem"
+            lineHeight="1.5625rem"
+            cursor="pointer"
+            _hover={{ textDecoration: "none", color: "orange.100" }}
+          >
             Earphones
           </Link>
         </Flex>
         <Flex>
-          <Image src="/shared/desktop/icon-cart.svg" onClick={onOpen} cursor="pointer" />
+          <Image
+            src="/shared/desktop/icon-cart.svg"
+            onClick={onOpen}
+            cursor="pointer"
+          />
         </Flex>
       </Flex>
     </Flex>

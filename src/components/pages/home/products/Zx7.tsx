@@ -2,7 +2,7 @@ import { Heading, Flex, Link } from "@chakra-ui/react";
 
 //Styles
 
-import { homeProductsHeadingStyle2, seeProductButton } from "../HomeStyles";
+import { homeProductsHeadingStyle2 } from "../HomeStyles";
 
 const Zx7 = () => {
   return (
@@ -28,7 +28,23 @@ const Zx7 = () => {
       <Heading {...homeProductsHeadingStyle2} mb="2rem">
         ZX7 speaker
       </Heading>
-      <Link href="/products/zx7-speaker" {...seeProductButton}>
+      <Link
+        href="/products/zx7-speaker"
+        width="160px"
+        height="48px"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        cursor="pointer"
+        textTransform="uppercase"
+        fontSize="13px"
+        fontWeight="bold"
+        fontFamily="main.100"
+        letterSpacing="1px"
+        color="white"
+        bgColor="orange.100"
+        _hover={{ textDecoration: "none", bgcolor: "orange.200" }}
+      >
         See product
       </Link>
     </Flex>

@@ -6,11 +6,9 @@ export interface IProduct {
   desc: string;
   title: string;
   image: string;
-  slug:
-    | string
-    | {
-        current: string;
-      };
+  slug: {
+    current: string;
+  };
   _id: string;
   price: number;
   features1: string;
@@ -87,4 +85,16 @@ export type CheckoutItemProps = {
 export type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
+};
+
+export type Inputs = {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  address: string;
+  ZIPCode: string;
+  city: string;
+  country: string;
+  eMoneyNumber: number;
+  eMoneyPin: number;
 };
