@@ -1,5 +1,5 @@
 // React hook form
-import { useForm } from "react-hook-form";
+import { FieldValues, UseFormRegister, useForm } from "react-hook-form";
 
 //Chakra UI
 import { Heading, Flex } from "@chakra-ui/react";
@@ -22,9 +22,15 @@ type Inputs = {
   country: string;
   eMoneyNumber: number;
   eMoneyPin: number;
+} & FieldValues;
+
+type ExtendedFieldValues = FieldValues & Inputs;
+
+type CheckoutFormProps = {
+  register: UseFormRegister<ExtendedFieldValues>;
 };
 
-const CheckoutForm = () => {
+const CheckoutForm: React.FC<CheckoutFormProps> = () => {
   const {
     handleSubmit,
     register,

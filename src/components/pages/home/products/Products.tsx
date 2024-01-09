@@ -1,9 +1,5 @@
 import { Flex } from "@chakra-ui/react";
 
-// Styles imports
-
-import { seeProductButton, homeProductsHeadingStyle2 } from "../HomeStyles";
-
 //Components
 
 import Zx9 from "./Zx9";

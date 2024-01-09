@@ -45,7 +45,7 @@ const CartItem = ({ _id }: CartItemProps) => {
         height={{ base: "50px" }}
       >
         <Text {...ItemHeading}>
-          {item.title
+          {item?.title
             .replace("Headphones", "")
             .replace("speaker", "")
             .replace("SPEAKER", "")}
@@ -55,7 +55,7 @@ const CartItem = ({ _id }: CartItemProps) => {
           fontWeight="bold"
           fontSize={{ base: "14px" }}
         >
-          $ {item.price.toLocaleString("en-US")}
+          $ {item?.price.toLocaleString("en-US")}
         </Text>
       </Flex>
       <Flex

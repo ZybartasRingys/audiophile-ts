@@ -23,7 +23,12 @@ const Checkout = () => {
         mt={{ base: "1rem", md: "3rem" }}
         mb={{ base: "1.5rem" }}
       >
-        <Text {...SmallTextOpacity} _hover={{color:"orange.100", cursor:"pointer"}}>Go Back</Text>
+        <Text
+          {...SmallTextOpacity}
+          _hover={{ color: "orange.100", cursor: "pointer" }}
+        >
+          Go Back
+        </Text>
       </Flex>
 
       <Flex
@@ -32,7 +37,7 @@ const Checkout = () => {
         flexDir={{ base: "column" }}
         alignItems="center"
       >
-        <CheckoutForm name={"string"} />
+        <CheckoutForm />
       </Flex>
     </Flex>
   );
