@@ -1,5 +1,11 @@
 // React hook form
-import { FieldErrors, UseFormRegister, useForm } from "react-hook-form";
+import {
+  FieldErrors,
+  RegisterOptions,
+  UseFormRegister,
+  UseFormRegisterReturn,
+  useForm,
+} from "react-hook-form";
 
 //Chakra UI
 import { Heading, Flex } from "@chakra-ui/react";
@@ -24,11 +30,11 @@ type Inputs = {
   eMoneyPin: number;
 };
 
-type CheckoutFormProps = {
-  register: UseFormRegister<Inputs>;
-  errors: FieldErrors<Inputs>;
+export type CheckoutFormProps = {
   handleSubmit: () => void;
   isValid: boolean;
+  register: UseFormRegister<Inputs>;
+  errors: FieldErrors<Inputs>;
 };
 
 const CheckoutForm: React.FC<CheckoutFormProps> = () => {
@@ -78,24 +84,71 @@ const CheckoutForm: React.FC<CheckoutFormProps> = () => {
 
           {/*Billing Address section */}
 
-          <BillingDetails register={register} errors={errors} />
+          <BillingDetails
+            register={register}
+            errors={errors}
+            handleSubmit={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+            isValid={false}
+          />
 
           {/*Billing Address section end */}
 
           {/*Shipping info  section */}
 
-          <ShippingInfo register={register} errors={errors} />
+          <ShippingInfo
+            register={register}
+            errors={errors}
+            handleSubmit={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+            isValid={false}
+          />
 
           {/*Shipping info  section end */}
 
           {/*Payment method  section */}
-          <PaymentDetails register={register} errors={errors} />
+          <PaymentDetails
+            register={register}
+            errors={errors}
+            handleSubmit={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+            isValid={false}
+          />
           {/*Payment method  section end */}
         </Flex>
         <Summary
           handleSubmit={handleSubmit(onSubmit)}
           errors={errors}
           isValid={isValid}
+          register={function <
+            TFieldName extends
+              | "name"
+              | "email"
+              | "phoneNumber"
+              | "address"
+              | "ZIPCode"
+              | "city"
+              | "country"
+              | "eMoneyNumber"
+              | "eMoneyPin" =
+              | "name"
+              | "email"
+              | "phoneNumber"
+              | "address"
+              | "ZIPCode"
+              | "city"
+              | "country"
+              | "eMoneyNumber"
+              | "eMoneyPin"
+          >(
+            _name: TFieldName,
+            _options?: RegisterOptions<Inputs, TFieldName> | undefined
+          ): UseFormRegisterReturn<TFieldName> {
+            throw new Error("Function not implemented.");
+          }}
         />
       </Flex>
     </>

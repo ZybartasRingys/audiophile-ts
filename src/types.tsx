@@ -6,7 +6,7 @@ export interface IProduct {
   desc: string;
   title: string;
   image: string;
-  slug: {
+  slug?: {
     current: string;
   };
   _id: string;
@@ -62,7 +62,8 @@ export interface ICartContext {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
-  setProducts: () => void;
+  setProducts: ({}) => void;
+  fetchProducts: () => void;
 }
 
 export type ShoppingCartProvider = {
@@ -90,9 +91,9 @@ export type ModalProps = {
 export type Inputs = {
   name: string;
   email: string;
-  phoneNumber: string;
+  phoneNumber: number;
   address: string;
-  ZIPCode: string;
+  ZIPCode: number;
   city: string;
   country: string;
   eMoneyNumber: number;

@@ -18,13 +18,17 @@ const ProductsDetail: React.FC<IProduct> = () => {
   const { products, setProducts } = useContext(CartContext);
   const { slug } = useParams();
 
+  if (!slug) {
+    return null;
+  }
+
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchProducts = async (slug: string) => {
       const products = await getProductsBySlug(slug);
       setProducts(products);
     };
 
-    fetchProducts();
+    fetchProducts(slug);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -66,7 +70,7 @@ const ProductsDetail: React.FC<IProduct> = () => {
           alignItems="center"
         >
           {products
-            .filter((product: IProduct) => product.slug.current == slug)
+            .filter((product: IProduct) => product.slug?.current == slug)
             .map(
               ({
                 title,
