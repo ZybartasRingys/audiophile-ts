@@ -2,7 +2,6 @@ import { useState } from "react";
 
 //Chakra UI
 import {
-  FormLabel,
   useRadioGroup,
   Radio,
   Flex,
@@ -24,7 +23,11 @@ import {
 //Components
 import InputField from "./InputField";
 
-const PaymentDetails = ({ register, errors }) => {
+//Types
+
+import { CheckoutFormProps } from "./CheckoutForm";
+
+const PaymentDetails: React.FC<CheckoutFormProps> = ({ register, errors }) => {
   const options = ["e-Money", "Cash on Delivery"];
   const [checkedOption, setCheckedOption] = useState(options[0]);
 
@@ -41,10 +44,12 @@ const PaymentDetails = ({ register, errors }) => {
   const group = getRootProps();
   return (
     <>
-      <FormLabel {...FormLabelHeading}>Payment details</FormLabel>
-      <FormLabel {...formLabelStyle} mb={{ md: "-1rem", lg: "0" }}>
+      <Text as="label" {...FormLabelHeading}>
+        Payment details
+      </Text>
+      <Text as="label" {...formLabelStyle} mb={{ md: "-1rem", lg: "0" }}>
         Payment Method
-      </FormLabel>
+      </Text>
       <Flex {...group} flexDir={{ base: "column" }}>
         <Grid
           gridTemplateAreas={{

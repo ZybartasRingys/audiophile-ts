@@ -15,7 +15,9 @@ import SummaryModal from "./SummaryModal";
 
 //Type
 
-const Summary = ({ handleSubmit, isValid }) => {
+import { CheckoutFormProps } from "../form/CheckoutForm";
+
+const Summary: React.FC<CheckoutFormProps> = ({ handleSubmit, isValid }) => {
   const { cartItems, products } = useContext(CartContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
 

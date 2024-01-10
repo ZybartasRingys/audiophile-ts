@@ -39,7 +39,7 @@ const Speakers: React.FC<IProduct> = () => {
             unit={[]}
             products={[]}
             isNewProduct={isNewProduct}
-            className={slug.current}
+            className={slug?.current}
             features1={""}
             features2={""}
           />

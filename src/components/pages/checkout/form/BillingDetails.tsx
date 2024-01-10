@@ -7,7 +7,11 @@ import { formInputStyle, FormLabelHeading } from "../checkoutStyle";
 //Components
 import InputField from "./InputField";
 
-const BillingDetails = ({ register, errors }) => {
+//Types
+
+import { CheckoutFormProps } from "./CheckoutForm";
+
+const BillingDetails: React.FC<CheckoutFormProps> = ({ register, errors }) => {
   return (
     <>
       <Text as="label" htmlFor="name" {...FormLabelHeading}>

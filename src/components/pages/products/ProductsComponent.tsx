@@ -105,7 +105,7 @@ const ProductsComponent = ({
           </Text>
         </Flex>
         <Link
-          href={`/products/${slug.current}`}
+          href={`/products/${slug?.current}`}
           mt="1.875rem"
           width="10rem"
           height="3rem"

@@ -7,7 +7,11 @@ import { formInputStyle, FormLabelHeading } from "../checkoutStyle";
 //Components
 import InputField from "./InputField";
 
-const ShippingInfo = ({ register, errors }) => {
+//Type
+
+import { CheckoutFormProps } from "./CheckoutForm";
+
+const ShippingInfo: React.FC<CheckoutFormProps> = ({ register, errors }) => {
   return (
     <>
       <Flex flexDir={{ base: "column" }} mb={{ md: "3.875rem" }}>
