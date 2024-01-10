@@ -31,10 +31,10 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
       <Flex flexDir={{ base: "column", md: "row" }} width={{ base: "100%" }}>
         {products
           .sort(() => 0.5 - Math.random())
-          .filter((product) => product.slug.current !== slug.current)
+          .filter((product) => product.slug?.current !== slug?.current)
           .map(
             (item: {
-              slug: { current: string };
+              slug?: { current: string };
               title: string;
               image: string;
               price: number;
@@ -86,7 +86,7 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
                   fontSize={{ base: "13px" }}
                   letterSpacing="1px"
                   _hover={{ bgColor: "orange.200" }}
-                  href={`/products/${item.slug.current}`}
+                  href={`/products/${item.slug?.current}`}
                 >
                   SEE PRODUCT
                 </Link>

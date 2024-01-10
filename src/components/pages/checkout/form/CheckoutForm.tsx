@@ -37,13 +37,12 @@ export type CheckoutFormProps = {
   errors: FieldErrors<Inputs>;
 };
 
-const CheckoutForm: React.FC<CheckoutFormProps> = () => {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors, isValid },
-  } = useForm<Inputs>({ mode: "all" });
-
+const CheckoutForm: React.FC<CheckoutFormProps> = ({
+  handleSubmit,
+  register,
+  errors,
+  isValid,
+}) => {
   const onSubmit = () => {
     console.log("good");
   };

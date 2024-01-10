@@ -42,7 +42,7 @@ const Headphones: React.FC<IProduct> = () => {
             products={[]}
             isNewProduct={isNewProduct}
             key={title}
-            className={`${slug.current}`}
+            className={`${slug?.current}`}
             features1={""}
             features2={""}
           />

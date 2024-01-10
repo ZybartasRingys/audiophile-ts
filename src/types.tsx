@@ -18,7 +18,7 @@ export interface IProduct {
   unit: Array<string>;
   products: IProduct[];
   isNewProduct: boolean;
-  className: string;
+  className: string | undefined;
   item?: {
     image: string;
     price: number;
