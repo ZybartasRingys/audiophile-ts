@@ -1,11 +1,4 @@
-import {
-  Box,
-  Flex,
-  useDisclosure,
-  Image,
-  Link,
- 
-} from "@chakra-ui/react";
+import { Box, Flex, useDisclosure, Image, Link } from "@chakra-ui/react";
 
 import Cart from "../cart/Cart";
 import NavbarModal from "./NavbarModal";
@@ -37,7 +30,11 @@ const MobileNav = () => {
           cursor="pointer"
           mr={{ md: "40px" }}
         >
-          <Image src="shared/tablet/icon-hamburger.svg" alt="h" />
+          <Image
+            src="shared/tablet/icon-hamburger.svg"
+            alt="hamburger"
+            loading="lazy"
+          />
         </Box>
 
         <Link href="/">
@@ -51,9 +48,9 @@ const MobileNav = () => {
       </Flex>
 
       {/* Navbar Modal */}
-      <NavbarModal isOpen={isOpen} onClose={onClose}/>
+      <NavbarModal isOpen={isOpen} onClose={onClose} />
       {/* Navbar Modal */}
-      
+
       <Cart />
     </Flex>
   );

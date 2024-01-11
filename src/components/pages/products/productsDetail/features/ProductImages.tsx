@@ -38,8 +38,8 @@ const ProductImages: React.FC<ProductImagesProps> = ({ productImages }) => {
             height={{ base: "100%" }}
             borderRadius=".5rem"
             bgImage={urlFor(image).url()}
-            bgSize="cover"
-            bgPos="center"
+            bgSize={{ base: "cover" }}
+            bgPos={{ base: "cover" }}
             bgRepeat="no-repeat"
           />
         </GridItem>

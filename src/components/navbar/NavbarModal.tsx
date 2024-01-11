@@ -66,7 +66,7 @@ const NavbarModal: React.FC<NavbarModalProps> = ({ isOpen, onClose }) => {
                 <Link
                   display="flex"
                   alignItems="center"
-                  href="/headphones"
+                  href={card.heading}
                   textTransform="uppercase"
                 >
                   <Text
