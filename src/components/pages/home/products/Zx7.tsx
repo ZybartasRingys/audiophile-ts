@@ -29,7 +29,6 @@ const Zx7 = () => {
         ZX7 speaker
       </Heading>
       <Link
-        href="/products/zx7-speaker"
         width="160px"
         height="48px"
         display="flex"
@@ -41,9 +40,11 @@ const Zx7 = () => {
         fontWeight="bold"
         fontFamily="main.100"
         letterSpacing="1px"
-        color="white"
-        bgColor="orange.100"
+        color="black.100"
+        bgColor="grey.400"
+        border="1px solid black"
         _hover={{ textDecoration: "none", bgcolor: "orange.200" }}
+        href="/products/zx7-speaker"
       >
         See product
       </Link>

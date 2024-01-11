@@ -27,7 +27,7 @@ const DesktopNav = () => {
       >
         <Flex width="8.9375rem" height="1.5625rem">
           <Link as={RouterLink} to="/">
-            <Image src="/shared/desktop/logo.svg" />
+            <Image src="/shared/desktop/logo.svg" alt="logo" />
           </Link>
         </Flex>
         <Flex
@@ -95,7 +95,8 @@ const DesktopNav = () => {
         </Flex>
         <Flex>
           <Image
-            src="/shared/desktop/icon-cart.svg"
+            src="/shared/desktop/icon-cart.svg "
+            alt="cart"
             onClick={onOpen}
             cursor="pointer"
           />

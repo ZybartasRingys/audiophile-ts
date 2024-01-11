@@ -50,8 +50,9 @@ const Yx1 = () => {
           fontWeight="bold"
           fontFamily="main.100"
           letterSpacing="1px"
-          color="white"
-          bgColor="orange.100"
+          color="black.100"
+          bgColor="white.300"
+          border="1px solid black"
           _hover={{ textDecoration: "none", bgcolor: "orange.200" }}
           href="/products/yx1-wireless-earphones"
         >

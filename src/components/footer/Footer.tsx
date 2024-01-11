@@ -26,7 +26,7 @@ const Footer = () => {
         height={{ base: "100%", lg: "1.5625rem" }}
         flexDir={{ base: "column", lg: "row" }}
       >
-        <Image src="/public/shared/desktop/logo.svg" />
+        <Image src="/shared/desktop/logo.svg" alt="footer-logo" />
         <Flex
           flexDir={{ base: "column", md: "row" }}
           mt={{ base: "50px", md: "2rem", lg: "0rem" }}
@@ -132,13 +132,13 @@ const Footer = () => {
           justifyContent="space-between"
         >
           <Link href="https://facebook.com" isExternal>
-            <Image src="/shared/desktop/icon-facebook.svg" />
+            <Image src="/shared/desktop/icon-facebook.svg" alt="facebook" />
           </Link>
           <Link href="https://twitter.com" isExternal>
-            <Image src="/shared/desktop/icon-twitter.svg" />
+            <Image src="/shared/desktop/icon-twitter.svg" alt="twitter" />
           </Link>
           <Link href="https://instagram.com" isExternal>
-            <Image src="/shared/desktop/icon-instagram.svg" />
+            <Image src="/shared/desktop/icon-instagram.svg" alt="twitter" />
           </Link>
         </Flex>
       </Flex>

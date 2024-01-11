@@ -28,6 +28,7 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
             width={{ base: "150px", lg: "200px" }}
             height={{ base: "132px", lg: "180px" }}
             loading="lazy"
+            alt="product"
           />
 
           <Heading
@@ -61,6 +62,7 @@ const LinksCard: React.FC<LinksProps> = ({ heading, image }) => {
               height=".75rem"
               ml=".625rem"
               src="/shared/desktop/icon-arrow-right.svg"
+              alt="arrow"
             />
           </Link>
         </CardBody>
