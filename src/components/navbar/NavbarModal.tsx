@@ -87,6 +87,7 @@ const NavbarModal: React.FC<NavbarModalProps> = ({ isOpen, onClose }) => {
                     height=".75rem"
                     ml=".625rem"
                     src="/shared/desktop/icon-arrow-right.svg"
+                    alt="arrow"
                   />
                 </Link>
               </CardBody>

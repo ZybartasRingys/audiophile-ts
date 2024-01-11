@@ -17,6 +17,11 @@ import { CartContext } from "../../../../context/CartContext";
 //Icons
 import { HiMiniPlusSmall, HiMiniMinusSmall } from "react-icons/hi2";
 
+//React toast
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Product: React.FC<IProduct> = ({
   title,
   desc,
@@ -35,6 +40,20 @@ const Product: React.FC<IProduct> = ({
   const { increaseCartQuantity, decreaseCartQuantity, getItemsQuantity } =
     useContext(CartContext);
   const quantity = getItemsQuantity(_id);
+
+  const addToCartWithToast = (_id: string) => {
+    toast.success("Item added to cart", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+    increaseCartQuantity(_id);
+  };
 
   return (
     <>
@@ -181,7 +200,7 @@ const Product: React.FC<IProduct> = ({
                   borderRadius="0px"
                   fontSize={{ base: ".8125rem" }}
                   letterSpacing="1px"
-                  onClick={() => increaseCartQuantity(_id)}
+                  onClick={() => addToCartWithToast(_id)}
                 >
                   ADD TO CART
                 </Button>
@@ -237,6 +256,19 @@ const Product: React.FC<IProduct> = ({
         <Links />
         {/* Testimonial Section */}
         <Testimonial />
+
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
       </Flex>
     </>
   );
