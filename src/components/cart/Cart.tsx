@@ -32,7 +32,7 @@ const Cart = () => {
           alignItems="center"
           justifyContent="center"
           position="absolute"
-          right="2.5rem"
+          right={{ base: "1.7rem", md: "2.5rem" }}
           top="1.6rem"
         >
           <Text color="white" fontSize=".6875rem">

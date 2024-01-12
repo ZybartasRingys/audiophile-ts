@@ -1,4 +1,4 @@
-import { Flex, Image, Link } from "@chakra-ui/react";
+import { Flex, Image, Link, Text } from "@chakra-ui/react";
 import { NavLink as RouterLink } from "react-router-dom";
 
 //Context
@@ -9,7 +9,7 @@ import { CartContext } from "../../context/CartContext";
 // Styles
 
 const DesktopNav = () => {
-  const { onOpen } = useContext(CartContext);
+  const { onOpen, totalCartQuantity } = useContext(CartContext);
 
   return (
     <Flex
@@ -100,6 +100,26 @@ const DesktopNav = () => {
             onClick={onOpen}
             cursor="pointer"
           />
+
+          {totalCartQuantity <= 0 ? null : (
+            <Flex
+              width=".75rem"
+              height=".8125rem"
+              fontFamily="main.100"
+              bgColor="orange.100"
+              color="white.100"
+              borderRadius="50%"
+              alignItems="center"
+              justifyContent="center"
+              position="absolute"
+              right={{ base: "1.7rem", md: "2.5rem", lg: "10.9rem" }}
+              top="1.6rem"
+            >
+              <Text color="white" fontSize=".6875rem">
+                {totalCartQuantity}
+              </Text>
+            </Flex>
+          )}
         </Flex>
       </Flex>
     </Flex>
