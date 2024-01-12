@@ -33,7 +33,7 @@ const Cart = () => {
           justifyContent="center"
           position="absolute"
           right="2.5rem"
-          top="2rem"
+          top="1.6rem"
         >
           <Text color="white" fontSize=".6875rem">
             {totalCartQuantity}
