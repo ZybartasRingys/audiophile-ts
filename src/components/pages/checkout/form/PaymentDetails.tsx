@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 //Chakra UI
 import {
   useRadioGroup,
@@ -13,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 
 //Chakra Styles Import
-
 import {
   FormLabelHeading,
   formInputStyle,
@@ -24,12 +21,14 @@ import {
 import InputField from "./InputField";
 
 //Types
-
 import { CheckoutFormProps } from "./CheckoutForm";
 
+//Context
+import { useContext } from "react";
+import { CartContext } from "../../../../context/CartContext";
+
 const PaymentDetails: React.FC<CheckoutFormProps> = ({ register, errors }) => {
-  const options = ["e-Money", "Cash on Delivery"];
-  const [checkedOption, setCheckedOption] = useState(options[0]);
+  const { options, setCheckedOption, checkedOption } = useContext(CartContext);
 
   const handleChange = (value: string) => {
     setCheckedOption(value);

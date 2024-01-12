@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect } from "react";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */

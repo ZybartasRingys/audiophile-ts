@@ -19,9 +19,11 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
     "shopping-cart",
     []
   );
-
+  const options = ["e-Money", "Cash on Delivery"];
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [products, setProducts] = useState<IProduct[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [checkedOption, setCheckedOption] = useState(options[0]);
 
   useEffect(() => {
     const fetchAllProducts = async () => {
@@ -93,6 +95,9 @@ export const CartContextProvider = ({ children }: ShoppingCartProvider) => {
         onOpen,
         onClose,
         setProducts,
+        setCheckedOption,
+        options,
+        checkedOption,
       }}
     >
       {children}

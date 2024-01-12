@@ -62,8 +62,12 @@ export interface ICartContext {
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
+  // eslint-disable-next-line no-empty-pattern
   setProducts: ({}) => void;
   fetchProducts: () => void;
+  options: Array<string>;
+  checkedOption: string;
+  setCheckedOption: (value: string) => void;
 }
 
 export type ShoppingCartProvider = {

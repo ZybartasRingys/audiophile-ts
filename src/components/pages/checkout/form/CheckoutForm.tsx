@@ -143,7 +143,9 @@ const CheckoutForm: React.FC<CheckoutFormProps> = () => {
               | "eMoneyNumber"
               | "eMoneyPin"
           >(
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             _name: TFieldName,
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             _options?: RegisterOptions<Inputs, TFieldName> | undefined
           ): UseFormRegisterReturn<TFieldName> {
             throw new Error("Function not implemented.");

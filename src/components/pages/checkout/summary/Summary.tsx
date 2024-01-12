@@ -18,13 +18,16 @@ import SummaryModal from "./SummaryModal";
 import { CheckoutFormProps } from "../form/CheckoutForm";
 
 const Summary: React.FC<CheckoutFormProps> = ({ handleSubmit, isValid }) => {
-  const { cartItems, products } = useContext(CartContext);
+  const { cartItems, products, checkedOption } = useContext(CartContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleForm = () => {
     handleSubmit();
 
     if (isValid) {
+      onOpen();
+    }
+    if (checkedOption === "Cash on Delivery") {
       onOpen();
     }
   };

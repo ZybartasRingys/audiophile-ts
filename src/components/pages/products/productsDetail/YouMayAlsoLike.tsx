@@ -1,6 +1,6 @@
 // Chakra UI
 
-import { Flex, Heading, Image, Link } from "@chakra-ui/react";
+import { Flex, Heading, Link } from "@chakra-ui/react";
 
 // Sanity
 import { urlFor } from "../../../../../sanity/sanity";
@@ -53,19 +53,14 @@ const YouMayAlsoLike: React.FC<IProduct> = ({ products, slug }) => {
                   height={{ base: "7.5rem", md: "19.875rem" }}
                   justifyContent="center"
                   alignItems={{ md: "center" }}
-                  bgColor="white.300"
                   mb={{ base: "2rem" }}
                   borderRadius=".5rem"
-                >
-                  <Image
-                    width={{ base: "40%", md: "100%" }}
-                    height={{ base: "100%", md: "85%" }}
-                    mb={{ base: "1.875rem", md: "2.5rem" }}
-                    borderRadius="10px"
-                    src={urlFor(item.image).url()}
-                    alt={item.title}
-                  ></Image>
-                </Flex>
+                  bgColor="white.300"
+                  bgImage={urlFor(item.image).url()}
+                  bgSize={{ base: "40%", md: "cover" }}
+                  bgPos="center"
+                  bgRepeat="no-repeat"
+                ></Flex>
                 <Heading {...Heading5} mb={{ base: "2rem" }}>
                   {item.title
                     .replace("Headphones", "")
